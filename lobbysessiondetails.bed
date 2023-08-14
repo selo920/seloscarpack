@@ -45,6 +45,42 @@ dofile("data/menu/single_player_track_images29.bed")
 dofile("data/menu/single_player_track_images30.bed")
 
 
+dofile("data/menu/single_player_track_images31.bed")
+dofile("data/menu/single_player_track_images32.bed")
+dofile("data/menu/single_player_track_images33.bed")
+dofile("data/menu/single_player_track_images34.bed")
+dofile("data/menu/single_player_track_images35.bed")
+dofile("data/menu/single_player_track_images36.bed")
+dofile("data/menu/single_player_track_images37.bed")
+dofile("data/menu/single_player_track_images38.bed")
+dofile("data/menu/single_player_track_images39.bed")
+dofile("data/menu/single_player_track_images40.bed")
+dofile("data/menu/single_player_track_images41.bed")
+dofile("data/menu/single_player_track_images42.bed")
+dofile("data/menu/single_player_track_images43.bed")
+dofile("data/menu/single_player_track_images44.bed")
+dofile("data/menu/single_player_track_images45.bed")
+dofile("data/menu/single_player_track_images46.bed")
+dofile("data/menu/single_player_track_images47.bed")
+dofile("data/menu/single_player_track_images48.bed")
+dofile("data/menu/single_player_track_images49.bed")
+dofile("data/menu/single_player_track_images50.bed")
+dofile("data/menu/single_player_track_images51.bed")
+dofile("data/menu/single_player_track_images52.bed")
+dofile("data/menu/single_player_track_images53.bed")
+dofile("data/menu/single_player_track_images54.bed")
+dofile("data/menu/single_player_track_images55.bed")
+dofile("data/menu/single_player_track_images56.bed")
+dofile("data/menu/single_player_track_images57.bed")
+dofile("data/menu/single_player_track_images58.bed")
+dofile("data/menu/single_player_track_images59.bed")
+dofile("data/menu/single_player_track_images60.bed")
+dofile("data/menu/single_player_track_images61.bed")
+dofile("data/menu/single_player_track_images62.bed")
+dofile("data/menu/single_player_track_images63.bed")
+dofile("data/menu/single_player_track_images64.bed")
+dofile("data/menu/single_player_track_images65.bed")
+
 local State
 local SESSION_DETAILS = 1
 local EVENT_HELP = 2
@@ -165,6 +201,25 @@ local OptionItems = {
 	}
 }
 
+		--------------------add custom class type buttons
+				dofile("data/scripts/customcarclasses.bed")
+				local _list = {}
+				local _n = {}
+				local _d = {}
+				for i=1,table.getn(customCarClassList) do
+					table.insert(_list, L(customCarClassList[i].classname) )
+					table.insert(_n, i)
+					table.insert(_d, L(customCarClassList[i].description))
+				end
+				table.insert(_list, MULTIPLAYER_CAR_SAMEHOST)
+				table.insert(_n, -1)
+				table.insert(_d, MULTIPLAYER_CAR_SAMEHOST_DESC)
+				--OptionItems[3][1] = L"_list 2"
+				OptionItems[4][2] = _list 
+				OptionItems[4][3] = _n 
+				OptionItems[4][7] = _d 
+		  --------------------
+		  
 local NumOptions=10
 
 -- OptionItem item indexes
@@ -252,17 +307,28 @@ local StuntTexts = {
 local EventHelpEnabled
 
 local trackfiles = {
-	[TRACKTYPE_RACING] = { "single_player_track_images1","single_player_track_images2","single_player_track_images3" },
-	[TRACKTYPE_FIELDS] = { "single_player_track_images4","single_player_track_images5", "single_player_track_images6" },
-	[TRACKTYPE_FOREST] = { "single_player_track_images7","single_player_track_images8",	"single_player_track_images9" },
-	[TRACKTYPE_CITY] = { "single_player_track_images10", "single_player_track_images11", "single_player_track_images12" },
+----------------------------
+----------------------------
+----------------------------
+----------------------------
+	[TRACKTYPE_RACING] = { "single_player_track_images1","single_player_track_images2","single_player_track_images3","single_player_track_images38","single_player_track_images41" },
+	[TRACKTYPE_FIELDS] = { "single_player_track_images4","single_player_track_images5", "single_player_track_images6", "single_player_track_images43" },
+	[TRACKTYPE_FOREST] = { "single_player_track_images7","single_player_track_images8",	"single_player_track_images9", "single_player_track_images34","single_player_track_images38",
+		"single_player_track_images62","single_player_track_images63","single_player_track_images64","single_player_track_images65" },
+	[TRACKTYPE_CITY] = { "single_player_track_images10", "single_player_track_images11", "single_player_track_images12", "single_player_track_images31", "single_player_track_images43" },
 	[TRACKTYPE_DESERT] = {"single_player_track_images13","single_player_track_images14" },
-	[TRACKTYPE_CANAL] = { "single_player_track_images14", "single_player_track_images15" },
+	[TRACKTYPE_CANAL] = { "single_player_track_images14", "single_player_track_images15", "single_player_track_images41", "single_player_track_images42" },
+	[TRACKTYPE_FO1_SNOW] = { "single_player_track_images44","single_player_track_images45","single_player_track_images46"},
+	[TRACKTYPE_FO1_PIT] = { "single_player_track_images47","single_player_track_images48","single_player_track_images49","single_player_track_images50","single_player_track_images51"},
+	[TRACKTYPE_FO1_FOREST] = { "single_player_track_images51","single_player_track_images52","single_player_track_images53","single_player_track_images54","single_player_track_images55"},
+	[TRACKTYPE_FO1_TOWN] = { "single_player_track_images56","single_player_track_images57","single_player_track_images58"},
+	[TRACKTYPE_FO1_RACING] = { "single_player_track_images59","single_player_track_images60","single_player_track_images61"},
 	[TRACKTYPE_STUNT] = { "single_player_track_images25", "single_player_track_images26", "single_player_track_images27",
-						  "single_player_track_images28", "single_player_track_images29", "single_player_track_images30", },
+						  "single_player_track_images28", "single_player_track_images29", "single_player_track_images30" },
 	[TRACKTYPE_EVENT] = {  "single_player_track_images19", "single_player_track_images20", "single_player_track_images21",
-						  "single_player_track_images22", "single_player_track_images23", "single_player_track_images24", },
-	[TRACKTYPE_DERBY] = { "single_player_track_images16", "single_player_track_images17", "single_player_track_images18", },
+						  "single_player_track_images22", "single_player_track_images23", "single_player_track_images24", "single_player_track_images32", "single_player_track_images33", "single_player_track_images37", "single_player_track_images34", },
+	[TRACKTYPE_DERBY] = { "single_player_track_images16", "single_player_track_images17", "single_player_track_images18", "single_player_track_images35", "single_player_track_images36", "single_player_track_images39", "single_player_track_images40","single_player_track_images63","single_player_track_images64" },
+
 }						
 
 
@@ -599,7 +665,7 @@ function menu_multiplayer_lobby_sessiondetails.init(self)
 		end
 	end
 	
-	if info.CarClass < 5 then
+	if info.CarClass < ClassCounter then --------------------
 		for i = 1, table.getn(OptionItems[CarType][ItemValues]) do
 			if OptionItems[CarType][ItemValues][i] == info.CarClass then
 				SetSelectedItem(CarType, i)

@@ -11,6 +11,7 @@
 
 dofile("data/menu/garage_elements1.bed")
 dofile("data/menu/backdrops3.bed")
+dofile("data/scripts/customcarclasses.bed")
 
 local Layout=
 {
@@ -87,6 +88,15 @@ local nitrolabels={L"0x", L"0.5x", L"1x", L"2x"}
 local upgradelabels={L"0%", L"50%", L"100%", MULTIPLAYER_UPGRADES_CHOICE}
 local damagelabels={L"0x", L"0.5x", L"1x", L"1.5x", L"2x"}
 
+		--------------------
+				carclasses = {}
+				for i=1,table.getn(customCarClassList) do
+					table.insert(carclasses, L(customCarClassList[i].classname) )
+				end
+				table.insert(carclasses, MULTIPLAYER_CAR_SAMEHOST)
+		------------------------------
+
+
 local function RefreshGameInfo()
 	local sessionNum = wm.GetWindow("sessionlist"):GetSelectedRow()
 	if sessionNum >= 1 and sessionNum <= SessionList:GetNumSessions() then
@@ -145,10 +155,10 @@ local function RefreshGameInfo()
 			win:SetTitle(upgradelabels[sessionInfo.CarUpgrades + 1])
 			
 			win=wm.GetWindow("cars")
-			if sessionInfo.CarClass < 5 then
-				win:SetTitle(carclasses[sessionInfo.CarClass + 1])
+			if sessionInfo.CarClass < ClassCounter then --------------------
+				win:SetTitle(carclasses[sessionInfo.CarClass ])  --------------------cambiar ?????
 			else
-				local car = db.FlatOut2.Cars:GetProperty("Car", sessionInfo.CarClass - 5)
+				local car = db.FlatOut2.Cars:GetProperty("Car", sessionInfo.CarClass - ClassCounter)  ------------------
 				win:SetTitle(L(car.Name))
 			end
 			
@@ -215,8 +225,8 @@ local function NetworkEvents(event)
 
 		local info = Session:GetInfo()
 
-		if info.CarClass > 4 then
-			player.Car = info.CarClass - 5
+		if info.CarClass > (ClassCounter-1) then -------------------
+			player.Car = info.CarClass - ClassCounter ----------------------
 			player.CarValid = true
 		elseif info.CarClass == SessionInfo.CarClass.Stunt or info.Races[info.NextRace].EventType == ReplicatedSession.GAMETYPE_STUNT then
 			player.Car = CarlistStuntCars()[1].index		

@@ -1,0 +1,8 @@
+
+function test_set_car()
+	local player = Session:GetLocalPlayer(1)
+	player.Car = player.Car
+	player.CarSkin = player.CarSkin
+end
+
+test_set_car()

@@ -61,6 +61,11 @@ local function entersinglerace(id)
 		if id then 
 			back=entermenu("menu_singleplayer")
 		end
+		GameFlow.ClearRace()
+		db.GameFlow.PreRace.Mode=GM_SINGLE_RACE
+		if id == TRACKTYPE_STUNT then
+			db.GameFlow.PreRace.Rules=GR_STUNT
+		end
 		EnterSingleRaceSelection(back,id,okaction)
 	end
 	return f
@@ -68,10 +73,19 @@ end
 
 
 local function check_career_garage()
+	Settings.Game.Ragdoll = TRUE
 	if Garage:GetNumCarsPurchased() == 0 then
-		EnterCarShop(CarlistFromClass(1,false,false),true,"data/menu/garage_bg.tga",1)
+		ProfileSave(
+			Save.GetLastSaveSlotUsed(),
+			EnterCarShop(CarlistFromClass(1,false,false),true,"data/menu/garage_bg.tga",1),
+			function() end
+		)
 	else
-		EnterMenu("menu_career")
+		ProfileSave(
+			Save.GetLastSaveSlotUsed(),
+			EnterMenu("menu_career"),
+			function() end
+		)
 	end
 end
 
@@ -84,7 +98,6 @@ function menu_singleplayer.create(self)
 	self:addResource("single_player_images1.tga",single_player_images1,single_player_images1_size)
 	self:addResource("single_player_images2.tga",single_player_images2,single_player_images2_size)
 	self:addResource("single_player_images3.tga",single_player_images3,single_player_images3_size)
-
 
 	self:loadResources()
 

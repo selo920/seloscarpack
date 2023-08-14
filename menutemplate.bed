@@ -230,8 +230,8 @@ end
 function StandardBarsAndButtons(menu,showmoney,showcarname)
 		--//upper bar
 
-		local bar_pos=POS(0,0)
-		local bar_size=SIZE(640,menu_bars.menu_bar_top[4])
+		local bar_pos=POS(-120,0)
+		local bar_size=SIZE(890,menu_bars.menu_bar_top[4])
 
 		if menu_entered then
 			bar_pos=POS(0,-bar_size[2])
@@ -271,8 +271,8 @@ function StandardBarsAndButtons(menu,showmoney,showcarname)
 		end
 			
 
-		bar_size=SIZE(640,menu_bars.menu_bar_bottom[4])
-		bar_pos=POS(0,480-bar_size[2])
+		bar_size=SIZE(890,menu_bars.menu_bar_bottom[4])
+		bar_pos=POS(-120,480-bar_size[2])
 
 		if menu_entered then
 			bar_pos=POS(0,460)
@@ -325,7 +325,7 @@ end
 function BlackLowerBalk()
 	local ppos=POS(0,392)
 
-	local p=addparent(Frame{ Position=ppos, Size=SIZE(640,480-392), ShowBorders=FALSE,Layer=0 } )
+	local p=addparent(Frame{ Position=ppos, Size=SIZE(800,480-392), ShowBorders=FALSE,Layer=0 } )
 	--//p:AttachResource(menucommon.black_transparent)
 
 end
@@ -336,16 +336,16 @@ function StandardUpperBalk(showmoney)
 
 	local w=GetResourceSize(menucommon.upperbalk)
 
-	local parent=addparent(Frame{ Position=ppos, Size=SIZE(640,w[2]), ShowBorders=FALSE, Layer=0} )
+	local parent=addparent(Frame{ Position=ppos, Size=SIZE(800,w[2]), ShowBorders=FALSE, Layer=0} )
 	parent:AttachResource(menucommon.upperbalk)
 
 
---//	parent=addchild(Frame{Position=POS(0,0),Size=SIZE(640,w[2]),ShowBorders=FALSE,Parent=parent,Layer=5})
+--//	parent=addchild(Frame{Position=POS(0,0),Size=SIZE(800,w[2]),ShowBorders=FALSE,Parent=parent,Layer=5})
 --//	parent:AttachResource(menucommon.upperbalk)
 
 	if getplatform() ~= "PC" then
 		w=GetResourceSize(menucommon.upperbalk_ext)
-		addparent(Frame{Position=POS(0,0),Size=SIZE(640,w[2]), ShowBorders=FALSE,Layer=0 }):AttachResource(menucommon.upperbalk_ext)
+		addparent(Frame{Position=POS(0,0),Size=SIZE(800,w[2]), ShowBorders=FALSE,Layer=0 }):AttachResource(menucommon.upperbalk_ext)
 	end
 
 
@@ -390,13 +390,13 @@ function StandardLowerBalk(arrows,extrabutton,yesno,hidebuttons)
 
 	
 	local w=GetResourceSize(menucommon.lowerbalk)
-	local p=addparent(Frame{ Position=ppos, Size=SIZE(640,w[2]), ShowBorders=FALSE,Layer=0 } )
+	local p=addparent(Frame{ Position=ppos, Size=SIZE(800,w[2]), ShowBorders=FALSE,Layer=0 } )
 	p:AttachResource(menucommon.lowerbalk)
 
 
 	w=GetResourceSize(menucommon.lowerbalk_ext)
 
-	addparent(Frame{Position=POS(0,495-w[2]),Size=SIZE(640,w[2]), ShowBorders=FALSE,Layer=0 }):AttachResource(menucommon.lowerbalk_ext)
+	addparent(Frame{Position=POS(300,495-w[2]),Size=SIZE(800,w[2]), ShowBorders=FALSE,Layer=0 }):AttachResource(menucommon.lowerbalk_ext)
 
 
 
@@ -410,12 +410,12 @@ function StandardLowerBalk(arrows,extrabutton,yesno,hidebuttons)
 	if hidebuttons then return p end
 
 
-	local extrapos1=RELATIVEPOS(POS(230,437),ppos)
-	local extrapos2=RELATIVEPOS(POS(253,437),ppos)
+	local extrapos1=RELATIVEPOS(POS(530,437),ppos)
+	local extrapos2=RELATIVEPOS(POS(553,437),ppos)
 
 	if extrabutton and not balk_state.backbutton then
-		extrapos1=RELATIVEPOS(POS(330,437),ppos)
-		extrapos2=RELATIVEPOS(POS(353,437),ppos)
+		extrapos1=RELATIVEPOS(POS(630,437),ppos)
+		extrapos2=RELATIVEPOS(POS(653,437),ppos)
 	end
 
 	if extrabutton then
@@ -436,37 +436,37 @@ function StandardLowerBalk(arrows,extrabutton,yesno,hidebuttons)
 
 	if balk_state.backbutton then
 		--//backbutton
-		local pos=RELATIVEPOS(POS(373,437),ppos)
+		local pos=RELATIVEPOS(POS(673,437),ppos)
 		if getplatform() == "PC" then
-			pos=RELATIVEPOS(POS(350+GetResourceSize(menucommon.backbutton)[1],437),ppos)
+			pos=RELATIVEPOS(POS(650+GetResourceSize(menucommon.backbutton)[1],437),ppos)
 		end
 
 
-		addchild(Button{Name="balk_backbutton",Position=RELATIVEPOS(POS(350,437),ppos),Layer=6,Size=GetResourceSize(menucommon.backbutton),Parent=p}):AttachResource(menucommon.backbutton)
+		addchild(Button{Name="balk_backbutton",Position=RELATIVEPOS(POS(650,437),ppos),Layer=6,Size=GetResourceSize(menucommon.backbutton),Parent=p}):AttachResource(menucommon.backbutton)
 		addchild(StaticText{Name="balk_backbuttontext",Title=MENU_BACK,Layer=6,Position=pos,Size=SIZE(64,32),Font=fontsmall(),Parent=p})
 	end
 
 	if balk_state.forwardbutton then
 		--//forwardbutton
-		local pos=POS(476,437)
+		local pos=POS(776,437)
 		if getplatform() == "PC" then
-			pos=POS(453+GetResourceSize(menucommon.okbutton)[1],437)
+			pos=POS(753+GetResourceSize(menucommon.okbutton)[1],437)
 		end
 
-		addchild(Button{Name="balk_forwardbutton",Position=RELATIVEPOS(POS(453,437),ppos),Layer=6,Size=GetResourceSize(menucommon.okbutton),Parent=p}):AttachResource(menucommon.okbutton)
+		addchild(Button{Name="balk_forwardbutton",Position=RELATIVEPOS(POS(753,437),ppos),Layer=6,Size=GetResourceSize(menucommon.okbutton),Parent=p}):AttachResource(menucommon.okbutton)
 		addchild(StaticText{Name="balk_forwardbuttontext",Title=MENU_SELECT,Layer=6,Position=RELATIVEPOS(pos,ppos),Size=SIZE(64,32),Font=fontsmall(),Parent=p})
 	end
 
 	if arrows then
-		addchild(Button{Name="balk_arrow_left", Position=RELATIVEPOS(POS(54,401),ppos),Layer=6,Size=GetResourceSize(menucommon.selection_arrow_l),Parent=p}):AttachResource(menucommon.control_arrow_left_pal_3)
-		addchild(Button{Name="balk_arrow_right",Position=RELATIVEPOS(POS(571,401),ppos),Layer=6,Size=GetResourceSize(menucommon.selection_arrow_r),Parent=p}):AttachResource(menucommon.control_arrow_right_pal_3)
+		addchild(Button{Name="balk_arrow_left", Position=RELATIVEPOS(POS(354,401),ppos),Layer=6,Size=GetResourceSize(menucommon.selection_arrow_l),Parent=p}):AttachResource(menucommon.control_arrow_left_pal_3)
+		addchild(Button{Name="balk_arrow_right",Position=RELATIVEPOS(POS(871,401),ppos),Layer=6,Size=GetResourceSize(menucommon.selection_arrow_r),Parent=p}):AttachResource(menucommon.control_arrow_right_pal_3)
 	end
 
 	if yesno then
 		ShowYesNoBox()
 	end
 
-	w=addchild(StaticText{Name="lowerbalk_text",Position=RELATIVEPOS(POS(304,403),ppos),Size=SIZE(200,32),Parent=p,Font=font18()})
+	w=addchild(StaticText{Name="lowerbalk_text",Position=RELATIVEPOS(POS(604,403),ppos),Size=SIZE(200,32),Parent=p,Font=font18()})
 	w:HideWindow()
 
 
@@ -940,9 +940,9 @@ function ShowYesNoBox()
 	local pos
 
 	if getplatform() == "PC" then
-		pos=POS(640-128,480-100)
+		pos=POS(800-128,480-100)
 	else
-		pos=POS(640-(108+48),480-(70+36))
+		pos=POS(800-(108+48),480-(70+36))
 	end
 
 	local parent=addparent(Frame{Name="yesnobox",Position=pos,Size=SIZE(128,128),ShowBorders=FALSE})
@@ -993,7 +993,7 @@ function ShowMessageBox(Pos, TitleMsg, Message, LabelA, FunctionA, LabelB, Funct
 	
 	local boxleft = 135
 	
-	win=AddMsgBoxWin(Frame { Name="msgboxback", Position=POS(0, 0), Size=SIZE(640, 480), Layer=5 } )
+	win=AddMsgBoxWin(Frame { Name="msgboxback", Position=POS(0, 0), Size=SIZE(800, 480), Layer=5 } )
 	win:AttachResource(wm.GetResource("black_transparent_50"))
 	wm.ActivateWindow(win)
 	win=AddMsgBoxWin(Frame { Name="messagebox", Position=POS(0,0), Size=SIZE(0,0), ShowBorders=TRUE, Layer=5, Parent=win } )
@@ -1225,13 +1225,13 @@ function ConfirmationBox(text,b1label,b1action,b2label,b2action)
 	HideBalkButtons()
 
 	local position=POS(0,61+36)
-	local size=SIZE(640,297)
+	local size=SIZE(800,297)
 
 	local parent=AddConfirmationWin(Frame{Name="confirmationbox", Position=position, Size=size, ShowBorders=FALSE,Layer=6})
 	parent:AttachResource(menucommon.black_transparent)
 
 	
-	AddConfirmationWin(StaticText{Font=font12(),Title=text,TitleCentering=TITLE_CENTER_XY,Parent=parent,Position=POS(48,0),Size=SIZE(640-48*2,200)})
+	AddConfirmationWin(StaticText{Font=font12(),Title=text,TitleCentering=TITLE_CENTER_XY,Parent=parent,Position=POS(48,0),Size=SIZE(800-48*2,200)})
 
 	local buttonpos
 	local totalsize=0
@@ -1239,7 +1239,7 @@ function ConfirmationBox(text,b1label,b1action,b2label,b2action)
 	local b2size=GetResourceSize(menucommon.backbutton)
 
 	if not b2label then
-		buttonpos=POS(640/2-b1size[1],235-b1size[2])
+		buttonpos=POS(800/2-b1size[1],235-b1size[2])
 	else
 		buttonpos=POS(240,235-b1size[2])
 	end
@@ -1324,7 +1324,7 @@ function PurchaseConfirmation(text,item,price,sure,b1label,b1action,b2label,b2ac
 	--//HideBalkButtons()
 
 	local position=POS(0,0)
-	local size=SIZE(640,480)
+	local size=SIZE(800,480)
 
 	local parent=AddPurchaseConfirmationWin(Frame{Name="purchaseconfirmation", Position=position, Size=size, ShowBorders=FALSE,Layer=5})
 	parent:AttachResource(menucommon.black_transparent)
@@ -1332,24 +1332,24 @@ function PurchaseConfirmation(text,item,price,sure,b1label,b1action,b2label,b2ac
 
 	 local textw=wm.GetTextWidth(text,fontsmall())
 	
-	AddPurchaseConfirmationWin(StaticText{Font=fontsmall(),Title=text,Parent=parent,Position=RELATIVEPOS(SPOS(536-textw,121),position),Size=SIZE(640-48*2,200)})
+	AddPurchaseConfirmationWin(StaticText{Font=fontsmall(),Title=text,Parent=parent,Position=RELATIVEPOS(SPOS(536-textw,121),position),Size=SIZE(800-48*2,200)})
 
 	textw=wm.GetTextWidth(item,fontmedium())
-	AddPurchaseConfirmationWin(StaticText{Font=fontmedium(),Title=item,Parent=parent,Position=RELATIVEPOS(SPOS(536-textw,143),position),Size=SIZE(640-48*2,200),Color=GetPaletteColor(18)})
+	AddPurchaseConfirmationWin(StaticText{Font=fontmedium(),Title=item,Parent=parent,Position=RELATIVEPOS(SPOS(536-textw,143),position),Size=SIZE(800-48*2,200),Color=GetPaletteColor(18)})
 
 	textw=wm.GetTextWidth(CARDEALER_PRICE,fontsmall())
-	AddPurchaseConfirmationWin(StaticText{Font=fontsmall(),Title=CARDEALER_PRICE,Parent=parent,Position=RELATIVEPOS(SPOS(536-textw,195),position),Size=SIZE(640-48*2,200)})
+	AddPurchaseConfirmationWin(StaticText{Font=fontsmall(),Title=CARDEALER_PRICE,Parent=parent,Position=RELATIVEPOS(SPOS(536-textw,195),position),Size=SIZE(800-48*2,200)})
 
 
 	local pricetext=ConvertToWString(string.format("$%d",price))
 	textw=wm.GetTextWidth(pricetext,fontmedium())
-	AddPurchaseConfirmationWin(StaticText{Font=fontmedium(),Title=pricetext,Parent=parent,Position=RELATIVEPOS(SPOS(536-textw,215),position),Size=SIZE(640-48*2,200),Color=GetPaletteColor(18)})
+	AddPurchaseConfirmationWin(StaticText{Font=fontmedium(),Title=pricetext,Parent=parent,Position=RELATIVEPOS(SPOS(536-textw,215),position),Size=SIZE(800-48*2,200),Color=GetPaletteColor(18)})
 
 
 
 	if sure then
 		textw=wm.GetTextWidth(PURCHASE_CONFIRMATION,fontsmall())
-		AddPurchaseConfirmationWin(StaticText{Font=fontsmall(),Title=PURCHASE_CONFIRMATION,Parent=parent,Position=RELATIVEPOS(SPOS(536-textw,273),position),Size=SIZE(640-48*2,200)})
+		AddPurchaseConfirmationWin(StaticText{Font=fontsmall(),Title=PURCHASE_CONFIRMATION,Parent=parent,Position=RELATIVEPOS(SPOS(536-textw,273),position),Size=SIZE(800-48*2,200)})
 	end
 		
 	HideBalkButtons()

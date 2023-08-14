@@ -10,6 +10,9 @@
 --///////////////////////////////////////////////////////////////////////////
 
 dofile("data/menu/garage_elements1.bed")
+dofile("data/scripts/customcarclasses.bed")
+
+local IWantAllCars = false
 
 local Layout={
 	TrackFramePos=POS(284,84),
@@ -276,20 +279,22 @@ local function ChangeCar()
 	local carclass = info.CarClass
 	local bg
 	local description = false
+	local class_changer_enabled = false
 	
 	LeavingLobby = true
 	
 	if info.Races[info.NextRace].EventType == ReplicatedSession.GAMETYPE_STUNT then
 		-- Only stunt cars are valid in stunt events
-		if carclass >= 5 and not Session:IsHost() then
-			carlist = { { index = carclass - 5 } }
+		if carclass >= ClassCounter and not Session:IsHost() then --------------------
+			carlist = { { index = carclass - ClassCounter } }
 		else
 			carlist = CarlistStuntCars()
 		end
 		bg = "data/menu/stunt_car_selection_bg.tga"
 		description = true
-	elseif carclass == SessionInfo.CarClass.Any then
+	elseif carclass == 1 then --------SessionInfo.CarClass.Any then
 		-- Any car; includes derby, racing, street and bonus cars
+		class_changer_enabled = true
 		local function SplitString(str)
 			local t={}		
 			for w in string.gfind(str,"(%w+)%.?") do
@@ -306,11 +311,12 @@ local function ChangeCar()
 				table.insert(carlist, {index = i} )
 			end
 		end
-	elseif carclass < 5 then
+	elseif carclass < ClassCounter then-----------
 		-- A specific car class
-		carlist = CarlistFromClass(carclass, false, true)
+		carlist = CarlistFromCustomClass(carclass)---------------
 	elseif Session:IsHost() then
 		-- "Same as host" car setting
+		class_changer_enabled = true
 		local function SplitString(str)
 			local t={}		
 			for w in string.gfind(str,"(%w+)%.?") do
@@ -329,13 +335,16 @@ local function ChangeCar()
 		end
 	else
 		-- "Same as host" car setting for non-hosts, can only change the car skin
-		carlist = { { index = carclass - 5 } }
-		if IsStuntCar(carclass - 5) then
+		carlist = { { index = carclass - ClassCounter } } ---------------------
+		if IsStuntCar(carclass - ClassCounter) then-------------------
 			bg="data/menu/stunt_car_selection_bg.tga"
 			description=true
 		end
 	end
-
+	
+	--class_changer_enabled = true
+	--carlist = CarlistFromCustomClass(3)
+	-------------------------
 	Session:GetLocalPlayer(1).Status = ReplicatedPlayer.STATUS_CHANGING_CAR
 	EnterCarSelection(
 		function(car, skin)
@@ -344,8 +353,8 @@ local function ChangeCar()
 			player.Car = car
 			player.CarSkin = skin
 			player.CarValid = true
-			if Session:IsHost() and Session:GetInfo().CarClass > 4 then
-				Session:GetInfo().CarClass = car + 5
+			if Session:IsHost() and Session:GetInfo().CarClass > (ClassCounter-1) then----------------
+				Session:GetInfo().CarClass = car + ClassCounter--------------------
 			end
 			EnterMenu("menu_multiplayer_lobby")
 		end,
@@ -363,7 +372,8 @@ local function ChangeCar()
 		nil,
 		true,
 		nil,
-		true
+		true,
+		class_changer_enabled
 	)
 end
 
@@ -383,10 +393,10 @@ local function SetEvents(events)
 	end
 	info.NextRace = 1
 	
-	if info.Races[1].EventType == ReplicatedSession.GAMETYPE_STUNT and info.CarClass >= 5 and not IsStuntCar(info.CarClass - 5) then
+	if info.Races[1].EventType == ReplicatedSession.GAMETYPE_STUNT and info.CarClass >= ClassCounter and not IsStuntCar(info.CarClass - ClassCounter) then --------------------
 		ChangeCar()
 		return
-	elseif info.Races[1].EventType ~= ReplicatedSession.GAMETYPE_STUNT and info.CarClass >= 5 and IsStuntCar(info.CarClass - 5) then
+	elseif info.Races[1].EventType ~= ReplicatedSession.GAMETYPE_STUNT and info.CarClass >= ClassCounter and IsStuntCar(info.CarClass - ClassCounter) then --------------------
 		ChangeCar()
 		return
 	end
@@ -2068,10 +2078,10 @@ function menu_multiplayer_lobby.update(self, time)
 				-- Player does not have a stunt car, so the event type must have been race or derby previously
 				-- Event type changed from non-stunt to stunt
 				eventTypeChanged = true
-				if LatestSessionInfo.CarClass >= 5 then
-					if IsStuntCar(LatestSessionInfo.CarClass - 5) then
+				if LatestSessionInfo.CarClass >= ClassCounter then  --------------------
+					if IsStuntCar(LatestSessionInfo.CarClass - ClassCounter) then  --------------------
 						-- Same as host, host has selected a stunt car
-						player.Car = LatestSessionInfo.CarClass - 5
+						player.Car = LatestSessionInfo.CarClass - ClassCounter  --------------------
 					else
 						-- Same as host, host has changed game type and is selecting a car, set temporarily to 1st stunt car
 						player.Car = CarlistStuntCars()[1].index
@@ -2091,9 +2101,9 @@ function menu_multiplayer_lobby.update(self, time)
 			elseif Session:HasCarClassChanged() then
 				-- Player has a stunt car, event type must have been stunt
 				-- Stunt event, car class has changed
-				if LatestSessionInfo.CarClass >= 5 and IsStuntCar(LatestSessionInfo.CarClass - 5) then
+				if LatestSessionInfo.CarClass >= ClassCounter and IsStuntCar(LatestSessionInfo.CarClass - ClassCounter) then  --------------------
 					-- Same as host
-					player.Car = LatestSessionInfo.CarClass - 5
+					player.Car = LatestSessionInfo.CarClass - ClassCounter  --------------------
 					if not player.CarValid then
 						player.CarValid = true
 						GUI:CloseMessageBox()
@@ -2102,7 +2112,7 @@ function menu_multiplayer_lobby.update(self, time)
 					setbuttons = true
 				else
 					player.Car = CarlistStuntCars()[1].index
-					if PrevCarClass ~= nil and PrevCarClass >= 5 and LatestSessionInfo.CarClass < 5 then
+					if PrevCarClass ~= nil and PrevCarClass >= ClassCounter and LatestSessionInfo.CarClass < ClassCounter then  --------------------
 						changeCarMsg = TRANSLATOR(MULTIPLAYER_CARCHANGE)
 						mustChangeCar = true
 					else
@@ -2131,15 +2141,18 @@ function menu_multiplayer_lobby.update(self, time)
 					player.Car = 0
 				end
 				mustChangeCar = true
-			elseif LatestSessionInfo.CarClass < 5 then
-				cars = CarlistFromClass(LatestSessionInfo.CarClass, false, true)
+			elseif LatestSessionInfo.CarClass < ClassCounter then  --------------------
+				--cars = CarlistFromClass(LatestSessionInfo.CarClass, false, true)
+				-------------crash!!!
+				--cars = CarlistFromCustomClass(LatestSessionInfo.CarClass)
+				--------------
 				mustChangeCar = true
 			else
-				if IsStuntCar(LatestSessionInfo.CarClass - 5) then
+				if IsStuntCar(LatestSessionInfo.CarClass - ClassCounter) then  --------------------
 					-- Same as host, host has changed game type and is selecting a car, set temporarily to 1st car
 					player.Car = 0
 				else
-					player.Car = LatestSessionInfo.CarClass - 5
+					player.Car = LatestSessionInfo.CarClass - ClassCounter  --------------------
 				end
 				if not player.CarValid then
 					GUI:CloseMessageBox()

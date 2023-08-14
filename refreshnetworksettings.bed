@@ -1,0 +1,16 @@
+
+function refresh_network_settings_zmenu()
+	local info = Session:GetInfo()
+	info.Races[info.NextRace].StageNr = info.Races[info.NextRace].StageNr 
+	info.Races[info.NextRace].TrackType = info.Races[info.NextRace].TrackType 
+	info.Races[info.NextRace].EventType = info.Races[info.NextRace].EventType 
+	info.Races[info.NextRace].LapsOrTimeLimit = info.Races[info.NextRace].LapsOrTimeLimit 
+	info.Races[info.NextRace].Weather = info.Races[info.NextRace].Weather 
+	info.Races[info.NextRace].NumHunters = info.Races[info.NextRace].NumHunters 
+	info.Races[info.NextRace].Raced = info.Races[info.NextRace].Raced
+	info.CarClass = info.CarClass
+	info.DamageLevel = info.DamageLevel
+	info.DerbyDamageLevel = info.DerbyDamageLevel
+end
+
+refresh_network_settings_zmenu()

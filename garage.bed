@@ -33,9 +33,10 @@ CarStats={
 --//local resources
 dofile("data/menu/car_icons.bed")
 dofile("data/menu/car_icons_locked.bed")
---//dofile("data/menu/car_icons_2.bed")
---//dofile("data/menu/car_icons_2_locked.bed")
+dofile("data/menu/car_icons_2.bed")
+dofile("data/menu/car_icons_2_locked.bed")
 dofile("data/menu/garage_elements1.bed")
+dofile("data/menu/garage_elements2.bed")
 
 
 menu_career_garage.options.title=TRANSLATOR(TITLE_GARAGE)
@@ -375,10 +376,11 @@ function menu_career_garage.create(self)
 	self.parent:create(self)
 
 	self:addResource("car_icons.tga",car_icons,car_icons_size)
---//	self:addResource("car_icons_2.tga",car_icons_2,car_icons_2_size)
+	self:addResource("car_icons_2.tga",car_icons_2,car_icons_2_size)
 	self:addResource("car_icons_locked.tga",car_icons_locked,car_icons_locked_size)
---//	self:addResource("car_icons_2_locked.tga",car_icons_2_locked,car_icons_2_locked_size)
+	self:addResource("car_icons_2_locked.tga",car_icons_2_locked,car_icons_2_locked_size)
 	self:addResource("garage_elements1.tga",garage_elements1,garage_elements1_size)
+	self:addResource("garage_elements2.tga",garage_elements2,garage_elements2_size)
 
 	self:loadResources()
 
@@ -398,7 +400,7 @@ function menu_career_garage.init(self)
 	local parent=ButtonBar{ Slots=7,Name="garage_cars",Padding=0,SlotSize=SIZE(107,56),
 							SelectedSlotSize=SIZE(107,56),Position=POS(-60,337),Size=SIZE(640+50,60),
 							ButtonBackground=self:getResource("selection_window"),
-							ButtonSelection=self:getResource("buttonbar_select_glow"),
+							ButtonSelection=self:getResource("buttonbar_select_glow_car"),
 							}
 
 	parent.onButtonChange = function(self,id)

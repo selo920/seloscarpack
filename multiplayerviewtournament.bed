@@ -12,6 +12,10 @@
 dofile("data/menu/backdrops1.bed")
 dofile("data/menu/backdrops2.bed")
 dofile("data/menu/track_images.bed")
+-------------------
+dofile("data/menu/track_images3.bed")
+dofile("data/menu/track_images4.bed")
+-------------------
 dofile("data/menu/selection_elements.bed")
 
 local state = { }
@@ -95,6 +99,10 @@ function menu_multiplayer_view_tournament.create(self)
 	self:addResource("backdrops1.tga",backdrops1,backdrops1_size)
 	self:addResource("backdrops2.tga",backdrops2,backdrops2_size)
 	self:addResource("track_images.tga",track_images,track_images_size)
+	----------------------
+	self:addResource("track_images3.tga",track_images3,track_images3_size)
+	self:addResource("track_images4.tga",track_images4,track_images4_size)
+	---------------------
 	self:addResource("selection_elements.tga",selection_elements,selection_elements_size)
 	self:loadResources()
 

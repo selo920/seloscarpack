@@ -10,6 +10,7 @@
 --///////////////////////////////////////////////////////////////////////////
 
 dofile("data/menu/backdrops3.bed")
+dofile("data/scripts/customcarclasses.bed")
 --dofile("data/menu/selection_elements.bed")
 
 menu_multiplayer_lobby_changeoptions = CreateMenuFromTemplate("template_multiplayer")
@@ -318,8 +319,8 @@ local function ChangeOptions(events, carindex, carskin)
 	
 	local cartype = GetSelectedItemValue(CarType)
 	if cartype == -1 then
-		if carindex ~= nil and info.CarClass ~= 5 + carindex then
-			info.CarClass	= 5 + carindex
+		if carindex ~= nil and info.CarClass ~= ClassCounter + carindex then  --------------------
+			info.CarClass	= ClassCounter + carindex  --------------------
 		end
 	elseif info.CarClass ~= GetSelectedItemValue(CarType) then
 		info.CarClass		= GetSelectedItemValue(CarType)
@@ -619,12 +620,28 @@ function menu_multiplayer_lobby_changeoptions.init(self)
 		OptionItems[CarType][ItemValues] = { SessionInfo.CarClass.Stunt, -1 }
 		OptionItems[CarType][Descriptions] = { MULTIPLAYER_CARTYPE_STUNT_DESCRIPTION, MULTIPLAYER_CAR_SAMEHOST_DESC }
 	else
-		OptionItems[CarType][ItemLabels] = { MULTIPLAYER_CARTYPE_ANY, MULTIPLAYER_CARTYPE_DERBY, MULTIPLAYER_CARTYPE_RACING, MULTIPLAYER_CARTYPE_STREET, MULTIPLAYER_CAR_SAMEHOST }
-		OptionItems[CarType][ItemValues] = { SessionInfo.CarClass.Any, SessionInfo.CarClass.ClassA, SessionInfo.CarClass.ClassB, SessionInfo.CarClass.ClassC, -1 }
-		OptionItems[CarType][Descriptions] = { MULTIPLAYER_CARTYPE_ANY_DESCRIPTION, MULTIPLAYER_CARTYPE_DERBY_DESCRIPTION, MULTIPLAYER_CARTYPE_RACING_DESCRIPTION, MULTIPLAYER_CARTYPE_STREET_DESCRIPTION, MULTIPLAYER_CAR_SAMEHOST_DESC }
+		--OptionItems[CarType][ItemLabels] = { MULTIPLAYER_CARTYPE_ANY, MULTIPLAYER_CARTYPE_DERBY, MULTIPLAYER_CARTYPE_RACING, MULTIPLAYER_CARTYPE_STREET, MULTIPLAYER_CAR_SAMEHOST }
+		--OptionItems[CarType][ItemValues] = { SessionInfo.CarClass.Any, SessionInfo.CarClass.ClassA, SessionInfo.CarClass.ClassB, SessionInfo.CarClass.ClassC, -1 }
+		--OptionItems[CarType][Descriptions] = { MULTIPLAYER_CARTYPE_ANY_DESCRIPTION, MULTIPLAYER_CARTYPE_DERBY_DESCRIPTION, MULTIPLAYER_CARTYPE_RACING_DESCRIPTION, MULTIPLAYER_CARTYPE_STREET_DESCRIPTION, MULTIPLAYER_CAR_SAMEHOST_DESC }
+		--------------------
+				local _list = {}
+				local _n = {}
+				local _d = {}
+				for i=1,table.getn(customCarClassList) do
+					table.insert(_list, L(customCarClassList[i].classname) )
+					table.insert(_n, i)
+					table.insert(_d, L(customCarClassList[i].description))
+				end
+				table.insert(_list, MULTIPLAYER_CAR_SAMEHOST)
+				table.insert(_n, -1)
+				table.insert(_d, MULTIPLAYER_CAR_SAMEHOST_DESC)
+				OptionItems[CarType][ItemLabels] = _list 
+				OptionItems[CarType][ItemValues] = _n 
+				OptionItems[CarType][Descriptions] = _d 
+		------------------------------
 	end
 
-	if info.CarClass < 5 then
+	if info.CarClass < ClassCounter then  --------------------
 		for i = 1, table.getn(OptionItems[CarType][ItemValues]) do
 			if OptionItems[CarType][ItemValues][i] == info.CarClass then
 				SetSelectedItem(CarType, i)
@@ -701,7 +718,7 @@ function menu_multiplayer_lobby_changeoptions.init(self)
 				EnterBuildTournamentMenu(
 					tournamenttype,
 					function(tournamentEvents)
-						if GetSelectedItemValue(CarType) == -1 and info.CarClass < 5 then
+						if GetSelectedItemValue(CarType) == -1 and info.CarClass < ClassCounter then  --------------------
 							SelectHostCar(tournamentEvents)
 						else
 							ChangeOptions(tournamentEvents)
@@ -716,7 +733,7 @@ function menu_multiplayer_lobby_changeoptions.init(self)
 				EnterMultiplayerRaceSelection(
 					tournamenttype, 
 					function(event)
-						if GetSelectedItemValue(CarType) == -1 and info.CarClass < 5 then
+						if GetSelectedItemValue(CarType) == -1 and info.CarClass < ClassCounter then  --------------------
 							SelectHostCar( { event } )
 						else
 							ChangeOptions( { event } )
@@ -726,7 +743,7 @@ function menu_multiplayer_lobby_changeoptions.init(self)
 					GetSelectedItemValue(Players)
 				)
 			else
-				if GetSelectedItemValue(CarType) == -1 and info.CarClass < 5 then
+				if GetSelectedItemValue(CarType) == -1 and info.CarClass < ClassCounter then  --------------------
 					SelectHostCar()
 				else
 					ChangeOptions()

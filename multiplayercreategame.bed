@@ -10,6 +10,7 @@
 --///////////////////////////////////////////////////////////////////////////
 
 dofile("data/menu/backdrops3.bed")
+dofile("data/scripts/customcarclasses.bed")
 
 function EnterCreateGameMenu(backmenu)
 	menu_multiplayer_creategame.backmenu = backmenu
@@ -142,7 +143,24 @@ local OptionItems = {
 		{MULTIPLAYER_DERBYDAMAGELEVEL_50_DESCRIPTION, MULTIPLAYER_DERBYDAMAGELEVEL_100_DESCRIPTION, MULTIPLAYER_DERBYDAMAGELEVEL_150_DESCRIPTION, MULTIPLAYER_DERBYDAMAGELEVEL_200_DESCRIPTION}
 	}
 }
-
+		--------------------add custom class type buttons
+				dofile("data/scripts/customcarclasses.bed")
+				local _list = {}
+				local _n = {}
+				local _d = {}
+				for i=1,table.getn(customCarClassList) do
+					table.insert(_list, L(customCarClassList[i].classname) )
+					table.insert(_n, i)
+					table.insert(_d, L(customCarClassList[i].description))
+				end
+				table.insert(_list, MULTIPLAYER_CAR_SAMEHOST)
+				table.insert(_n, -1)
+				table.insert(_d, MULTIPLAYER_CAR_SAMEHOST_DESC)
+				--OptionItems[3][1] = L"_list 2"
+				OptionItems[4][2] = _list 
+				OptionItems[4][3] = _n 
+				OptionItems[4][7] = _d 
+		  --------------------
 local NumOptions=10
 
 -- OptionItem item indexes
@@ -266,7 +284,7 @@ local function CreateSession(tournamentEvents, carindex, carskin)
 
 	local cartype = GetSelectedItemValue(CarType)
 	if cartype == -1 then
-		info.CarClass		= 5 + carindex
+		info.CarClass		= ClassCounter + carindex  --------------------
 	elseif tournamentEvents[1].rules == ReplicatedSession.GAMETYPE_STUNT then
 		info.CarClass		= SessionInfo.CarClass.Any
 	else
@@ -301,8 +319,8 @@ local function NetworkEvents(event)
 		
 		local info = Session:GetInfo()
 
-		if info.CarClass > 4 then
-			player.Car = info.CarClass - 5
+		if info.CarClass > (ClassCounter-1) then   -------------------- it was4
+			player.Car = info.CarClass - ClassCounter   -------------------- 5
 			player.CarValid = true
 		elseif info.CarClass == SessionInfo.CarClass.Stunt or info.Races[info.NextRace].EventType == ReplicatedSession.GAMETYPE_STUNT then
 			player.Car = CarlistStuntCars()[1].index		

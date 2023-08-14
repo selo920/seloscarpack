@@ -13,19 +13,22 @@ local RaceSelectionState
 
 local tracks
 
+local ai_names = {
+	[1] = "JACK BENTON",
+	[2] = "KATIE JACKSON",
+	[3] = "SOFIA MARTINEZ",
+	[4] = "SALLY TAYLOR",
+	[5] = "JASON WALKER",
+	[6] = "RAY CARTER",
+	[7] = "FRANK MALCOV",
+}
+
 dofile("data/menu/cup_final_results_elements1.bed")
 
 dofile("data/menu/event_type_icons.bed")
-
---//dofile("data/menu/track_images.bed")
---//dofile("data/menu/track_images2.bed")
-
---//dofile("data/menu/track_images_big1.bed")
---//dofile("data/menu/track_images_big2.bed")
---//dofile("data/menu/track_images_big3.bed")
---//dofile("data/menu/track_images_big4.bed")
-
-
+dofile("data/menu/fo1_event_type_icons.bed") ------------------------------
+dofile("data/menu/track_images3.bed")
+dofile("data/menu/track_images4.bed")
 dofile("data/menu/backdrops2.bed")
 dofile("data/menu/backdrops3.bed")
 
@@ -33,21 +36,9 @@ dofile("data/menu/backdrops3.bed")
 dofile("data/menu/race_type_images1.bed")
 dofile("data/menu/race_type_images2.bed")
 dofile("data/menu/race_type_images3.bed")
---//dofile("data/menu/track_logos.bed")
---//dofile("data/menu/track_logos2.bed")
---//dofile("data/menu/track_logos3.bed")
-
---//dofile("data/menu/track_arena.bed")
---//dofile("data/menu/track_city_1.bed")
---//dofile("data/menu/track_city_2.bed")
---//dofile("data/menu/track_desert.bed")
---//dofile("data/menu/track_canal.bed")
---//dofile("data/menu/track_fields_1.bed")
---//dofile("data/menu/track_fields_2.bed")
---//dofile("data/menu/track_forest_1.bed")
---//dofile("data/menu/track_forest_2.bed")
---//dofile("data/menu/track_racing_1.bed")
---//dofile("data/menu/track_racing_2.bed")
+dofile("data/menu/race_type_images4.bed")
+dofile("data/menu/race_type_images5.bed")
+dofile("data/menu/race_type_images6.bed")
 
 dofile("data/menu/single_player_track_images1.bed")
 dofile("data/menu/single_player_track_images2.bed")
@@ -79,34 +70,87 @@ dofile("data/menu/single_player_track_images27.bed")
 dofile("data/menu/single_player_track_images28.bed")
 dofile("data/menu/single_player_track_images29.bed")
 dofile("data/menu/single_player_track_images30.bed")
-
-
+dofile("data/menu/single_player_track_images31.bed")
+dofile("data/menu/single_player_track_images32.bed")
+dofile("data/menu/single_player_track_images33.bed")
+dofile("data/menu/single_player_track_images34.bed")
+dofile("data/menu/single_player_track_images35.bed")
+dofile("data/menu/single_player_track_images36.bed")
+dofile("data/menu/single_player_track_images37.bed")
+dofile("data/menu/single_player_track_images38.bed")
+dofile("data/menu/single_player_track_images39.bed")
+dofile("data/menu/single_player_track_images40.bed")
+dofile("data/menu/single_player_track_images41.bed")
+dofile("data/menu/single_player_track_images42.bed")
+dofile("data/menu/single_player_track_images43.bed")
+dofile("data/menu/single_player_track_images44.bed")
+dofile("data/menu/single_player_track_images45.bed")
+dofile("data/menu/single_player_track_images46.bed")
+dofile("data/menu/single_player_track_images47.bed")
+dofile("data/menu/single_player_track_images48.bed")
+dofile("data/menu/single_player_track_images49.bed")
+dofile("data/menu/single_player_track_images50.bed")
+dofile("data/menu/single_player_track_images51.bed")
+dofile("data/menu/single_player_track_images52.bed")
+dofile("data/menu/single_player_track_images53.bed")
+dofile("data/menu/single_player_track_images54.bed")
+dofile("data/menu/single_player_track_images55.bed")
+dofile("data/menu/single_player_track_images56.bed")
+dofile("data/menu/single_player_track_images57.bed")
+dofile("data/menu/single_player_track_images58.bed")
+dofile("data/menu/single_player_track_images59.bed")
+dofile("data/menu/single_player_track_images60.bed")
+dofile("data/menu/single_player_track_images61.bed")
+dofile("data/menu/single_player_track_images62.bed")
+dofile("data/menu/single_player_track_images63.bed")
+dofile("data/menu/single_player_track_images64.bed")
+dofile("data/menu/single_player_track_images65.bed")
 
 local trackfiles = {
-	[TRACKTYPE_RACING] = { "single_player_track_images1","single_player_track_images2","single_player_track_images3" },
-	[TRACKTYPE_FIELDS] = { "single_player_track_images4","single_player_track_images5", "single_player_track_images6" },
-	[TRACKTYPE_FOREST] = { "single_player_track_images7","single_player_track_images8",	"single_player_track_images9" },
-	[TRACKTYPE_CITY] = { "single_player_track_images10", "single_player_track_images11", "single_player_track_images12" },
+----------------------------
+----------------------------
+----------------------------
+----------------------------
+	[TRACKTYPE_RACING] = { "single_player_track_images1","single_player_track_images2","single_player_track_images3","single_player_track_images38","single_player_track_images41" },
+	[TRACKTYPE_FIELDS] = { "single_player_track_images4","single_player_track_images5", "single_player_track_images6", "single_player_track_images43" },
+	[TRACKTYPE_FOREST] = { "single_player_track_images7","single_player_track_images8",	"single_player_track_images9", "single_player_track_images34","single_player_track_images38" },
+	[TRACKTYPE_CITY] = { "single_player_track_images10", "single_player_track_images11", "single_player_track_images12", "single_player_track_images31", "single_player_track_images43" },
 	[TRACKTYPE_DESERT] = {"single_player_track_images13","single_player_track_images14" },
-	[TRACKTYPE_CANAL] = { "single_player_track_images14", "single_player_track_images15" },
+	[TRACKTYPE_CANAL] = { "single_player_track_images14", "single_player_track_images15", "single_player_track_images41", "single_player_track_images42" },
+	[TRACKTYPE_FO1_SNOW] = { "single_player_track_images44","single_player_track_images45","single_player_track_images46"},
+	[TRACKTYPE_FO1_PIT] = { "single_player_track_images47","single_player_track_images48","single_player_track_images49","single_player_track_images50","single_player_track_images51"},
+	[TRACKTYPE_FO1_FOREST] = { "single_player_track_images51","single_player_track_images52","single_player_track_images53","single_player_track_images54","single_player_track_images55"},
+	[TRACKTYPE_FO1_TOWN] = { "single_player_track_images56","single_player_track_images57","single_player_track_images58"},
+	[TRACKTYPE_FO1_RACING] = { "single_player_track_images59","single_player_track_images60","single_player_track_images61"},
 	[TRACKTYPE_STUNT] = { "single_player_track_images25", "single_player_track_images26", "single_player_track_images27",
-						  "single_player_track_images28", "single_player_track_images29", "single_player_track_images30", },
+						  "single_player_track_images28", "single_player_track_images29", "single_player_track_images30" },
 	[TRACKTYPE_EVENT] = {  "single_player_track_images19", "single_player_track_images20", "single_player_track_images21",
-						  "single_player_track_images22", "single_player_track_images23", "single_player_track_images24", },
-	[TRACKTYPE_DERBY] = { "single_player_track_images16", "single_player_track_images17", "single_player_track_images18", },
+						  "single_player_track_images22", "single_player_track_images23", "single_player_track_images24", "single_player_track_images32", "single_player_track_images33", "single_player_track_images37","single_player_track_images34","single_player_track_images62","single_player_track_images63", },
+	[TRACKTYPE_DERBY] = { "single_player_track_images16", "single_player_track_images17", "single_player_track_images18", "single_player_track_images35", "single_player_track_images36", "single_player_track_images39", "single_player_track_images40","single_player_track_images63","single_player_track_images64","single_player_track_images65" },
+
 }						
 
 local tracktype_descriptions = {
-	[TRACKTYPE_RACING] = TRACK_DESCRIPTION_RACING,
-	[TRACKTYPE_FIELDS] = TRACK_DESCRIPTION_FIELDS,
-	[TRACKTYPE_FOREST] = TRACK_DESCRIPTION_FOREST,
-	[TRACKTYPE_CITY] = TRACK_DESCRIPTION_CITY,
-	[TRACKTYPE_DESERT] = TRACK_DESCRIPTION_DESERT,
-	[TRACKTYPE_CANAL] = TRACK_DESCRIPTION_CANAL,
-	[TRACKTYPE_STUNT] = TRACK_DESCRIPTION_STUNT,
-	[TRACKTYPE_EVENT] = TRACK_DESCRIPTION_ARENA,
-	[TRACKTYPE_DERBY] = TRACK_DESCRIPTION_DERBY,
+	[TRACKTYPE_RACING] = TRANSLATOR(TRACK_DESCRIPTION_RACING),
+	[TRACKTYPE_FIELDS] = TRANSLATOR(TRACK_DESCRIPTION_FIELDS),
+	[TRACKTYPE_FOREST] = TRANSLATOR(TRACK_DESCRIPTION_FOREST),
+	[TRACKTYPE_CITY] = TRANSLATOR(TRACK_DESCRIPTION_CITY),
+	[TRACKTYPE_DESERT] = TRANSLATOR(TRACK_DESCRIPTION_DESERT),
+	[TRACKTYPE_CANAL] = TRANSLATOR(TRACK_DESCRIPTION_CANAL),
+	[TRACKTYPE_FO1_SNOW] = L(TRACK_DESCRIPTION_FO1_SNOW),
+	[TRACKTYPE_FO1_PIT] = L(TRACK_DESCRIPTION_FO1_PIT),
+	[TRACKTYPE_FO1_FOREST] = L(TRACK_DESCRIPTION_FO1_FOREST),
+	[TRACKTYPE_FO1_TOWN] = L(TRACK_DESCRIPTION_FO1_TOWN),
+	[TRACKTYPE_FO1_RACING] = L(TRACK_DESCRIPTION_FO1_RACING),
+	[TRACKTYPE_STUNT] = TRANSLATOR(TRACK_DESCRIPTION_STUNT),
+	[TRACKTYPE_EVENT] = TRANSLATOR(TRACK_DESCRIPTION_ARENA),
+	[TRACKTYPE_DERBY] = TRANSLATOR(TRACK_DESCRIPTION_DERBY),
+
 }
+----------------------------
+----------------------------
+----------------------------
+----------------------------
 
 local stunt_goals = {
 	[STUNT_CURLING] = TRACK_DESCRIPTION_CURLING_GOAL,
@@ -128,13 +172,18 @@ local singlerace_selected
 
 local function carselected(car,skin)
 	--//db.GameFlow.PreRace.Mode=RaceSelectionState.GameMode
-	GameFlow.ClearRace()
-	db.GameFlow.PreRace.Mode=GM_SINGLE_RACE
+	--GameFlow.ClearRace()
+	--db.GameFlow.PreRace.Mode=GM_SINGLE_RACE
 	db.GameFlow.PreRace.Car=car
 	db.GameFlow.PreRace.CarSkin=skin or 1
 	db.GameFlow.PreRace.Level=RaceSelectionState.Level
 	--//db.GameFlow.PreRace.Laps=RaceSelectionState.Laps
 	--//RaceSelectionState=nil
+		
+	local playerinfo=db.GameFlow["PlayerInfo[0]"]
+	playerinfo.Car=car
+	playerinfo.CarSkin=skin or 1
+	
 	Event:PostEvent(event(EVENT_RACE_BEGIN))
 end
 
@@ -178,11 +227,135 @@ local race_type_names = {
 	{ name=TRANSLATOR(RACETRACKTYPE_CANAL), bg="bg_canals.tga", tracktype=TRACKTYPE_CANAL, },
 	{ name=TRANSLATOR(RACETRACKTYPE_CITY), bg="bg_city.tga", tracktype=TRACKTYPE_CITY, },
 	{ name=TRANSLATOR(RACETRACKTYPE_RACING), bg="bg_racing.tga", tracktype=TRACKTYPE_RACING, },
+	{ name=L(RACETRACKTYPE_FO1_SNOW), bg="snowtype.tga", tracktype=TRACKTYPE_FO1_SNOW, },
+	{ name=L(RACETRACKTYPE_FO1_PIT), bg="track_images_fo1derby2a_sp.tga", tracktype=TRACKTYPE_FO1_PIT, },
+	{ name=L(RACETRACKTYPE_FO1_FOREST), bg="derby_cls_bg.tga", tracktype=TRACKTYPE_FO1_FOREST, },
+	{ name=L(RACETRACKTYPE_FO1_TOWN), bg="derby_cls_bg.tga", tracktype=TRACKTYPE_FO1_TOWN, },
+	{ name=L(RACETRACKTYPE_FO1_RACING), bg="derby_cls_bg.tga", tracktype=TRACKTYPE_FO1_RACING, },
 	{ name=TRANSLATOR(RACETRACKTYPE_STUNT), bg="bg_racing.tga", tracktype=TRACKTYPE_STUNT, },
 	{ name=TRANSLATOR(RACETRACKTYPE_EVENTS), bg="bg_racing.tga", tracktype=TRACKTYPE_EVENT, },
 	{ name=TRANSLATOR(RACETRACKTYPE_DERBY), bg="derby_cls_bg.tga", tracktype=TRACKTYPE_DERBY, },
+
 }
 
+local AILevelTable = {}
+local AILevelTable_strings = {}
+for i=1,77 do
+	AILevelTable[i] = i
+	AILevelTable_strings[i] = ConvertToWString(i)
+end
+
+local AICarTable = {}
+local AICarTable_strings = {}
+for i=1,97 do
+	AICarTable[i] = i
+	car_data=db.FlatOut2.Cars:GetProperty("Car",i-1)
+	AICarTable_strings[i] = ConvertToWString(car_data.Name)
+end
+
+AICarTable[98] = 100
+AICarTable_strings[98] = ConvertToWString("DEFAULT")
+
+local SingleRace = {
+	OptionItems = {
+		{
+			L"GAME MODE",
+			{L"RACE", L"DERBY", L"TEST"},
+			{1, 2, 3},
+			1,
+			true,
+			nil,
+		},
+		{
+			L"LAPS",
+			{L"1", L"2", L"3", L"4", L"5", L"6", L"7", L"8", L"9", L"10", L"12", L"15", L"20", L"30", L"50"},
+			{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20, 30, 50},
+			1,
+			true,
+			nil,
+		},	
+		{
+			L"UPGRADES",
+			{L"0%", L"50%", L"100%"},
+			{0, 50, 100},
+			3,
+			true,
+			nil,
+		},
+		{
+			L"PLAYER DAMAGE",
+			{L"0x", L"0.5x", L"1x", L"2x", L"5x", L"10x"},
+			{0.000, 0.500, 1.000, 2.000, 5.000, 10.000},
+			3,
+			true,
+			nil,
+		},
+		{
+			L"VISUAL DAMAGE",
+			{L"0x", L"0.5x", L"1x", L"2x", L"5x", L"10x"},
+			{0.000, 1.000, 2.000, 4.000, 10.000, 20.000},
+			3,
+			true,
+			nil,
+		},
+		{
+			L"RAGDOLL",
+			{TRANSLATOR(OPTIONS_ON), TRANSLATOR(OPTIONS_OFF)},
+			{TRUE, FALSE},
+			1,
+			true,
+			nil,
+		},
+		{
+			L"NITRO",
+			{TRANSLATOR(OPTIONS_ON), TRANSLATOR(OPTIONS_OFF)},
+			{TRUE, FALSE},
+			1,
+			true,
+			nil,
+		},
+		{
+			L"AI PLAYERS",
+			{L"1", L"2", L"3", L"4", L"5", L"6", L"7"},
+			{1, 2, 3, 4, 5, 6, 7},
+			7,
+			true,
+			nil,
+		},
+		{
+			L"AI LEVEL",
+			AILevelTable_strings,
+			AILevelTable,
+			76,
+			true,
+			nil,
+		},
+		{
+			L"AI UPGRADES",
+			{L"0%", L"50%", L"100%"},
+			{0, 50, 100},
+			3,
+			true,
+			nil,
+		},
+		{
+			L"AI CLASS",
+			{L"DEFAULT", L"DERBY", L"RACE", L"STREET"},
+			{-1, 0, 1, 2},
+			1,
+			true,
+			nil,
+		},
+		{
+			L"AI CARS",
+			AICarTable_strings,
+			AICarTable,
+			98,
+			true,
+			nil,
+		},
+	},
+}
 
 
 --// ---------------------------------------------------------------------------------------------------------------------------------
@@ -204,7 +377,10 @@ function menu_singleplayer_racetype.create(self)
 	self.parent:create(self)
 
 	self:addResource("event_type_icons.tga",event_type_icons,event_type_icons_size)
-
+	----------------modificado
+	self:addResource("fo1_event_type_icons.dds",fo1_event_type_icons,fo1_event_type_icons_size)
+	----------------------
+	
 	self:addResource("selection_elements.tga",selection_elements,selection_elements_size)
 	self:addResource("cup_final_results_elements1.tga",cup_final_results_elements1,cup_final_results_elements1_size)
 	self:addResource("garage_elements1.tga",garage_elements1,garage_elements1_size)
@@ -214,6 +390,9 @@ function menu_singleplayer_racetype.create(self)
 	self:addResource("race_type_images1.tga",race_type_images1,race_type_images1_size)
 	self:addResource("race_type_images2.tga",race_type_images2,race_type_images2_size)
 	self:addResource("race_type_images3.tga",race_type_images3,race_type_images3_size)
+    self:addResource("race_type_images4.tga",race_type_images4,race_type_images4_size)
+	self:addResource("race_type_images5.tga",race_type_images5,race_type_images5_size)
+	self:addResource("race_type_images6.tga",race_type_images6,race_type_images6_size)
 
 	self:loadResources()
 end
@@ -244,7 +423,8 @@ function menu_singleplayer_racetype.init(self)
 		playmenusound_move()
 		RaceSelectionState.RaceType=id
 		W("type_name"):SetTitle(race_type_names[id].name)
-		W("type_description"):SetTitle(TRANSLATOR(tracktype_descriptions[id]))
+		W("type_description"):SetTitle(tracktype_descriptions[id])
+		------------------W("type_description"):SetTitle(TRANSLATOR(tracktype_descriptions[id]))
 		W("type_description"):WordWrap()
 		W("track_image"):AttachResource(menu_singleplayer_racetype:getResource(string.format("race_type_image%d",id)))
 		GUI:SwitchButtonText(race_type_names[id].name)
@@ -258,14 +438,19 @@ function menu_singleplayer_racetype.init(self)
 		EnterMenu("menu_singleplayer_trackselection")
 
 	end
-
+	----------------modificado
 	bar:AddButton(self:getResource("race_type_1"))
 	bar:AddButton(self:getResource("race_type_2"))
 	bar:AddButton(self:getResource("race_type_3"))
 	bar:AddButton(self:getResource("race_type_4"))
 	bar:AddButton(self:getResource("race_type_5"))
 	bar:AddButton(self:getResource("race_type_6"))
-
+	bar:AddButton(self:getResource("fo1_1"))
+	bar:AddButton(self:getResource("fo1_2"))
+	bar:AddButton(self:getResource("fo1_3"))
+	bar:AddButton(self:getResource("fo1_4"))
+	bar:AddButton(self:getResource("fo1_5"))
+	-------------------
 
 	bar:SetFocus()
 
@@ -384,6 +569,1409 @@ local function UpdateHighScores()
 
 end
 
+local function UpdateOptions()
+	if RaceSelectionState.RaceType == TRACKTYPE_STUNT then
+	elseif RaceSelectionState.RaceType == TRACKTYPE_DERBY then
+		local ai_level = Levels[RaceSelectionState.Level].AIHandicapLevel
+		SingleRace.OptionItems = {
+			{
+				L"GAME MODE",
+				{L"WRECKING", L"LAST MAN STANDING", L"FRAG", L"HUNTER, PREY"},
+				{1, 2, 3, 4},
+				1,
+				true,
+				nil,
+			},
+			{
+				L"INACTIVITY TIMER",
+				{L"10 s", L"15 s", L"20 s", L"30 s", L"45 s", L"1 min", L"2 mins", L"5 mins"},
+				{10, 15, 20, 30, 45, 60, 120, 300},
+				5,
+				true,
+				nil,
+			},
+			{
+				L"UPGRADES",
+				{L"0%", L"50%", L"100%"},
+				{0, 50, 100},
+				3,
+				true,
+				nil,
+			},
+			{
+				L"PLAYER DAMAGE",
+				{L"0x", L"0.5x", L"1x", L"2x", L"5x", L"10x"},
+				{0.000, 0.400, 0.800, 1.600, 4.000, 8.000},
+				3,
+				true,
+				nil,
+			},
+			{
+				L"VISUAL DAMAGE",
+				{L"0x", L"0.5x", L"1x", L"2x", L"5x", L"10x"},
+				{0.000, 1.000, 2.000, 4.000, 10.000, 20.000},
+				3,
+				true,
+				nil,
+			},
+			{
+				L"NITRO",
+				{TRANSLATOR(OPTIONS_ON), TRANSLATOR(OPTIONS_OFF)},
+				{TRUE, FALSE},
+				1,
+				true,
+				nil,
+			},
+			{
+				L"AI PLAYERS",
+				{L"1", L"2", L"3", L"4", L"5", L"6", L"7"},
+				{1, 2, 3, 4, 5, 6, 7},
+				7,
+				true,
+				nil,
+			},
+			{
+				L"AI LEVEL",
+				AILevelTable_strings,
+				AILevelTable,
+				ai_level,
+				true,
+				nil,
+			},
+			{
+				L"AI UPGRADES",
+				{L"0%", L"50%", L"100%"},
+				{0, 50, 100},
+				3,
+				true,
+				nil,
+			},
+			{
+				L"AI CLASS",
+				{L"DEFAULT", L"DERBY", L"RACE", L"STREET"},
+				{-1, 0, 1, 2},
+				1,
+				true,
+				nil,
+			},
+			{
+				L"AI CARS",
+				AICarTable_strings,
+				AICarTable,
+				98,
+				true,
+				nil,
+			},
+			{
+				L"AI TARGET PLAYER",
+				{L"-1", L"DEFAULT", L"+1", L"+2", L"+3"},
+				{0, 1, 10, 100, 1000},
+				2,
+				true,
+				nil,
+			},
+		}
+	else
+		local laps
+		if Levels[RaceSelectionState.Level].Laps <= 10 then
+			laps = Levels[RaceSelectionState.Level].Laps
+		elseif Levels[RaceSelectionState.Level].Laps == 12 then
+			laps = 11
+		elseif Levels[RaceSelectionState.Level].Laps == 15 then
+			laps = 12
+		elseif Levels[RaceSelectionState.Level].Laps == 20 then
+			laps = 13
+		elseif Levels[RaceSelectionState.Level].Laps == 30 then
+			laps = 14
+		elseif Levels[RaceSelectionState.Level].Laps == 50 then
+			laps = 15
+		else
+			laps = 1
+		end
+		local ai_level = Levels[RaceSelectionState.Level].AIHandicapLevel
+		local ragdoll
+		if Settings.Game.Ragdoll then
+			ragdoll = 1
+		else
+			ragdoll = 2
+		end
+		SingleRace.OptionItems = {
+			{
+				L"GAME MODE",
+				{L"RACE", L"DERBY", L"TEST"},
+				{1, 2, 3},
+				1,
+				true,
+				nil,
+			},
+			{
+				L"LAPS",
+				{L"1", L"2", L"3", L"4", L"5", L"6", L"7", L"8", L"9", L"10", L"12", L"15", L"20", L"30", L"50"},
+				{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20, 30, 50},
+				laps,
+				true,
+				nil,
+			},	
+			{
+				L"UPGRADES",
+				{L"0%", L"50%", L"100%"},
+				{0, 50, 100},
+				3,
+				true,
+				nil,
+			},
+			{
+				L"PLAYER DAMAGE",
+				{L"0x", L"0.5x", L"1x", L"2x", L"5x", L"10x"},
+				{0.000, 0.500, 1.000, 2.000, 5.000, 10.000},
+				3,
+				true,
+				nil,
+			},
+			{
+				L"VISUAL DAMAGE",
+				{L"0x", L"0.5x", L"1x", L"2x", L"5x", L"10x"},
+				{0.000, 1.000, 2.000, 4.000, 10.000, 20.000},
+				3,
+				true,
+				nil,
+			},
+			{
+				L"RAGDOLL",
+				{TRANSLATOR(OPTIONS_ON), TRANSLATOR(OPTIONS_OFF)},
+				{TRUE, FALSE},
+				1,
+				true,
+				nil,
+			},
+			{
+				L"NITRO",
+				{TRANSLATOR(OPTIONS_ON), TRANSLATOR(OPTIONS_OFF)},
+				{TRUE, FALSE},
+				1,
+				true,
+				nil,
+			},
+			{
+				L"AI PLAYERS",
+				{L"1", L"2", L"3", L"4", L"5", L"6", L"7"},
+				{1, 2, 3, 4, 5, 6, 7},
+				7,
+				true,
+				nil,
+			},
+			{
+				L"AI LEVEL",
+				AILevelTable_strings,
+				AILevelTable,
+				ai_level,
+				true,
+				nil,
+			},
+			{
+				L"AI UPGRADES",
+				{L"0%", L"50%", L"100%"},
+				{0, 50, 100},
+				3,
+				true,
+				nil,
+			},
+			{
+				L"AI CLASS",
+				{L"DEFAULT", L"DERBY", L"RACE", L"STREET"},
+				{-1, 0, 1, 2},
+				1,
+				true,
+				nil,
+			},
+			{
+				L"AI CARS",
+				AICarTable_strings,
+				AICarTable,
+				98,
+				true,
+				nil,
+			},
+		}
+	end
+end
+
+local function OnChangeOptions(laps, ailevel, ragdoll, gmode, aicount, upgrades, aiupgrades, aicars, playerdamage, visualdamage, nitro, aiclass)
+	Levels[RaceSelectionState.Level].Laps = laps
+	W("lapcount"):SetTitle(ConvertToWString(string.format("%d LAPS",laps)))
+	Levels[RaceSelectionState.Level].AIHandicapLevel = ailevel
+	Settings.Game.Ragdoll=ragdoll
+	GameFlow.ClearRace()
+	
+	db.GameFlow.PreRace.MenuData = -2
+	
+	if aicount == 7 then
+		if gmode == 1 then
+			db.GameFlow.PreRace.Mode=GM_SINGLE_RACE
+		elseif gmode == 2 then
+			db.GameFlow.PreRace.Mode=GM_SINGLE_RACE
+			db.GameFlow.PreRace.Rules=GR_DERBY
+			db.GameFlow.PreRace.DerbyType=DERBY_WRECKING
+		end
+		
+		local UpgradeLevels = db:GetTable("Settings.UpgradeLevels")
+		if upgrades == 0 then
+			UpgradeLevels.SingleRacePlayer = 0.000
+		elseif upgrades == 50 then
+			UpgradeLevels.SingleRacePlayer = 0.500
+		else
+			UpgradeLevels.SingleRacePlayer = 1.000
+		end
+		if aiupgrades == 0 then
+			UpgradeLevels.SingleRaceAI = 0.000
+		elseif aiupgrades == 50 then
+			UpgradeLevels.SingleRaceAI = 0.500
+		else
+			UpgradeLevels.SingleRaceAI = 1.000
+		end
+	
+	else
+		db.GameFlow.PreRace.Mode=GM_NONE
+		if gmode == 2 then
+			db.GameFlow.PreRace.Rules=GR_DERBY
+			db.GameFlow.PreRace.DerbyType=DERBY_WRECKING
+		end
+		
+		local playerinfo=db.GameFlow["PlayerInfo[0]"]
+		playerinfo.Name=PlayerProfile:GetName()
+		playerinfo.Type=PLAYERTYPE_LOCAL
+		if upgrades == 0 then
+			playerinfo.CarUpgrades=1.000
+		elseif upgrades == 50 then
+			playerinfo.CarUpgrades=2.000
+		else
+			playerinfo.CarUpgrades=3.000
+		end
+		
+		for i=2,aicount+1 do
+			local playerinfo=db.GameFlow[string.format("PlayerInfo[%d]",i-1)]
+			playerinfo.Name=ConvertToWString(ai_names[i-1])
+			playerinfo.Type=PLAYERTYPE_AI
+			if aiupgrades == 0 then
+				playerinfo.CarUpgrades=1.000
+			elseif aiupgrades == 50 then
+				playerinfo.CarUpgrades=2.000
+			else
+				playerinfo.CarUpgrades=3.000
+			end
+		end
+	end
+	
+	if gmode == 3 then
+		db.GameFlow.PreRace.Mode=GM_TEST
+		db.GameFlow.PreRace.Rules=GR_TEST
+	elseif aiclass ~= -1 then
+		local AI1_class = db:GetTable(string.format("Data.Profile.AI1_JackBenton.Class[%d]", aiclass))
+		local AI2_class = db:GetTable(string.format("Data.Profile.AI2_SueO'Neill.Class[%d]", aiclass))
+		local AI3_class = db:GetTable(string.format("Data.Profile.AI3_ValerioVega.Class[%d]", aiclass))
+		local AI4_class = db:GetTable(string.format("Data.Profile.AI4_KatieDaggert.Class[%d]", aiclass))
+		local AI5_class = db:GetTable(string.format("Data.Profile.AI5_PaulMcGuire.Class[%d]", aiclass))
+		local AI6_class = db:GetTable(string.format("Data.Profile.AI6_RaySmith.Class[%d]", aiclass))
+		local AI7_class = db:GetTable(string.format("Data.Profile.AI7_FrankMalcov.Class[%d]", aiclass))
+		
+		for i=0,2 do
+			local tableName=string.format("Data.Profile.AI1_JackBenton.Class[%d]", i)
+			local tbl=db:GetTable(tableName)
+	       	tbl.CarNum  = AI1_class.CarNum
+	        tbl.Skin  = AI1_class.Skin
+	        tbl.CharacterType  = AI1_class.CharacterType  
+	        tbl.CharacterSkinId  = AI1_class.CharacterSkinId  
+	        tbl.Aggression  = AI1_class.Aggression  
+	        tbl.BumpAggression  = AI1_class.BumpAggression  
+	        tbl.BlockAggression  = AI1_class.BlockAggression  
+	        tbl.OvertakeAggression  = AI1_class.OvertakeAggression  
+	        tbl.ThrottleLimit  = AI1_class.ThrottleLimit  
+	        tbl.HandicapRacing  = AI1_class.HandicapRacing  
+	        tbl.HandicapOffTrack  = AI1_class.HandicapOffTrack  
+	        tbl.HandicapAirborne  = AI1_class.HandicapAirborne  
+	        tbl.CatchUpRacing  = AI1_class.CatchUpRacing  
+	        tbl.CatchUpOffTrack  = AI1_class.CatchUpOffTrack  
+	        tbl.CatchUpAirborne  = AI1_class.CatchUpAirborne  
+	        tbl.LookAheadMin  = AI1_class.LookAheadMin  
+	        tbl.LookAheadMax  = AI1_class.LookAheadMax  
+	        tbl.LookAheadModifier  = AI1_class.LookAheadModifier  
+	        tbl.UnderSteerRange  = AI1_class.UnderSteerRange  
+	        tbl.OverSteerRange  = AI1_class.OverSteerRange  
+	        tbl.SpinOutRange  = AI1_class.SpinOutRange  
+	        tbl.NeutralSlide  = AI1_class.NeutralSlide  
+	        tbl.NeutralBrakeTime  = AI1_class.NeutralBrakeTime  
+	        tbl.MinBrakeTime  = AI1_class.MinBrakeTime  
+	        tbl.MaxBrakeTime  = AI1_class.MaxBrakeTime  
+	        tbl.SlideFrictionScale  = AI1_class.SlideFrictionScale  
+	        tbl.BrakeFrictionScale  = AI1_class.BrakeFrictionScale  
+	        tbl.FrictionAdjust  = AI1_class.FrictionAdjust  
+	        tbl.HandicapAhead  = AI1_class.HandicapAhead  
+	        tbl.HandicapBehind  = AI1_class.HandicapBehind  
+	        tbl.Avoidance  = AI1_class.Avoidance  
+	        tbl.DamageReaction  = AI1_class.DamageReaction  
+	        tbl.DamageRecovery  = AI1_class.DamageRecovery  
+	        tbl.NitroUsage  = AI1_class.NitroUsage  
+	        tbl.NitroScan  = AI1_class.NitroScan  
+	        tbl.UseAltRoute  = AI1_class.UseAltRoute  
+	        tbl.DerbyFavourCenter  = AI1_class.DerbyFavourCenter  
+	        tbl.DerbyTargetPlayer  = AI1_class.DerbyTargetPlayer  
+	        tbl.DerbyExitCruiseSpeed  = AI1_class.DerbyExitCruiseSpeed  
+	        tbl.CoefP  = AI1_class.CoefP  
+	        tbl.CoefI  = AI1_class.CoefI  
+	        tbl.CoefD  = AI1_class.CoefD  
+	        tbl.CatchUpMul  = AI1_class.CatchUpMul  
+	        tbl.HandicapMul  = AI1_class.HandicapMul  
+	        tbl.MagnetSpeedLimit  = AI1_class.MagnetSpeedLimit  
+	        tbl.MagnetDistanceLimitAhead  = AI1_class.MagnetDistanceLimitAhead  
+	        tbl.MagnetDistanceLimitBehind  = AI1_class.MagnetDistanceLimitBehind  
+	        tbl.MagnetSpeedRatio  = AI1_class.MagnetSpeedRatio  
+	        tbl.DefaultTurbo  = AI1_class.DefaultTurbo  
+	        tbl.RLMagnetSpeedLimit  = AI1_class.RLMagnetSpeedLimit  
+	        tbl.RLMagnetMul  = AI1_class.RLMagnetMul  
+
+					
+			tableName=string.format("Data.Profile.AI2_SueO'Neill.Class[%d]", i)
+			tbl=db:GetTable(tableName)
+	       	tbl.CarNum  = AI2_class.CarNum
+	        tbl.Skin  = AI2_class.Skin
+	        tbl.CharacterType  = AI2_class.CharacterType  
+	        tbl.CharacterSkinId  = AI2_class.CharacterSkinId  
+	        tbl.Aggression  = AI2_class.Aggression  
+	        tbl.BumpAggression  = AI2_class.BumpAggression  
+	        tbl.BlockAggression  = AI2_class.BlockAggression  
+	        tbl.OvertakeAggression  = AI2_class.OvertakeAggression  
+	        tbl.ThrottleLimit  = AI2_class.ThrottleLimit  
+	        tbl.HandicapRacing  = AI2_class.HandicapRacing  
+	        tbl.HandicapOffTrack  = AI2_class.HandicapOffTrack  
+	        tbl.HandicapAirborne  = AI2_class.HandicapAirborne  
+	        tbl.CatchUpRacing  = AI2_class.CatchUpRacing  
+	        tbl.CatchUpOffTrack  = AI2_class.CatchUpOffTrack  
+	        tbl.CatchUpAirborne  = AI2_class.CatchUpAirborne  
+	        tbl.LookAheadMin  = AI2_class.LookAheadMin  
+	        tbl.LookAheadMax  = AI2_class.LookAheadMax  
+	        tbl.LookAheadModifier  = AI2_class.LookAheadModifier  
+	        tbl.UnderSteerRange  = AI2_class.UnderSteerRange  
+	        tbl.OverSteerRange  = AI2_class.OverSteerRange  
+	        tbl.SpinOutRange  = AI2_class.SpinOutRange  
+	        tbl.NeutralSlide  = AI2_class.NeutralSlide  
+	        tbl.NeutralBrakeTime  = AI2_class.NeutralBrakeTime  
+	        tbl.MinBrakeTime  = AI2_class.MinBrakeTime  
+	        tbl.MaxBrakeTime  = AI2_class.MaxBrakeTime  
+	        tbl.SlideFrictionScale  = AI2_class.SlideFrictionScale  
+	        tbl.BrakeFrictionScale  = AI2_class.BrakeFrictionScale  
+	        tbl.FrictionAdjust  = AI2_class.FrictionAdjust  
+	        tbl.HandicapAhead  = AI2_class.HandicapAhead  
+	        tbl.HandicapBehind  = AI2_class.HandicapBehind  
+	        tbl.Avoidance  = AI2_class.Avoidance  
+	        tbl.DamageReaction  = AI2_class.DamageReaction  
+	        tbl.DamageRecovery  = AI2_class.DamageRecovery  
+	        tbl.NitroUsage  = AI2_class.NitroUsage  
+	        tbl.NitroScan  = AI2_class.NitroScan  
+	        tbl.UseAltRoute  = AI2_class.UseAltRoute  
+	        tbl.DerbyFavourCenter  = AI2_class.DerbyFavourCenter  
+	        tbl.DerbyTargetPlayer  = AI2_class.DerbyTargetPlayer  
+	        tbl.DerbyExitCruiseSpeed  = AI2_class.DerbyExitCruiseSpeed  
+	        tbl.CoefP  = AI2_class.CoefP  
+	        tbl.CoefI  = AI2_class.CoefI  
+	        tbl.CoefD  = AI2_class.CoefD  
+	        tbl.CatchUpMul  = AI2_class.CatchUpMul  
+	        tbl.HandicapMul  = AI2_class.HandicapMul  
+	        tbl.MagnetSpeedLimit  = AI2_class.MagnetSpeedLimit  
+	        tbl.MagnetDistanceLimitAhead  = AI2_class.MagnetDistanceLimitAhead  
+	        tbl.MagnetDistanceLimitBehind  = AI2_class.MagnetDistanceLimitBehind  
+	        tbl.MagnetSpeedRatio  = AI2_class.MagnetSpeedRatio  
+	        tbl.DefaultTurbo  = AI2_class.DefaultTurbo  
+	        tbl.RLMagnetSpeedLimit  = AI2_class.RLMagnetSpeedLimit  
+	        tbl.RLMagnetMul  = AI2_class.RLMagnetMul  
+
+			tableName=string.format("Data.Profile.AI3_ValerioVega.Class[%d]", i)
+			tbl=db:GetTable(tableName)
+	       	tbl.CarNum  = AI3_class.CarNum
+	        tbl.Skin  = AI3_class.Skin
+	        tbl.CharacterType  = AI3_class.CharacterType  
+	        tbl.CharacterSkinId  = AI3_class.CharacterSkinId  
+	        tbl.Aggression  = AI3_class.Aggression  
+	        tbl.BumpAggression  = AI3_class.BumpAggression  
+	        tbl.BlockAggression  = AI3_class.BlockAggression  
+	        tbl.OvertakeAggression  = AI3_class.OvertakeAggression  
+	        tbl.ThrottleLimit  = AI3_class.ThrottleLimit  
+	        tbl.HandicapRacing  = AI3_class.HandicapRacing  
+	        tbl.HandicapOffTrack  = AI3_class.HandicapOffTrack  
+	        tbl.HandicapAirborne  = AI3_class.HandicapAirborne  
+	        tbl.CatchUpRacing  = AI3_class.CatchUpRacing  
+	        tbl.CatchUpOffTrack  = AI3_class.CatchUpOffTrack  
+	        tbl.CatchUpAirborne  = AI3_class.CatchUpAirborne  
+	        tbl.LookAheadMin  = AI3_class.LookAheadMin  
+	        tbl.LookAheadMax  = AI3_class.LookAheadMax  
+	        tbl.LookAheadModifier  = AI3_class.LookAheadModifier  
+	        tbl.UnderSteerRange  = AI3_class.UnderSteerRange  
+	        tbl.OverSteerRange  = AI3_class.OverSteerRange  
+	        tbl.SpinOutRange  = AI3_class.SpinOutRange  
+	        tbl.NeutralSlide  = AI3_class.NeutralSlide  
+	        tbl.NeutralBrakeTime  = AI3_class.NeutralBrakeTime  
+	        tbl.MinBrakeTime  = AI3_class.MinBrakeTime  
+	        tbl.MaxBrakeTime  = AI3_class.MaxBrakeTime  
+	        tbl.SlideFrictionScale  = AI3_class.SlideFrictionScale  
+	        tbl.BrakeFrictionScale  = AI3_class.BrakeFrictionScale  
+	        tbl.FrictionAdjust  = AI3_class.FrictionAdjust  
+	        tbl.HandicapAhead  = AI3_class.HandicapAhead  
+	        tbl.HandicapBehind  = AI3_class.HandicapBehind  
+	        tbl.Avoidance  = AI3_class.Avoidance  
+	        tbl.DamageReaction  = AI3_class.DamageReaction  
+	        tbl.DamageRecovery  = AI3_class.DamageRecovery  
+	        tbl.NitroUsage  = AI3_class.NitroUsage  
+	        tbl.NitroScan  = AI3_class.NitroScan  
+	        tbl.UseAltRoute  = AI3_class.UseAltRoute  
+	        tbl.DerbyFavourCenter  = AI3_class.DerbyFavourCenter  
+	        tbl.DerbyTargetPlayer  = AI3_class.DerbyTargetPlayer  
+	        tbl.DerbyExitCruiseSpeed  = AI3_class.DerbyExitCruiseSpeed  
+	        tbl.CoefP  = AI3_class.CoefP  
+	        tbl.CoefI  = AI3_class.CoefI  
+	        tbl.CoefD  = AI3_class.CoefD  
+	        tbl.CatchUpMul  = AI3_class.CatchUpMul  
+	        tbl.HandicapMul  = AI3_class.HandicapMul  
+	        tbl.MagnetSpeedLimit  = AI3_class.MagnetSpeedLimit  
+	        tbl.MagnetDistanceLimitAhead  = AI3_class.MagnetDistanceLimitAhead  
+	        tbl.MagnetDistanceLimitBehind  = AI3_class.MagnetDistanceLimitBehind  
+	        tbl.MagnetSpeedRatio  = AI3_class.MagnetSpeedRatio  
+	        tbl.DefaultTurbo  = AI3_class.DefaultTurbo  
+	        tbl.RLMagnetSpeedLimit  = AI3_class.RLMagnetSpeedLimit  
+	        tbl.RLMagnetMul  = AI3_class.RLMagnetMul  
+
+			
+			tableName=string.format("Data.Profile.AI4_KatieDaggert.Class[%d]", i)
+			tbl=db:GetTable(tableName)
+	       	tbl.CarNum  = AI4_class.CarNum
+	        tbl.Skin  = AI4_class.Skin
+	        tbl.CharacterType  = AI4_class.CharacterType  
+	        tbl.CharacterSkinId  = AI4_class.CharacterSkinId  
+	        tbl.Aggression  = AI4_class.Aggression  
+	        tbl.BumpAggression  = AI4_class.BumpAggression  
+	        tbl.BlockAggression  = AI4_class.BlockAggression  
+	        tbl.OvertakeAggression  = AI4_class.OvertakeAggression  
+	        tbl.ThrottleLimit  = AI4_class.ThrottleLimit  
+	        tbl.HandicapRacing  = AI4_class.HandicapRacing  
+	        tbl.HandicapOffTrack  = AI4_class.HandicapOffTrack  
+	        tbl.HandicapAirborne  = AI4_class.HandicapAirborne  
+	        tbl.CatchUpRacing  = AI4_class.CatchUpRacing  
+	        tbl.CatchUpOffTrack  = AI4_class.CatchUpOffTrack  
+	        tbl.CatchUpAirborne  = AI4_class.CatchUpAirborne  
+	        tbl.LookAheadMin  = AI4_class.LookAheadMin  
+	        tbl.LookAheadMax  = AI4_class.LookAheadMax  
+	        tbl.LookAheadModifier  = AI4_class.LookAheadModifier  
+	        tbl.UnderSteerRange  = AI4_class.UnderSteerRange  
+	        tbl.OverSteerRange  = AI4_class.OverSteerRange  
+	        tbl.SpinOutRange  = AI4_class.SpinOutRange  
+	        tbl.NeutralSlide  = AI4_class.NeutralSlide  
+	        tbl.NeutralBrakeTime  = AI4_class.NeutralBrakeTime  
+	        tbl.MinBrakeTime  = AI4_class.MinBrakeTime  
+	        tbl.MaxBrakeTime  = AI4_class.MaxBrakeTime  
+	        tbl.SlideFrictionScale  = AI4_class.SlideFrictionScale  
+	        tbl.BrakeFrictionScale  = AI4_class.BrakeFrictionScale  
+	        tbl.FrictionAdjust  = AI4_class.FrictionAdjust  
+	        tbl.HandicapAhead  = AI4_class.HandicapAhead  
+	        tbl.HandicapBehind  = AI4_class.HandicapBehind  
+	        tbl.Avoidance  = AI4_class.Avoidance  
+	        tbl.DamageReaction  = AI4_class.DamageReaction  
+	        tbl.DamageRecovery  = AI4_class.DamageRecovery  
+	        tbl.NitroUsage  = AI4_class.NitroUsage  
+	        tbl.NitroScan  = AI4_class.NitroScan  
+	        tbl.UseAltRoute  = AI4_class.UseAltRoute  
+	        tbl.DerbyFavourCenter  = AI4_class.DerbyFavourCenter  
+	        tbl.DerbyTargetPlayer  = AI4_class.DerbyTargetPlayer  
+	        tbl.DerbyExitCruiseSpeed  = AI4_class.DerbyExitCruiseSpeed  
+	        tbl.CoefP  = AI4_class.CoefP  
+	        tbl.CoefI  = AI4_class.CoefI  
+	        tbl.CoefD  = AI4_class.CoefD  
+	        tbl.CatchUpMul  = AI4_class.CatchUpMul  
+	        tbl.HandicapMul  = AI4_class.HandicapMul  
+	        tbl.MagnetSpeedLimit  = AI4_class.MagnetSpeedLimit  
+	        tbl.MagnetDistanceLimitAhead  = AI4_class.MagnetDistanceLimitAhead  
+	        tbl.MagnetDistanceLimitBehind  = AI4_class.MagnetDistanceLimitBehind  
+	        tbl.MagnetSpeedRatio  = AI4_class.MagnetSpeedRatio  
+	        tbl.DefaultTurbo  = AI4_class.DefaultTurbo  
+	        tbl.RLMagnetSpeedLimit  = AI4_class.RLMagnetSpeedLimit  
+	        tbl.RLMagnetMul  = AI4_class.RLMagnetMul  
+
+			
+			tableName=string.format("Data.Profile.AI5_PaulMcGuire.Class[%d]", i)
+			tbl=db:GetTable(tableName)
+	       	tbl.CarNum  = AI5_class.CarNum
+	        tbl.Skin  = AI5_class.Skin
+	        tbl.CharacterType  = AI5_class.CharacterType  
+	        tbl.CharacterSkinId  = AI5_class.CharacterSkinId  
+	        tbl.Aggression  = AI5_class.Aggression  
+	        tbl.BumpAggression  = AI5_class.BumpAggression  
+	        tbl.BlockAggression  = AI5_class.BlockAggression  
+	        tbl.OvertakeAggression  = AI5_class.OvertakeAggression  
+	        tbl.ThrottleLimit  = AI5_class.ThrottleLimit  
+	        tbl.HandicapRacing  = AI5_class.HandicapRacing  
+	        tbl.HandicapOffTrack  = AI5_class.HandicapOffTrack  
+	        tbl.HandicapAirborne  = AI5_class.HandicapAirborne  
+	        tbl.CatchUpRacing  = AI5_class.CatchUpRacing  
+	        tbl.CatchUpOffTrack  = AI5_class.CatchUpOffTrack  
+	        tbl.CatchUpAirborne  = AI5_class.CatchUpAirborne  
+	        tbl.LookAheadMin  = AI5_class.LookAheadMin  
+	        tbl.LookAheadMax  = AI5_class.LookAheadMax  
+	        tbl.LookAheadModifier  = AI5_class.LookAheadModifier  
+	        tbl.UnderSteerRange  = AI5_class.UnderSteerRange  
+	        tbl.OverSteerRange  = AI5_class.OverSteerRange  
+	        tbl.SpinOutRange  = AI5_class.SpinOutRange  
+	        tbl.NeutralSlide  = AI5_class.NeutralSlide  
+	        tbl.NeutralBrakeTime  = AI5_class.NeutralBrakeTime  
+	        tbl.MinBrakeTime  = AI5_class.MinBrakeTime  
+	        tbl.MaxBrakeTime  = AI5_class.MaxBrakeTime  
+	        tbl.SlideFrictionScale  = AI5_class.SlideFrictionScale  
+	        tbl.BrakeFrictionScale  = AI5_class.BrakeFrictionScale  
+	        tbl.FrictionAdjust  = AI5_class.FrictionAdjust  
+	        tbl.HandicapAhead  = AI5_class.HandicapAhead  
+	        tbl.HandicapBehind  = AI5_class.HandicapBehind  
+	        tbl.Avoidance  = AI5_class.Avoidance  
+	        tbl.DamageReaction  = AI5_class.DamageReaction  
+	        tbl.DamageRecovery  = AI5_class.DamageRecovery  
+	        tbl.NitroUsage  = AI5_class.NitroUsage  
+	        tbl.NitroScan  = AI5_class.NitroScan  
+	        tbl.UseAltRoute  = AI5_class.UseAltRoute  
+	        tbl.DerbyFavourCenter  = AI5_class.DerbyFavourCenter  
+	        tbl.DerbyTargetPlayer  = AI5_class.DerbyTargetPlayer  
+	        tbl.DerbyExitCruiseSpeed  = AI5_class.DerbyExitCruiseSpeed  
+	        tbl.CoefP  = AI5_class.CoefP  
+	        tbl.CoefI  = AI5_class.CoefI  
+	        tbl.CoefD  = AI5_class.CoefD  
+	        tbl.CatchUpMul  = AI5_class.CatchUpMul  
+	        tbl.HandicapMul  = AI5_class.HandicapMul  
+	        tbl.MagnetSpeedLimit  = AI5_class.MagnetSpeedLimit  
+	        tbl.MagnetDistanceLimitAhead  = AI5_class.MagnetDistanceLimitAhead  
+	        tbl.MagnetDistanceLimitBehind  = AI5_class.MagnetDistanceLimitBehind  
+	        tbl.MagnetSpeedRatio  = AI5_class.MagnetSpeedRatio  
+	        tbl.DefaultTurbo  = AI5_class.DefaultTurbo  
+	        tbl.RLMagnetSpeedLimit  = AI5_class.RLMagnetSpeedLimit  
+	        tbl.RLMagnetMul  = AI5_class.RLMagnetMul  
+
+						
+			tableName=string.format("Data.Profile.AI6_RaySmith.Class[%d]", i)
+			tbl=db:GetTable(tableName)
+	       	tbl.CarNum  = AI6_class.CarNum
+	        tbl.Skin  = AI6_class.Skin
+	        tbl.CharacterType  = AI6_class.CharacterType  
+	        tbl.CharacterSkinId  = AI6_class.CharacterSkinId  
+	        tbl.Aggression  = AI6_class.Aggression  
+	        tbl.BumpAggression  = AI6_class.BumpAggression  
+	        tbl.BlockAggression  = AI6_class.BlockAggression  
+	        tbl.OvertakeAggression  = AI6_class.OvertakeAggression  
+	        tbl.ThrottleLimit  = AI6_class.ThrottleLimit  
+	        tbl.HandicapRacing  = AI6_class.HandicapRacing  
+	        tbl.HandicapOffTrack  = AI6_class.HandicapOffTrack  
+	        tbl.HandicapAirborne  = AI6_class.HandicapAirborne  
+	        tbl.CatchUpRacing  = AI6_class.CatchUpRacing  
+	        tbl.CatchUpOffTrack  = AI6_class.CatchUpOffTrack  
+	        tbl.CatchUpAirborne  = AI6_class.CatchUpAirborne  
+	        tbl.LookAheadMin  = AI6_class.LookAheadMin  
+	        tbl.LookAheadMax  = AI6_class.LookAheadMax  
+	        tbl.LookAheadModifier  = AI6_class.LookAheadModifier  
+	        tbl.UnderSteerRange  = AI6_class.UnderSteerRange  
+	        tbl.OverSteerRange  = AI6_class.OverSteerRange  
+	        tbl.SpinOutRange  = AI6_class.SpinOutRange  
+	        tbl.NeutralSlide  = AI6_class.NeutralSlide  
+	        tbl.NeutralBrakeTime  = AI6_class.NeutralBrakeTime  
+	        tbl.MinBrakeTime  = AI6_class.MinBrakeTime  
+	        tbl.MaxBrakeTime  = AI6_class.MaxBrakeTime  
+	        tbl.SlideFrictionScale  = AI6_class.SlideFrictionScale  
+	        tbl.BrakeFrictionScale  = AI6_class.BrakeFrictionScale  
+	        tbl.FrictionAdjust  = AI6_class.FrictionAdjust  
+	        tbl.HandicapAhead  = AI6_class.HandicapAhead  
+	        tbl.HandicapBehind  = AI6_class.HandicapBehind  
+	        tbl.Avoidance  = AI6_class.Avoidance  
+	        tbl.DamageReaction  = AI6_class.DamageReaction  
+	        tbl.DamageRecovery  = AI6_class.DamageRecovery  
+	        tbl.NitroUsage  = AI6_class.NitroUsage  
+	        tbl.NitroScan  = AI6_class.NitroScan  
+	        tbl.UseAltRoute  = AI6_class.UseAltRoute  
+	        tbl.DerbyFavourCenter  = AI6_class.DerbyFavourCenter  
+	        tbl.DerbyTargetPlayer  = AI6_class.DerbyTargetPlayer  
+	        tbl.DerbyExitCruiseSpeed  = AI6_class.DerbyExitCruiseSpeed  
+	        tbl.CoefP  = AI6_class.CoefP  
+	        tbl.CoefI  = AI6_class.CoefI  
+	        tbl.CoefD  = AI6_class.CoefD  
+	        tbl.CatchUpMul  = AI6_class.CatchUpMul  
+	        tbl.HandicapMul  = AI6_class.HandicapMul  
+	        tbl.MagnetSpeedLimit  = AI6_class.MagnetSpeedLimit  
+	        tbl.MagnetDistanceLimitAhead  = AI6_class.MagnetDistanceLimitAhead  
+	        tbl.MagnetDistanceLimitBehind  = AI6_class.MagnetDistanceLimitBehind  
+	        tbl.MagnetSpeedRatio  = AI6_class.MagnetSpeedRatio  
+	        tbl.DefaultTurbo  = AI6_class.DefaultTurbo  
+	        tbl.RLMagnetSpeedLimit  = AI6_class.RLMagnetSpeedLimit  
+	        tbl.RLMagnetMul  = AI6_class.RLMagnetMul  
+
+						
+			tableName=string.format("Data.Profile.AI7_FrankMalcov.Class[%d]", i)
+			tbl=db:GetTable(tableName)
+	       	tbl.CarNum  = AI7_class.CarNum
+	        tbl.Skin  = AI7_class.Skin
+	        tbl.CharacterType  = AI7_class.CharacterType  
+	        tbl.CharacterSkinId  = AI7_class.CharacterSkinId  
+	        tbl.Aggression  = AI7_class.Aggression  
+	        tbl.BumpAggression  = AI7_class.BumpAggression  
+	        tbl.BlockAggression  = AI7_class.BlockAggression  
+	        tbl.OvertakeAggression  = AI7_class.OvertakeAggression  
+	        tbl.ThrottleLimit  = AI7_class.ThrottleLimit  
+	        tbl.HandicapRacing  = AI7_class.HandicapRacing  
+	        tbl.HandicapOffTrack  = AI7_class.HandicapOffTrack  
+	        tbl.HandicapAirborne  = AI7_class.HandicapAirborne  
+	        tbl.CatchUpRacing  = AI7_class.CatchUpRacing  
+	        tbl.CatchUpOffTrack  = AI7_class.CatchUpOffTrack  
+	        tbl.CatchUpAirborne  = AI7_class.CatchUpAirborne  
+	        tbl.LookAheadMin  = AI7_class.LookAheadMin  
+	        tbl.LookAheadMax  = AI7_class.LookAheadMax  
+	        tbl.LookAheadModifier  = AI7_class.LookAheadModifier  
+	        tbl.UnderSteerRange  = AI7_class.UnderSteerRange  
+	        tbl.OverSteerRange  = AI7_class.OverSteerRange  
+	        tbl.SpinOutRange  = AI7_class.SpinOutRange  
+	        tbl.NeutralSlide  = AI7_class.NeutralSlide  
+	        tbl.NeutralBrakeTime  = AI7_class.NeutralBrakeTime  
+	        tbl.MinBrakeTime  = AI7_class.MinBrakeTime  
+	        tbl.MaxBrakeTime  = AI7_class.MaxBrakeTime  
+	        tbl.SlideFrictionScale  = AI7_class.SlideFrictionScale  
+	        tbl.BrakeFrictionScale  = AI7_class.BrakeFrictionScale  
+	        tbl.FrictionAdjust  = AI7_class.FrictionAdjust  
+	        tbl.HandicapAhead  = AI7_class.HandicapAhead  
+	        tbl.HandicapBehind  = AI7_class.HandicapBehind  
+	        tbl.Avoidance  = AI7_class.Avoidance  
+	        tbl.DamageReaction  = AI7_class.DamageReaction  
+	        tbl.DamageRecovery  = AI7_class.DamageRecovery  
+	        tbl.NitroUsage  = AI7_class.NitroUsage  
+	        tbl.NitroScan  = AI7_class.NitroScan  
+	        tbl.UseAltRoute  = AI7_class.UseAltRoute  
+	        tbl.DerbyFavourCenter  = AI7_class.DerbyFavourCenter  
+	        tbl.DerbyTargetPlayer  = AI7_class.DerbyTargetPlayer  
+	        tbl.DerbyExitCruiseSpeed  = AI7_class.DerbyExitCruiseSpeed  
+	        tbl.CoefP  = AI7_class.CoefP  
+	        tbl.CoefI  = AI7_class.CoefI  
+	        tbl.CoefD  = AI7_class.CoefD  
+	        tbl.CatchUpMul  = AI7_class.CatchUpMul  
+	        tbl.HandicapMul  = AI7_class.HandicapMul  
+	        tbl.MagnetSpeedLimit  = AI7_class.MagnetSpeedLimit  
+	        tbl.MagnetDistanceLimitAhead  = AI7_class.MagnetDistanceLimitAhead  
+	        tbl.MagnetDistanceLimitBehind  = AI7_class.MagnetDistanceLimitBehind  
+	        tbl.MagnetSpeedRatio  = AI7_class.MagnetSpeedRatio  
+	        tbl.DefaultTurbo  = AI7_class.DefaultTurbo  
+	        tbl.RLMagnetSpeedLimit  = AI7_class.RLMagnetSpeedLimit  
+	        tbl.RLMagnetMul  = AI7_class.RLMagnetMul  
+
+	        tbl = {}
+	        collectgarbage("collect")
+		end
+		AI1_class = {}
+		AI2_class = {}
+		AI3_class = {}
+		AI4_class = {}
+		AI5_class = {}
+		AI6_class = {}
+		AI7_class = {}
+		collectgarbage("collect")
+	end
+
+	if aicars ~= 100 then
+		local AI1_data = {}
+		local AI2_data = {}
+		local AI3_data = {}
+		local AI4_data = {}
+		local AI5_data = {}
+		local AI6_data = {}
+		local AI7_data = {}
+		
+		for i=0,2 do
+			local tableName=string.format("Data.Profile.AI1_JackBenton.Class[%d]", i)
+			AI1_data[i]=db:GetTable(tableName)
+			AI1_data[i].CarNum=aicars
+			AI1_data[i].Skin=1
+			
+			tableName=string.format("Data.Profile.AI2_SueO'Neill.Class[%d]", i)
+			AI2_data[i]=db:GetTable(tableName)
+			AI2_data[i].CarNum=aicars
+			AI2_data[i].Skin=1
+			
+			tableName=string.format("Data.Profile.AI3_ValerioVega.Class[%d]", i)
+			AI3_data[i]=db:GetTable(tableName)
+			AI3_data[i].CarNum=aicars
+			AI3_data[i].Skin=1
+			
+			tableName=string.format("Data.Profile.AI4_KatieDaggert.Class[%d]", i)
+			AI4_data[i]=db:GetTable(tableName)
+			AI4_data[i].CarNum=aicars
+			AI4_data[i].Skin=1
+			
+			tableName=string.format("Data.Profile.AI5_PaulMcGuire.Class[%d]", i)
+			AI5_data[i]=db:GetTable(tableName)
+			AI5_data[i].CarNum=aicars
+			AI5_data[i].Skin=1
+			
+			tableName=string.format("Data.Profile.AI6_RaySmith.Class[%d]", i)
+			AI6_data[i]=db:GetTable(tableName)
+			AI6_data[i].CarNum=aicars
+			AI6_data[i].Skin=1
+			
+			tableName=string.format("Data.Profile.AI7_FrankMalcov.Class[%d]", i)
+			AI7_data[i]=db:GetTable(tableName)
+			AI7_data[i].CarNum=aicars
+			AI7_data[i].Skin=1
+		end
+		AI1_data = {}
+		AI2_data = {}
+		AI3_data = {}
+		AI4_data = {}
+		AI5_data = {}
+		AI6_data = {}
+		AI7_data = {}
+		collectgarbage("collect")
+	end
+	
+	if nitro == FALSE then
+		db.Settings.Nitro.CarCrashGain  = 0.000
+		db.Settings.Nitro.ObjectBonusFactor  = 0.000
+		db.Settings.Nitro.RagdollingGain  = 0.000
+		db.Settings.Nitro.AirtimeRate  = 0.000
+	    db.Settings.Nitro.RegenerationRate  = 0.000
+        db.Settings.Nitro.RegenerationRateTest  = 0.000
+	else
+		db.Settings.Nitro.CarCrashGain  = 20.000
+		db.Settings.Nitro.ObjectBonusFactor  = 1.000
+		db.Settings.Nitro.RagdollingGain  = 1.000
+		db.Settings.Nitro.AirtimeRate  = 3.200	
+	    db.Settings.Nitro.RegenerationRate  = 0.050
+        db.Settings.Nitro.RegenerationRateTest  = 0.300
+	end
+	
+	if gmode ~= 2 then
+		db.Settings.RaceDamage.PlayerDamageRate  = playerdamage
+		db.Settings.RaceDamage.VisualDamageScale  = visualdamage
+	end
+	if gmode ~= 1 then
+		db.Settings.DerbyDamage.PlayerDamageRate  = playerdamage
+		db.Settings.DerbyDamage.VisualDamageScale  = visualdamage
+	end
+	
+end
+
+local function OnChangeDerbyOptions(gmode, timer, upgrades, playerdamage, visualdamage, nitro, aicount, ailevel, aiupgrades, aicars, aitarget, aiclass)
+	Levels[RaceSelectionState.Level].AIHandicapLevel = ailevel
+	GameFlow.ClearRace()
+	
+	db.GameFlow.PreRace.MenuData = -2
+	
+	db.Settings.Derbies.InactivityTimer = timer
+	
+	if aicount == 7 then
+		db.GameFlow.PreRace.Mode=GM_SINGLE_RACE
+		if gmode == 1 then
+			db.GameFlow.PreRace.Rules=GR_DERBY
+			db.GameFlow.PreRace.DerbyType=DERBY_WRECKING
+		elseif gmode == 2 then
+			db.GameFlow.PreRace.Rules=GR_DERBY
+			db.GameFlow.PreRace.DerbyType=DERBY_LMS
+		elseif gmode == 3 then
+			db.GameFlow.PreRace.Rules=GR_DERBY
+			db.GameFlow.PreRace.DerbyType=DERBY_FRAG
+		elseif gmode == 4 then
+			db.GameFlow.PreRace.Rules=GR_HUNTER_PREY
+		end
+		
+		local UpgradeLevels = db:GetTable("Settings.UpgradeLevels")
+		if upgrades == 0 then
+			UpgradeLevels.SingleRacePlayer = 0.000
+		elseif upgrades == 50 then
+			UpgradeLevels.SingleRacePlayer = 0.500
+		else
+			UpgradeLevels.SingleRacePlayer = 1.000
+		end
+		if aiupgrades == 0 then
+			UpgradeLevels.SingleRaceAI = 0.000
+		elseif aiupgrades == 50 then
+			UpgradeLevels.SingleRaceAI = 0.500
+		else
+			UpgradeLevels.SingleRaceAI = 1.000
+		end
+	
+	else
+		db.GameFlow.PreRace.Mode=GM_NONE
+		if gmode == 1 then
+			db.GameFlow.PreRace.Rules=GR_DERBY
+			db.GameFlow.PreRace.DerbyType=DERBY_WRECKING
+		elseif gmode == 2 then
+			db.GameFlow.PreRace.Rules=GR_DERBY
+			db.GameFlow.PreRace.DerbyType=DERBY_LMS
+		elseif gmode == 3 then
+			db.GameFlow.PreRace.Rules=GR_DERBY
+			db.GameFlow.PreRace.DerbyType=DERBY_FRAG
+		elseif gmode == 4 then
+			db.GameFlow.PreRace.Rules=GR_HUNTER_PREY
+		end
+		
+		local playerinfo=db.GameFlow["PlayerInfo[0]"]
+		playerinfo.Name=PlayerProfile:GetName()
+		playerinfo.Type=PLAYERTYPE_LOCAL
+		if upgrades == 0 then
+			playerinfo.CarUpgrades=1.000
+		elseif upgrades == 50 then
+			playerinfo.CarUpgrades=2.000
+		else
+			playerinfo.CarUpgrades=3.000
+		end
+		
+		for i=2,aicount+1 do
+			local playerinfo=db.GameFlow[string.format("PlayerInfo[%d]",i-1)]
+			playerinfo.Name=ConvertToWString(ai_names[i-1])
+			playerinfo.Type=PLAYERTYPE_AI
+			if aiupgrades == 0 then
+				playerinfo.CarUpgrades=1.000
+			elseif aiupgrades == 50 then
+				playerinfo.CarUpgrades=2.000
+			else
+				playerinfo.CarUpgrades=3.000
+			end
+		end
+	end
+	
+	if aiclass ~= -1 then
+		local AI1_class = db:GetTable(string.format("Data.Profile.AI1_JackBenton.Class[%d]", aiclass))
+		local AI2_class = db:GetTable(string.format("Data.Profile.AI2_SueO'Neill.Class[%d]", aiclass))
+		local AI3_class = db:GetTable(string.format("Data.Profile.AI3_ValerioVega.Class[%d]", aiclass))
+		local AI4_class = db:GetTable(string.format("Data.Profile.AI4_KatieDaggert.Class[%d]", aiclass))
+		local AI5_class = db:GetTable(string.format("Data.Profile.AI5_PaulMcGuire.Class[%d]", aiclass))
+		local AI6_class = db:GetTable(string.format("Data.Profile.AI6_RaySmith.Class[%d]", aiclass))
+		local AI7_class = db:GetTable(string.format("Data.Profile.AI7_FrankMalcov.Class[%d]", aiclass))
+		
+		for i=0,2 do
+			local tableName=string.format("Data.Profile.AI1_JackBenton.Class[%d]", i)
+			local tbl=db:GetTable(tableName)
+	       	tbl.CarNum  = AI1_class.CarNum
+	        tbl.Skin  = AI1_class.Skin
+	        tbl.CharacterType  = AI1_class.CharacterType  
+	        tbl.CharacterSkinId  = AI1_class.CharacterSkinId  
+	        tbl.Aggression  = AI1_class.Aggression  
+	        tbl.BumpAggression  = AI1_class.BumpAggression  
+	        tbl.BlockAggression  = AI1_class.BlockAggression  
+	        tbl.OvertakeAggression  = AI1_class.OvertakeAggression  
+	        tbl.ThrottleLimit  = AI1_class.ThrottleLimit  
+	        tbl.HandicapRacing  = AI1_class.HandicapRacing  
+	        tbl.HandicapOffTrack  = AI1_class.HandicapOffTrack  
+	        tbl.HandicapAirborne  = AI1_class.HandicapAirborne  
+	        tbl.CatchUpRacing  = AI1_class.CatchUpRacing  
+	        tbl.CatchUpOffTrack  = AI1_class.CatchUpOffTrack  
+	        tbl.CatchUpAirborne  = AI1_class.CatchUpAirborne  
+	        tbl.LookAheadMin  = AI1_class.LookAheadMin  
+	        tbl.LookAheadMax  = AI1_class.LookAheadMax  
+	        tbl.LookAheadModifier  = AI1_class.LookAheadModifier  
+	        tbl.UnderSteerRange  = AI1_class.UnderSteerRange  
+	        tbl.OverSteerRange  = AI1_class.OverSteerRange  
+	        tbl.SpinOutRange  = AI1_class.SpinOutRange  
+	        tbl.NeutralSlide  = AI1_class.NeutralSlide  
+	        tbl.NeutralBrakeTime  = AI1_class.NeutralBrakeTime  
+	        tbl.MinBrakeTime  = AI1_class.MinBrakeTime  
+	        tbl.MaxBrakeTime  = AI1_class.MaxBrakeTime  
+	        tbl.SlideFrictionScale  = AI1_class.SlideFrictionScale  
+	        tbl.BrakeFrictionScale  = AI1_class.BrakeFrictionScale  
+	        tbl.FrictionAdjust  = AI1_class.FrictionAdjust  
+	        tbl.HandicapAhead  = AI1_class.HandicapAhead  
+	        tbl.HandicapBehind  = AI1_class.HandicapBehind  
+	        tbl.Avoidance  = AI1_class.Avoidance  
+	        tbl.DamageReaction  = AI1_class.DamageReaction  
+	        tbl.DamageRecovery  = AI1_class.DamageRecovery  
+	        tbl.NitroUsage  = AI1_class.NitroUsage  
+	        tbl.NitroScan  = AI1_class.NitroScan  
+	        tbl.UseAltRoute  = AI1_class.UseAltRoute  
+	        tbl.DerbyFavourCenter  = AI1_class.DerbyFavourCenter  
+	        tbl.DerbyTargetPlayer  = AI1_class.DerbyTargetPlayer  
+	        tbl.DerbyExitCruiseSpeed  = AI1_class.DerbyExitCruiseSpeed  
+	        tbl.CoefP  = AI1_class.CoefP  
+	        tbl.CoefI  = AI1_class.CoefI  
+	        tbl.CoefD  = AI1_class.CoefD  
+	        tbl.CatchUpMul  = AI1_class.CatchUpMul  
+	        tbl.HandicapMul  = AI1_class.HandicapMul  
+	        tbl.MagnetSpeedLimit  = AI1_class.MagnetSpeedLimit  
+	        tbl.MagnetDistanceLimitAhead  = AI1_class.MagnetDistanceLimitAhead  
+	        tbl.MagnetDistanceLimitBehind  = AI1_class.MagnetDistanceLimitBehind  
+	        tbl.MagnetSpeedRatio  = AI1_class.MagnetSpeedRatio  
+	        tbl.DefaultTurbo  = AI1_class.DefaultTurbo  
+	        tbl.RLMagnetSpeedLimit  = AI1_class.RLMagnetSpeedLimit  
+	        tbl.RLMagnetMul  = AI1_class.RLMagnetMul  
+
+					
+			tableName=string.format("Data.Profile.AI2_SueO'Neill.Class[%d]", i)
+			tbl=db:GetTable(tableName)
+	       	tbl.CarNum  = AI2_class.CarNum
+	        tbl.Skin  = AI2_class.Skin
+	        tbl.CharacterType  = AI2_class.CharacterType  
+	        tbl.CharacterSkinId  = AI2_class.CharacterSkinId  
+	        tbl.Aggression  = AI2_class.Aggression  
+	        tbl.BumpAggression  = AI2_class.BumpAggression  
+	        tbl.BlockAggression  = AI2_class.BlockAggression  
+	        tbl.OvertakeAggression  = AI2_class.OvertakeAggression  
+	        tbl.ThrottleLimit  = AI2_class.ThrottleLimit  
+	        tbl.HandicapRacing  = AI2_class.HandicapRacing  
+	        tbl.HandicapOffTrack  = AI2_class.HandicapOffTrack  
+	        tbl.HandicapAirborne  = AI2_class.HandicapAirborne  
+	        tbl.CatchUpRacing  = AI2_class.CatchUpRacing  
+	        tbl.CatchUpOffTrack  = AI2_class.CatchUpOffTrack  
+	        tbl.CatchUpAirborne  = AI2_class.CatchUpAirborne  
+	        tbl.LookAheadMin  = AI2_class.LookAheadMin  
+	        tbl.LookAheadMax  = AI2_class.LookAheadMax  
+	        tbl.LookAheadModifier  = AI2_class.LookAheadModifier  
+	        tbl.UnderSteerRange  = AI2_class.UnderSteerRange  
+	        tbl.OverSteerRange  = AI2_class.OverSteerRange  
+	        tbl.SpinOutRange  = AI2_class.SpinOutRange  
+	        tbl.NeutralSlide  = AI2_class.NeutralSlide  
+	        tbl.NeutralBrakeTime  = AI2_class.NeutralBrakeTime  
+	        tbl.MinBrakeTime  = AI2_class.MinBrakeTime  
+	        tbl.MaxBrakeTime  = AI2_class.MaxBrakeTime  
+	        tbl.SlideFrictionScale  = AI2_class.SlideFrictionScale  
+	        tbl.BrakeFrictionScale  = AI2_class.BrakeFrictionScale  
+	        tbl.FrictionAdjust  = AI2_class.FrictionAdjust  
+	        tbl.HandicapAhead  = AI2_class.HandicapAhead  
+	        tbl.HandicapBehind  = AI2_class.HandicapBehind  
+	        tbl.Avoidance  = AI2_class.Avoidance  
+	        tbl.DamageReaction  = AI2_class.DamageReaction  
+	        tbl.DamageRecovery  = AI2_class.DamageRecovery  
+	        tbl.NitroUsage  = AI2_class.NitroUsage  
+	        tbl.NitroScan  = AI2_class.NitroScan  
+	        tbl.UseAltRoute  = AI2_class.UseAltRoute  
+	        tbl.DerbyFavourCenter  = AI2_class.DerbyFavourCenter  
+	        tbl.DerbyTargetPlayer  = AI2_class.DerbyTargetPlayer  
+	        tbl.DerbyExitCruiseSpeed  = AI2_class.DerbyExitCruiseSpeed  
+	        tbl.CoefP  = AI2_class.CoefP  
+	        tbl.CoefI  = AI2_class.CoefI  
+	        tbl.CoefD  = AI2_class.CoefD  
+	        tbl.CatchUpMul  = AI2_class.CatchUpMul  
+	        tbl.HandicapMul  = AI2_class.HandicapMul  
+	        tbl.MagnetSpeedLimit  = AI2_class.MagnetSpeedLimit  
+	        tbl.MagnetDistanceLimitAhead  = AI2_class.MagnetDistanceLimitAhead  
+	        tbl.MagnetDistanceLimitBehind  = AI2_class.MagnetDistanceLimitBehind  
+	        tbl.MagnetSpeedRatio  = AI2_class.MagnetSpeedRatio  
+	        tbl.DefaultTurbo  = AI2_class.DefaultTurbo  
+	        tbl.RLMagnetSpeedLimit  = AI2_class.RLMagnetSpeedLimit  
+	        tbl.RLMagnetMul  = AI2_class.RLMagnetMul  
+
+			tableName=string.format("Data.Profile.AI3_ValerioVega.Class[%d]", i)
+			tbl=db:GetTable(tableName)
+	       	tbl.CarNum  = AI3_class.CarNum
+	        tbl.Skin  = AI3_class.Skin
+	        tbl.CharacterType  = AI3_class.CharacterType  
+	        tbl.CharacterSkinId  = AI3_class.CharacterSkinId  
+	        tbl.Aggression  = AI3_class.Aggression  
+	        tbl.BumpAggression  = AI3_class.BumpAggression  
+	        tbl.BlockAggression  = AI3_class.BlockAggression  
+	        tbl.OvertakeAggression  = AI3_class.OvertakeAggression  
+	        tbl.ThrottleLimit  = AI3_class.ThrottleLimit  
+	        tbl.HandicapRacing  = AI3_class.HandicapRacing  
+	        tbl.HandicapOffTrack  = AI3_class.HandicapOffTrack  
+	        tbl.HandicapAirborne  = AI3_class.HandicapAirborne  
+	        tbl.CatchUpRacing  = AI3_class.CatchUpRacing  
+	        tbl.CatchUpOffTrack  = AI3_class.CatchUpOffTrack  
+	        tbl.CatchUpAirborne  = AI3_class.CatchUpAirborne  
+	        tbl.LookAheadMin  = AI3_class.LookAheadMin  
+	        tbl.LookAheadMax  = AI3_class.LookAheadMax  
+	        tbl.LookAheadModifier  = AI3_class.LookAheadModifier  
+	        tbl.UnderSteerRange  = AI3_class.UnderSteerRange  
+	        tbl.OverSteerRange  = AI3_class.OverSteerRange  
+	        tbl.SpinOutRange  = AI3_class.SpinOutRange  
+	        tbl.NeutralSlide  = AI3_class.NeutralSlide  
+	        tbl.NeutralBrakeTime  = AI3_class.NeutralBrakeTime  
+	        tbl.MinBrakeTime  = AI3_class.MinBrakeTime  
+	        tbl.MaxBrakeTime  = AI3_class.MaxBrakeTime  
+	        tbl.SlideFrictionScale  = AI3_class.SlideFrictionScale  
+	        tbl.BrakeFrictionScale  = AI3_class.BrakeFrictionScale  
+	        tbl.FrictionAdjust  = AI3_class.FrictionAdjust  
+	        tbl.HandicapAhead  = AI3_class.HandicapAhead  
+	        tbl.HandicapBehind  = AI3_class.HandicapBehind  
+	        tbl.Avoidance  = AI3_class.Avoidance  
+	        tbl.DamageReaction  = AI3_class.DamageReaction  
+	        tbl.DamageRecovery  = AI3_class.DamageRecovery  
+	        tbl.NitroUsage  = AI3_class.NitroUsage  
+	        tbl.NitroScan  = AI3_class.NitroScan  
+	        tbl.UseAltRoute  = AI3_class.UseAltRoute  
+	        tbl.DerbyFavourCenter  = AI3_class.DerbyFavourCenter  
+	        tbl.DerbyTargetPlayer  = AI3_class.DerbyTargetPlayer  
+	        tbl.DerbyExitCruiseSpeed  = AI3_class.DerbyExitCruiseSpeed  
+	        tbl.CoefP  = AI3_class.CoefP  
+	        tbl.CoefI  = AI3_class.CoefI  
+	        tbl.CoefD  = AI3_class.CoefD  
+	        tbl.CatchUpMul  = AI3_class.CatchUpMul  
+	        tbl.HandicapMul  = AI3_class.HandicapMul  
+	        tbl.MagnetSpeedLimit  = AI3_class.MagnetSpeedLimit  
+	        tbl.MagnetDistanceLimitAhead  = AI3_class.MagnetDistanceLimitAhead  
+	        tbl.MagnetDistanceLimitBehind  = AI3_class.MagnetDistanceLimitBehind  
+	        tbl.MagnetSpeedRatio  = AI3_class.MagnetSpeedRatio  
+	        tbl.DefaultTurbo  = AI3_class.DefaultTurbo  
+	        tbl.RLMagnetSpeedLimit  = AI3_class.RLMagnetSpeedLimit  
+	        tbl.RLMagnetMul  = AI3_class.RLMagnetMul  
+
+			
+			tableName=string.format("Data.Profile.AI4_KatieDaggert.Class[%d]", i)
+			tbl=db:GetTable(tableName)
+	       	tbl.CarNum  = AI4_class.CarNum
+	        tbl.Skin  = AI4_class.Skin
+	        tbl.CharacterType  = AI4_class.CharacterType  
+	        tbl.CharacterSkinId  = AI4_class.CharacterSkinId  
+	        tbl.Aggression  = AI4_class.Aggression  
+	        tbl.BumpAggression  = AI4_class.BumpAggression  
+	        tbl.BlockAggression  = AI4_class.BlockAggression  
+	        tbl.OvertakeAggression  = AI4_class.OvertakeAggression  
+	        tbl.ThrottleLimit  = AI4_class.ThrottleLimit  
+	        tbl.HandicapRacing  = AI4_class.HandicapRacing  
+	        tbl.HandicapOffTrack  = AI4_class.HandicapOffTrack  
+	        tbl.HandicapAirborne  = AI4_class.HandicapAirborne  
+	        tbl.CatchUpRacing  = AI4_class.CatchUpRacing  
+	        tbl.CatchUpOffTrack  = AI4_class.CatchUpOffTrack  
+	        tbl.CatchUpAirborne  = AI4_class.CatchUpAirborne  
+	        tbl.LookAheadMin  = AI4_class.LookAheadMin  
+	        tbl.LookAheadMax  = AI4_class.LookAheadMax  
+	        tbl.LookAheadModifier  = AI4_class.LookAheadModifier  
+	        tbl.UnderSteerRange  = AI4_class.UnderSteerRange  
+	        tbl.OverSteerRange  = AI4_class.OverSteerRange  
+	        tbl.SpinOutRange  = AI4_class.SpinOutRange  
+	        tbl.NeutralSlide  = AI4_class.NeutralSlide  
+	        tbl.NeutralBrakeTime  = AI4_class.NeutralBrakeTime  
+	        tbl.MinBrakeTime  = AI4_class.MinBrakeTime  
+	        tbl.MaxBrakeTime  = AI4_class.MaxBrakeTime  
+	        tbl.SlideFrictionScale  = AI4_class.SlideFrictionScale  
+	        tbl.BrakeFrictionScale  = AI4_class.BrakeFrictionScale  
+	        tbl.FrictionAdjust  = AI4_class.FrictionAdjust  
+	        tbl.HandicapAhead  = AI4_class.HandicapAhead  
+	        tbl.HandicapBehind  = AI4_class.HandicapBehind  
+	        tbl.Avoidance  = AI4_class.Avoidance  
+	        tbl.DamageReaction  = AI4_class.DamageReaction  
+	        tbl.DamageRecovery  = AI4_class.DamageRecovery  
+	        tbl.NitroUsage  = AI4_class.NitroUsage  
+	        tbl.NitroScan  = AI4_class.NitroScan  
+	        tbl.UseAltRoute  = AI4_class.UseAltRoute  
+	        tbl.DerbyFavourCenter  = AI4_class.DerbyFavourCenter  
+	        tbl.DerbyTargetPlayer  = AI4_class.DerbyTargetPlayer  
+	        tbl.DerbyExitCruiseSpeed  = AI4_class.DerbyExitCruiseSpeed  
+	        tbl.CoefP  = AI4_class.CoefP  
+	        tbl.CoefI  = AI4_class.CoefI  
+	        tbl.CoefD  = AI4_class.CoefD  
+	        tbl.CatchUpMul  = AI4_class.CatchUpMul  
+	        tbl.HandicapMul  = AI4_class.HandicapMul  
+	        tbl.MagnetSpeedLimit  = AI4_class.MagnetSpeedLimit  
+	        tbl.MagnetDistanceLimitAhead  = AI4_class.MagnetDistanceLimitAhead  
+	        tbl.MagnetDistanceLimitBehind  = AI4_class.MagnetDistanceLimitBehind  
+	        tbl.MagnetSpeedRatio  = AI4_class.MagnetSpeedRatio  
+	        tbl.DefaultTurbo  = AI4_class.DefaultTurbo  
+	        tbl.RLMagnetSpeedLimit  = AI4_class.RLMagnetSpeedLimit  
+	        tbl.RLMagnetMul  = AI4_class.RLMagnetMul  
+
+			
+			tableName=string.format("Data.Profile.AI5_PaulMcGuire.Class[%d]", i)
+			tbl=db:GetTable(tableName)
+	       	tbl.CarNum  = AI5_class.CarNum
+	        tbl.Skin  = AI5_class.Skin
+	        tbl.CharacterType  = AI5_class.CharacterType  
+	        tbl.CharacterSkinId  = AI5_class.CharacterSkinId  
+	        tbl.Aggression  = AI5_class.Aggression  
+	        tbl.BumpAggression  = AI5_class.BumpAggression  
+	        tbl.BlockAggression  = AI5_class.BlockAggression  
+	        tbl.OvertakeAggression  = AI5_class.OvertakeAggression  
+	        tbl.ThrottleLimit  = AI5_class.ThrottleLimit  
+	        tbl.HandicapRacing  = AI5_class.HandicapRacing  
+	        tbl.HandicapOffTrack  = AI5_class.HandicapOffTrack  
+	        tbl.HandicapAirborne  = AI5_class.HandicapAirborne  
+	        tbl.CatchUpRacing  = AI5_class.CatchUpRacing  
+	        tbl.CatchUpOffTrack  = AI5_class.CatchUpOffTrack  
+	        tbl.CatchUpAirborne  = AI5_class.CatchUpAirborne  
+	        tbl.LookAheadMin  = AI5_class.LookAheadMin  
+	        tbl.LookAheadMax  = AI5_class.LookAheadMax  
+	        tbl.LookAheadModifier  = AI5_class.LookAheadModifier  
+	        tbl.UnderSteerRange  = AI5_class.UnderSteerRange  
+	        tbl.OverSteerRange  = AI5_class.OverSteerRange  
+	        tbl.SpinOutRange  = AI5_class.SpinOutRange  
+	        tbl.NeutralSlide  = AI5_class.NeutralSlide  
+	        tbl.NeutralBrakeTime  = AI5_class.NeutralBrakeTime  
+	        tbl.MinBrakeTime  = AI5_class.MinBrakeTime  
+	        tbl.MaxBrakeTime  = AI5_class.MaxBrakeTime  
+	        tbl.SlideFrictionScale  = AI5_class.SlideFrictionScale  
+	        tbl.BrakeFrictionScale  = AI5_class.BrakeFrictionScale  
+	        tbl.FrictionAdjust  = AI5_class.FrictionAdjust  
+	        tbl.HandicapAhead  = AI5_class.HandicapAhead  
+	        tbl.HandicapBehind  = AI5_class.HandicapBehind  
+	        tbl.Avoidance  = AI5_class.Avoidance  
+	        tbl.DamageReaction  = AI5_class.DamageReaction  
+	        tbl.DamageRecovery  = AI5_class.DamageRecovery  
+	        tbl.NitroUsage  = AI5_class.NitroUsage  
+	        tbl.NitroScan  = AI5_class.NitroScan  
+	        tbl.UseAltRoute  = AI5_class.UseAltRoute  
+	        tbl.DerbyFavourCenter  = AI5_class.DerbyFavourCenter  
+	        tbl.DerbyTargetPlayer  = AI5_class.DerbyTargetPlayer  
+	        tbl.DerbyExitCruiseSpeed  = AI5_class.DerbyExitCruiseSpeed  
+	        tbl.CoefP  = AI5_class.CoefP  
+	        tbl.CoefI  = AI5_class.CoefI  
+	        tbl.CoefD  = AI5_class.CoefD  
+	        tbl.CatchUpMul  = AI5_class.CatchUpMul  
+	        tbl.HandicapMul  = AI5_class.HandicapMul  
+	        tbl.MagnetSpeedLimit  = AI5_class.MagnetSpeedLimit  
+	        tbl.MagnetDistanceLimitAhead  = AI5_class.MagnetDistanceLimitAhead  
+	        tbl.MagnetDistanceLimitBehind  = AI5_class.MagnetDistanceLimitBehind  
+	        tbl.MagnetSpeedRatio  = AI5_class.MagnetSpeedRatio  
+	        tbl.DefaultTurbo  = AI5_class.DefaultTurbo  
+	        tbl.RLMagnetSpeedLimit  = AI5_class.RLMagnetSpeedLimit  
+	        tbl.RLMagnetMul  = AI5_class.RLMagnetMul  
+
+						
+			tableName=string.format("Data.Profile.AI6_RaySmith.Class[%d]", i)
+			tbl=db:GetTable(tableName)
+	       	tbl.CarNum  = AI6_class.CarNum
+	        tbl.Skin  = AI6_class.Skin
+	        tbl.CharacterType  = AI6_class.CharacterType  
+	        tbl.CharacterSkinId  = AI6_class.CharacterSkinId  
+	        tbl.Aggression  = AI6_class.Aggression  
+	        tbl.BumpAggression  = AI6_class.BumpAggression  
+	        tbl.BlockAggression  = AI6_class.BlockAggression  
+	        tbl.OvertakeAggression  = AI6_class.OvertakeAggression  
+	        tbl.ThrottleLimit  = AI6_class.ThrottleLimit  
+	        tbl.HandicapRacing  = AI6_class.HandicapRacing  
+	        tbl.HandicapOffTrack  = AI6_class.HandicapOffTrack  
+	        tbl.HandicapAirborne  = AI6_class.HandicapAirborne  
+	        tbl.CatchUpRacing  = AI6_class.CatchUpRacing  
+	        tbl.CatchUpOffTrack  = AI6_class.CatchUpOffTrack  
+	        tbl.CatchUpAirborne  = AI6_class.CatchUpAirborne  
+	        tbl.LookAheadMin  = AI6_class.LookAheadMin  
+	        tbl.LookAheadMax  = AI6_class.LookAheadMax  
+	        tbl.LookAheadModifier  = AI6_class.LookAheadModifier  
+	        tbl.UnderSteerRange  = AI6_class.UnderSteerRange  
+	        tbl.OverSteerRange  = AI6_class.OverSteerRange  
+	        tbl.SpinOutRange  = AI6_class.SpinOutRange  
+	        tbl.NeutralSlide  = AI6_class.NeutralSlide  
+	        tbl.NeutralBrakeTime  = AI6_class.NeutralBrakeTime  
+	        tbl.MinBrakeTime  = AI6_class.MinBrakeTime  
+	        tbl.MaxBrakeTime  = AI6_class.MaxBrakeTime  
+	        tbl.SlideFrictionScale  = AI6_class.SlideFrictionScale  
+	        tbl.BrakeFrictionScale  = AI6_class.BrakeFrictionScale  
+	        tbl.FrictionAdjust  = AI6_class.FrictionAdjust  
+	        tbl.HandicapAhead  = AI6_class.HandicapAhead  
+	        tbl.HandicapBehind  = AI6_class.HandicapBehind  
+	        tbl.Avoidance  = AI6_class.Avoidance  
+	        tbl.DamageReaction  = AI6_class.DamageReaction  
+	        tbl.DamageRecovery  = AI6_class.DamageRecovery  
+	        tbl.NitroUsage  = AI6_class.NitroUsage  
+	        tbl.NitroScan  = AI6_class.NitroScan  
+	        tbl.UseAltRoute  = AI6_class.UseAltRoute  
+	        tbl.DerbyFavourCenter  = AI6_class.DerbyFavourCenter  
+	        tbl.DerbyTargetPlayer  = AI6_class.DerbyTargetPlayer  
+	        tbl.DerbyExitCruiseSpeed  = AI6_class.DerbyExitCruiseSpeed  
+	        tbl.CoefP  = AI6_class.CoefP  
+	        tbl.CoefI  = AI6_class.CoefI  
+	        tbl.CoefD  = AI6_class.CoefD  
+	        tbl.CatchUpMul  = AI6_class.CatchUpMul  
+	        tbl.HandicapMul  = AI6_class.HandicapMul  
+	        tbl.MagnetSpeedLimit  = AI6_class.MagnetSpeedLimit  
+	        tbl.MagnetDistanceLimitAhead  = AI6_class.MagnetDistanceLimitAhead  
+	        tbl.MagnetDistanceLimitBehind  = AI6_class.MagnetDistanceLimitBehind  
+	        tbl.MagnetSpeedRatio  = AI6_class.MagnetSpeedRatio  
+	        tbl.DefaultTurbo  = AI6_class.DefaultTurbo  
+	        tbl.RLMagnetSpeedLimit  = AI6_class.RLMagnetSpeedLimit  
+	        tbl.RLMagnetMul  = AI6_class.RLMagnetMul  
+
+						
+			tableName=string.format("Data.Profile.AI7_FrankMalcov.Class[%d]", i)
+			tbl=db:GetTable(tableName)
+	       	tbl.CarNum  = AI7_class.CarNum
+	        tbl.Skin  = AI7_class.Skin
+	        tbl.CharacterType  = AI7_class.CharacterType  
+	        tbl.CharacterSkinId  = AI7_class.CharacterSkinId  
+	        tbl.Aggression  = AI7_class.Aggression  
+	        tbl.BumpAggression  = AI7_class.BumpAggression  
+	        tbl.BlockAggression  = AI7_class.BlockAggression  
+	        tbl.OvertakeAggression  = AI7_class.OvertakeAggression  
+	        tbl.ThrottleLimit  = AI7_class.ThrottleLimit  
+	        tbl.HandicapRacing  = AI7_class.HandicapRacing  
+	        tbl.HandicapOffTrack  = AI7_class.HandicapOffTrack  
+	        tbl.HandicapAirborne  = AI7_class.HandicapAirborne  
+	        tbl.CatchUpRacing  = AI7_class.CatchUpRacing  
+	        tbl.CatchUpOffTrack  = AI7_class.CatchUpOffTrack  
+	        tbl.CatchUpAirborne  = AI7_class.CatchUpAirborne  
+	        tbl.LookAheadMin  = AI7_class.LookAheadMin  
+	        tbl.LookAheadMax  = AI7_class.LookAheadMax  
+	        tbl.LookAheadModifier  = AI7_class.LookAheadModifier  
+	        tbl.UnderSteerRange  = AI7_class.UnderSteerRange  
+	        tbl.OverSteerRange  = AI7_class.OverSteerRange  
+	        tbl.SpinOutRange  = AI7_class.SpinOutRange  
+	        tbl.NeutralSlide  = AI7_class.NeutralSlide  
+	        tbl.NeutralBrakeTime  = AI7_class.NeutralBrakeTime  
+	        tbl.MinBrakeTime  = AI7_class.MinBrakeTime  
+	        tbl.MaxBrakeTime  = AI7_class.MaxBrakeTime  
+	        tbl.SlideFrictionScale  = AI7_class.SlideFrictionScale  
+	        tbl.BrakeFrictionScale  = AI7_class.BrakeFrictionScale  
+	        tbl.FrictionAdjust  = AI7_class.FrictionAdjust  
+	        tbl.HandicapAhead  = AI7_class.HandicapAhead  
+	        tbl.HandicapBehind  = AI7_class.HandicapBehind  
+	        tbl.Avoidance  = AI7_class.Avoidance  
+	        tbl.DamageReaction  = AI7_class.DamageReaction  
+	        tbl.DamageRecovery  = AI7_class.DamageRecovery  
+	        tbl.NitroUsage  = AI7_class.NitroUsage  
+	        tbl.NitroScan  = AI7_class.NitroScan  
+	        tbl.UseAltRoute  = AI7_class.UseAltRoute  
+	        tbl.DerbyFavourCenter  = AI7_class.DerbyFavourCenter  
+	        tbl.DerbyTargetPlayer  = AI7_class.DerbyTargetPlayer  
+	        tbl.DerbyExitCruiseSpeed  = AI7_class.DerbyExitCruiseSpeed  
+	        tbl.CoefP  = AI7_class.CoefP  
+	        tbl.CoefI  = AI7_class.CoefI  
+	        tbl.CoefD  = AI7_class.CoefD  
+	        tbl.CatchUpMul  = AI7_class.CatchUpMul  
+	        tbl.HandicapMul  = AI7_class.HandicapMul  
+	        tbl.MagnetSpeedLimit  = AI7_class.MagnetSpeedLimit  
+	        tbl.MagnetDistanceLimitAhead  = AI7_class.MagnetDistanceLimitAhead  
+	        tbl.MagnetDistanceLimitBehind  = AI7_class.MagnetDistanceLimitBehind  
+	        tbl.MagnetSpeedRatio  = AI7_class.MagnetSpeedRatio  
+	        tbl.DefaultTurbo  = AI7_class.DefaultTurbo  
+	        tbl.RLMagnetSpeedLimit  = AI7_class.RLMagnetSpeedLimit  
+	        tbl.RLMagnetMul  = AI7_class.RLMagnetMul  
+			
+	        tbl = {}
+	        collectgarbage("collect")
+		end
+		AI1_class = {}
+		AI2_class = {}
+		AI3_class = {}
+		AI4_class = {}
+		AI5_class = {}
+		AI6_class = {}
+		AI7_class = {}
+		collectgarbage("collect")
+	end
+	
+	if aicars ~= 100 then
+		local AI1_data = {}
+		local AI2_data = {}
+		local AI3_data = {}
+		local AI4_data = {}
+		local AI5_data = {}
+		local AI6_data = {}
+		local AI7_data = {}
+		
+		for i=0,2 do
+			local tableName=string.format("Data.Profile.AI1_JackBenton.Class[%d]", i)
+			AI1_data[i]=db:GetTable(tableName)
+			AI1_data[i].CarNum=aicars
+			AI1_data[i].Skin=1
+			
+			tableName=string.format("Data.Profile.AI2_SueO'Neill.Class[%d]", i)
+			AI2_data[i]=db:GetTable(tableName)
+			AI2_data[i].CarNum=aicars
+			AI2_data[i].Skin=1
+			
+			tableName=string.format("Data.Profile.AI3_ValerioVega.Class[%d]", i)
+			AI3_data[i]=db:GetTable(tableName)
+			AI3_data[i].CarNum=aicars
+			AI3_data[i].Skin=1
+			
+			tableName=string.format("Data.Profile.AI4_KatieDaggert.Class[%d]", i)
+			AI4_data[i]=db:GetTable(tableName)
+			AI4_data[i].CarNum=aicars
+			AI4_data[i].Skin=1
+			
+			tableName=string.format("Data.Profile.AI5_PaulMcGuire.Class[%d]", i)
+			AI5_data[i]=db:GetTable(tableName)
+			AI5_data[i].CarNum=aicars
+			AI5_data[i].Skin=1
+			
+			tableName=string.format("Data.Profile.AI6_RaySmith.Class[%d]", i)
+			AI6_data[i]=db:GetTable(tableName)
+			AI6_data[i].CarNum=aicars
+			AI6_data[i].Skin=1
+			
+			tableName=string.format("Data.Profile.AI7_FrankMalcov.Class[%d]", i)
+			AI7_data[i]=db:GetTable(tableName)
+			AI7_data[i].CarNum=aicars
+			AI7_data[i].Skin=1
+		end
+		AI1_data = {}
+		AI2_data = {}
+		AI3_data = {}
+		AI4_data = {}
+		AI5_data = {}
+		AI6_data = {}
+		AI7_data = {}
+		collectgarbage("collect")
+	end
+	
+	local AI1_data = {}
+	local AI2_data = {}
+	local AI3_data = {}
+	local AI4_data = {}
+	local AI5_data = {}
+	local AI6_data = {}
+	local AI7_data = {}
+	local AICatchUp_data = {}
+	local AIHandicap_data = {}
+		
+	
+	for i=0,2 do
+		local tableName=string.format("Data.Profile.AI1_JackBenton.Class[%d]", i)
+		AI1_data[i]=db:GetTable(tableName)
+		AI1_data[i].DerbyTargetPlayer=AI1_data[i].DerbyTargetPlayer * aitarget
+		
+		tableName=string.format("Data.Profile.AI2_SueO'Neill.Class[%d]", i)
+		AI2_data[i]=db:GetTable(tableName)
+		AI2_data[i].DerbyTargetPlayer=AI2_data[i].DerbyTargetPlayer * aitarget
+		
+		tableName=string.format("Data.Profile.AI3_ValerioVega.Class[%d]", i)
+		AI3_data[i]=db:GetTable(tableName)
+		AI3_data[i].DerbyTargetPlayer=AI3_data[i].DerbyTargetPlayer * aitarget
+		
+		tableName=string.format("Data.Profile.AI4_KatieDaggert.Class[%d]", i)
+		AI4_data[i]=db:GetTable(tableName)
+		AI4_data[i].DerbyTargetPlayer=AI4_data[i].DerbyTargetPlayer * aitarget
+		
+		tableName=string.format("Data.Profile.AI5_PaulMcGuire.Class[%d]", i)
+		AI5_data[i]=db:GetTable(tableName)
+		AI5_data[i].DerbyTargetPlayer=AI5_data[i].DerbyTargetPlayer * aitarget
+		
+		tableName=string.format("Data.Profile.AI6_RaySmith.Class[%d]", i)
+		AI6_data[i]=db:GetTable(tableName)
+		AI6_data[i].DerbyTargetPlayer=AI6_data[i].DerbyTargetPlayer * aitarget
+		
+		tableName=string.format("Data.Profile.AI7_FrankMalcov.Class[%d]", i)
+		AI7_data[i]=db:GetTable(tableName)
+		AI7_data[i].DerbyTargetPlayer=AI7_data[i].DerbyTargetPlayer * aitarget
+
+		tableName=string.format("Data.Profile.AICatchUp.Class[%d]", i)
+		AICatchUp_data[i]=db:GetTable(tableName)
+		AICatchUp_data[i].DerbyTargetPlayer=AICatchUp_data[i].DerbyTargetPlayer * aitarget
+
+		tableName=string.format("Data.Profile.AIHandicap.Class[%d]", i)
+		AIHandicap_data[i]=db:GetTable(tableName)
+		AIHandicap_data[i].DerbyTargetPlayer=AIHandicap_data[i].DerbyTargetPlayer * aitarget
+
+	end
+	AI1_data = {}
+	AI2_data = {}
+	AI3_data = {}
+	AI4_data = {}
+	AI5_data = {}
+	AI6_data = {}
+	AI7_data = {}
+	AICatchUp_data = {}
+	AIHandicap_data = {}
+
+	
+	if not nitro then
+		db.Settings.Nitro.CarCrashGain  = 0.000
+		db.Settings.Nitro.ObjectBonusFactor  = 0.000
+		db.Settings.Nitro.RagdollingGain  = 0.000
+		db.Settings.Nitro.AirtimeRate  = 0.000
+	    db.Settings.Nitro.RegenerationRate  = 0.000
+        db.Settings.Nitro.RegenerationRateTest  = 0.000
+	else
+		db.Settings.Nitro.CarCrashGain  = 20.000
+		db.Settings.Nitro.ObjectBonusFactor  = 1.000
+		db.Settings.Nitro.RagdollingGain  = 1.000
+		db.Settings.Nitro.AirtimeRate  = 3.200	
+	    db.Settings.Nitro.RegenerationRate  = 0.050
+        db.Settings.Nitro.RegenerationRateTest  = 0.300
+	end
+	
+	db.Settings.DerbyDamage.PlayerDamageRate  = playerdamage
+	db.Settings.DerbyDamage.VisualDamageScale  = visualdamage
+end
 
 local function SwitchTrackInfo(self,direction,id)
 
@@ -424,7 +2012,11 @@ local function SwitchTrackInfo(self,direction,id)
 	end
 
 
-	W("track_description"):SetTitle(TRANSLATOR(leveldata.Description))
+	local trackDesc = TRANSLATOR(leveldata.Description)
+	if (trackDesc == 65535) then
+      trackDesc = L(leveldata.Description)
+      end
+      W("track_description"):SetTitle(trackDesc)
 	W("track_description"):WordWrap()
 
 	local icon=leveldata.TrackIcon or ""
@@ -433,6 +2025,7 @@ local function SwitchTrackInfo(self,direction,id)
 	state.highscores=GetLevelHighScores(tracks[id].level_id)
 
 	UpdateHighScores()
+	UpdateOptions()
 end
 
 local function ToggleHighScores()
@@ -442,15 +2035,44 @@ local function ToggleHighScores()
 		W("info_windows").handle=AnimateWindowPos(W("info_windows"),{ W("info_windows"):GetPosition() },POS(0,0),0.3,0.3,W("info_windows").handle)
 
 		state.show_highscores=nil
-		GUI:SetHelpButtons(BUTTON_OK,TRANSLATOR(UI_SELECT),BUTTON_BACK,TRANSLATOR(UI_BACK),BUTTON_INFO,TRANSLATOR(UI_HIGHSCORES))
+		if RaceSelectionState.RaceType == TRACKTYPE_STUNT then
+			GUI:SetHelpButtons(BUTTON_OK,TRANSLATOR(UI_SELECT),BUTTON_BACK,TRANSLATOR(UI_BACK),BUTTON_INFO,TRANSLATOR(UI_HIGHSCORES))
+		else
+			GUI:SetHelpButtons(BUTTON_OK,TRANSLATOR(UI_SELECT),BUTTON_BACK,TRANSLATOR(UI_BACK),BUTTON_INFO,TRANSLATOR(ICON_MAIN_OPTIONS))
+		end
 	else
-		W("info_windows").handle=AnimateWindowPos(W("info_windows"),{ W("info_windows"):GetPosition() },POS(350,0),0.3,0.0,W("info_windows").handle)
+		if RaceSelectionState.RaceType == TRACKTYPE_STUNT then
+			W("info_windows").handle=AnimateWindowPos(W("info_windows"),{ W("info_windows"):GetPosition() },POS(350,0),0.3,0.0,W("info_windows").handle)
+		else
+			W("options_windows").handle=AnimateWindowPos(W("options_windows"),{ W("options_windows"):GetPosition() },POS(350,0),0.3,0.0,W("options_windows").handle)
+		end
 
 		W("highscore_windows").handle=AnimateWindowPos(W("highscore_windows"),{ W("highscore_windows"):GetPosition() },POS(0,0),0.3,0.3,W("highscore_windows").handle)
 
 		state.show_highscores=true
+		state.show_options=nil
 		GUI:SetHelpButtons(BUTTON_OK,TRANSLATOR(UI_SELECT),BUTTON_BACK,TRANSLATOR(UI_BACK),BUTTON_INFO,TRANSLATOR(UI_DESCRIPTION))
 	end
+end
+
+local function ToggleOptions()
+	W("info_windows").handle=AnimateWindowPos(W("info_windows"),{ W("info_windows"):GetPosition() },POS(350,0),0.3,0.0,W("info_windows").handle)
+
+	W("options_windows").handle=AnimateWindowPos(W("options_windows"),{ W("options_windows"):GetPosition() },POS(0,0),0.3,0.3,W("options_windows").handle)
+	
+	if RaceSelectionState.RaceType == TRACKTYPE_DERBY then
+		state.derby_options = true
+	else
+		state.derby_options = nil
+	end
+	UpdateOptions()
+	W("optionlist"):Refresh()
+	W("inputhandler"):SetFocus()
+	
+	--Settings.Game.Ragdoll=FALSE
+	
+	state.show_options=true
+	GUI:SetHelpButtons(BUTTON_OK,TRANSLATOR(UI_SELECT),BUTTON_BACK,TRANSLATOR(UI_BACK),BUTTON_INFO,TRANSLATOR(UI_HIGHSCORES))
 end
 
 
@@ -480,14 +2102,14 @@ function menu_singleplayer_trackselection.create(self)
 	end
 
 
---//	self:addResource("track_icons.tga",track_icons,track_icons_size)
---//	self:addResource("track_icons_2.tga",track_icons_2,track_icons_2_size)
 	self:addResource("selection_elements.tga",selection_elements,selection_elements_size)
 	self:addResource("cup_final_results_elements1.tga",cup_final_results_elements1,cup_final_results_elements1_size)
 	self:addResource("garage_elements1.tga",garage_elements1,garage_elements1_size)
 
 	self:addResource("track_images.tga",track_images,track_images_size)
+	self:addResource("track_images3.tga",track_images3,track_images3_size)
 	self:addResource("track_images2.tga",track_images2,track_images2_size)
+	self:addResource("track_images4.tga",track_images4,track_images4_size)
 
 	self:addResource("backdrops2.tga",backdrops2,backdrops2_size)
 	self:addResource("backdrops3.tga",backdrops3,backdrops3_size)
@@ -498,9 +2120,6 @@ function menu_singleplayer_trackselection.create(self)
 	for k,v in ipairs(files) do
 		self:addResource(v..".tga",_G[v],_G[v.."_size"])
 	end
---//	self:addResource("track_logos.tga",track_logos,track_logos_size)
---//	self:addResource("track_logos2.tga",track_logos2,track_logos2_size)
---//	self:addResource("track_logos3.tga",track_logos3,track_logos3_size)
 
 	self:loadResources()
 end
@@ -532,7 +2151,15 @@ function menu_singleplayer_trackselection.init(self)
 
 	local infobutton=function(self,id)
 		playmenusound_move()
-		ToggleHighScores()
+		if RaceSelectionState.RaceType == TRACKTYPE_STUNT then
+			ToggleHighScores()
+		else
+			if not state.show_options and not state.show_highscores then
+				ToggleOptions()
+			else
+				ToggleHighScores()
+			end
+		end
 	end
 
 	if XBOX then
@@ -547,12 +2174,6 @@ function menu_singleplayer_trackselection.init(self)
 
 	RaceSelectionState.Id=nil
 
-
---//	Frame{Name="trackmap_1",Position=POS(80,57),Size=SIZE(290,270)}
---//	Frame{Name="trackmap_2",Position=POS(641,57),Size=SIZE(290,270)}
-
-	
---//	Frame{Name="track_logo",Position=POS(400,70),Size=SIZE(160,64)}
 	Frame{Position=POS(284,72),Size=SIZE(58,32)}:AttachResource(self:getResource("upshop_top_n_bottom_infotxt_bar_ang"))
 	Frame{Position=POS(342,72),Size=SIZE(298,32)}:AttachResource(self:getResource("upshop_top_n_bottom_infotxt_bar"))
 
@@ -574,10 +2195,8 @@ function menu_singleplayer_trackselection.init(self)
 	local lap_size=GetResourceSize(self:getResource("lap"))
 	local clock_size=GetResourceSize(self:getResource("clock"))
 	
-	--//Frame{Name="clock_icon",Position=POS(358,273),Size=clock_size,Parent=p}:AttachResource(self:getResource("clock"))
 	Frame{Name="lap_icon",Position=POS(358,294),Size=lap_size,Parent=p}:AttachResource(self:getResource("lap"))
 
-	--//StaticText{Name="highscore",Title=L"0'00'00",Font=fontsmall(),Position=POS(358+clock_size[1]+4,275),Color=GetPaletteColor(34),Parent=p}
 	StaticText{Name="lapcount",Title=L"3 LAPS",Font=fontsmall(),Position=POS(358+lap_size[1]+4,295),Color=GetPaletteColor(34),Parent=p}
 	StaticText{Name="stunt_goal",Position=POS(358+lap_size[1]+4,294),Font=fontsmall(),Color=GetPaletteColor(33),Parent=p}:HideWindow()
 
@@ -609,6 +2228,439 @@ function menu_singleplayer_trackselection.init(self)
 	end
 
 	--//end highscores
+	
+	--//options
+	local p=Frame{Name="options_windows",Position=POS(350,0),Size=SIZE(640,480)}
+
+	Frame{Position=POS(301,110),Size=SIZE(23,72.5),Parent=p}:AttachResource(self:getResource("sr_highscore_bar_ang"))
+	Frame{Position=POS(323,110),Size=SIZE(316,72.5),Parent=p}:AttachResource(self:getResource("sr_highscore_bar_str"))
+	
+	Frame{Position=POS(322,184),Size=SIZE(23,72.5),Parent=p}:AttachResource(self:getResource("sr_highscore_bar_ang"))
+	Frame{Position=POS(344,184),Size=SIZE(295,72.5),Parent=p}:AttachResource(self:getResource("sr_highscore_bar_str"))
+	
+	Frame{Position=POS(342,258),Size=SIZE(23,72.5),Parent=p}:AttachResource(self:getResource("sr_highscore_bar_ang"))
+	Frame{Position=POS(364,258),Size=SIZE(275,72.5),Parent=p}:AttachResource(self:getResource("sr_highscore_bar_str"))
+
+	local Layout=
+	{
+		ListLeft=0,
+		ListTop=106,
+		ListFont=fontsmall(),
+		
+		LabelLeft=287,
+		LabelFontColor=GetPaletteColor(33),
+		
+		OptionLeft=303,
+		OptionWidth=337,
+		OptionFontColor=GetPaletteColor(34),
+		OptionDisabledFontColor=GetPaletteColor(2),
+		OptionArrowIndentTop=4,
+		OptionArrowIndentLeftRight=5,
+		
+		RowHeight=14,
+		RowPadding=1,
+		NumRows=12,
+	}
+	
+	local OptionItems = SingleRace.OptionItems
+	
+	local NumOptions=12
+	
+	-- OptionItem item indexes
+	local Label=1
+	local ItemLabels=2
+	local ItemValues=3
+	local SelectedItem=4
+	local Enabled=5
+	local OnChanged=6
+	local Descriptions=7
+	
+	-- OptionItem indexes
+	local GameMode=1
+	local Laps=2
+	local Upgrades=3
+	local PlayerDamage=4
+	local VisualDamage=5
+	local Ragdoll=6
+	local Nitro=7
+	local AIPlayers=8
+	local AILevel=9
+	local AIUpgrades=10
+	local AIClass=11
+	local AICars=12
+	
+	local DerbyGameMode=1
+	local DerbyTimer=2
+	local DerbyUpgrades=3
+	local DerbyPlayerDamage=4
+	local DerbyVisualDamage=5
+	local DerbyNitro=6
+	local DerbyAIPlayers=7
+	local DerbyAILevel=8
+	local DerbyAIUpgrades=9
+	local DerbyAIClass=10
+	local DerbyAICars=11
+	local AITargetPlayer=12
+		
+	local function GetEnabled(RowNr)
+		return OptionItems[RowNr][Enabled]
+	end
+	
+	local function SetEnabled(RowNr, Enable)
+		OptionItems[RowNr][Enabled]=Enable
+	end
+	
+	local function GetSelectedItem(RowNr)
+		return OptionItems[RowNr][SelectedItem]
+	end
+	
+	local function SetSelectedItem(RowNr, Item)
+		OptionItems[RowNr][SelectedItem]=Item
+	end
+	
+	local function GetSelectedItemValue(rowNr)
+		return OptionItems[rowNr][ItemValues][OptionItems[rowNr][SelectedItem] ]
+	end
+	
+	local function GetSelectedItemLabel(rowNr)
+		return OptionItems[rowNr][ItemLabels][OptionItems[rowNr][SelectedItem] ]
+	end
+	
+	local function GetNumItems(RowNr)
+		return table.getn(OptionItems[RowNr][ItemValues])
+	end
+	
+	local function UpdateArrows(self)
+		local leftarrow = wm.GetWindow("leftarrow")
+		local rightarrow = wm.GetWindow("rightarrow")
+		
+		local row = wm.GetWindow("optionlist"):GetSelectedRow()
+		local y = Layout.ListTop + (Layout.RowHeight + Layout.RowPadding) * (row - 1)
+		
+		local leftArrowSize = wm.GetResourceSize(self:getResource("selection_arrow_r"))
+		local rightArrowSize = wm.GetResourceSize(self:getResource("selection_arrow_l"))
+	
+		local value = wm.GetWindow("optionvalue_row"..row)
+		local xpos,_ = value:GetPosition()
+		leftarrow:SetPosition(xpos - 5 - leftArrowSize[1], y + 2)
+	
+		local w,_ = wm.GetTextExtents(value:GetTitle(), Layout.ListFont)
+		rightarrow:SetPosition(xpos + w + 9, y + 2)
+	end
+	
+	local listboxParams = {
+		ListBoxTemplate	= { Name="optionlist", Parent=p },
+		Left			= Layout.ListLeft,
+		Top				= Layout.ListTop,
+		LeftPadding		= 0,
+		RightPadding	= 0,
+		TopPadding		= 0,
+		BottomPadding	= 0,
+		RowWidth		= 640,
+		RowHeight		= Layout.RowHeight,
+		RowPadding		= Layout.RowPadding,
+		RowTemplate		= { DrawBackgroundColor=FALSE, TitleCentering=TITLE_CENTER_Y },
+		RowTemplateType	= "Button",
+		RowTemplateCust	= function(Row, RowNr)
+		end,
+		NumRows	= NumOptions,
+		Coloumns = {
+			[1] = {
+				Name				= "optiontitle", -- _row# is added
+				ColoumnTemplate		= { Font=Layout.ListFont, Color=Layout.LabelFontColor, Position=POS(Layout.LabelLeft, -2), Size=SIZE(Layout.OptionWidth, Layout.RowHeight), Layer=4 },
+				ColoumnTemplateType	= "StaticText",
+				ColoumnTemplateCust	= function(Coloumn, RowNr, ColoumnNr)
+				end
+			},
+			[2] = {
+				Name				= "optionvalue", -- _row# is added
+				ColoumnTemplate		= { Font=Layout.ListFont, Color=Layout.OptionFontColor, Position=POS(Layout.OptionLeft, -2), Size=SIZE(Layout.OptionWidth, Layout.RowHeight), Layer=4 },
+				ColoumnTemplateType	= "StaticText",
+				ColoumnTemplateCust	= function(Coloumn, RowNr, ColoumnNr)
+				end
+			},
+		}
+	}
+	
+	local optionlist = CreateMultiColoumnListBox(listboxParams)
+	optionlist:SetNumRows(NumOptions)
+	optionlist:SetSelectedRow(1)
+	optionlist.onNeedData = function(Self, RowObject, RowNr, ControlRowNr)
+		local title = wm.GetWindow("optiontitle_row"..RowNr)
+		local value = wm.GetWindow("optionvalue_row"..RowNr)
+		
+		local arrowSize = GetResourceSize(self:getResource("selection_arrow_r"))
+		title:SetPosition(320 + 4.2 * (RowNr + 1) - 15, 0)
+		value:SetPosition(320 + 4.2 * (RowNr + 1) + 120 + Layout.OptionArrowIndentLeftRight + arrowSize[1], 0)
+		
+		OptionItems = SingleRace.OptionItems
+		title:SetTitle(OptionItems[RowNr][Label])
+		if OptionItems[RowNr][Enabled] then
+			value:SetLayer(4)
+			title:SetLayer(4)
+			value:SetTitle(GetSelectedItemLabel(RowNr))
+		else
+			value:SetLayer(2)
+			title:SetLayer(2)
+			value:SetTitle(L"")
+		end
+
+		UpdateArrows(self)
+	end
+	
+	local arrowSize = GetResourceSize(self:getResource("selection_arrow_r"))
+	Frame { Name="leftarrow", Position=POS(0,0), Size=arrowSize, Parent=p, Layer=4 }:AttachResource(self:getResource("selection_arrow_r"))
+	arrowSize = GetResourceSize(self:getResource("selection_arrow_l"))
+	Frame { Name="rightarrow", Position=POS(0,0), Size=arrowSize, Parent=p, Layer=4 }:AttachResource(self:getResource("selection_arrow_l"))	
+	
+	local handler = InputHandler { Name="inputhandler" }
+	handler.onKeyPressed = function(Self, Character, VirtualKey, ScanCode)
+		local labels
+				
+		local selectedRow = optionlist:GetSelectedRow()
+		if VirtualKey == KeyCodes["BUTTON_START"] then
+			playmenusound_action()
+			
+			if not state.derby_options then
+				OnChangeOptions(
+					GetSelectedItemValue(Laps),
+					GetSelectedItemValue(AILevel),
+					GetSelectedItemValue(Ragdoll),
+					GetSelectedItemValue(GameMode),
+					GetSelectedItemValue(AIPlayers),
+					GetSelectedItemValue(Upgrades),
+					GetSelectedItemValue(AIUpgrades),
+					GetSelectedItemValue(AICars),
+					GetSelectedItemValue(PlayerDamage),
+					GetSelectedItemValue(VisualDamage),
+					GetSelectedItemValue(Nitro),
+					GetSelectedItemValue(AIClass)
+				)
+				carlist=CarlistAllUnlocked()
+				ProfileSave(Save.GetLastSaveSlotUsed(), 
+					EnterCarSelection(carselected,
+						  function()
+								EnterMenu("menu_singleplayer_trackselection")
+						  end,
+						  carlist,false,true,description,false,bg,nil,true,TRANSLATOR(TITLE_SELECTCAR)
+					),
+					function() end
+				)
+			else
+				OnChangeDerbyOptions(
+					GetSelectedItemValue(DerbyGameMode),
+					GetSelectedItemValue(DerbyTimer),
+					GetSelectedItemValue(DerbyUpgrades),
+					GetSelectedItemValue(DerbyPlayerDamage),
+					GetSelectedItemValue(DerbyVisualDamage),
+					GetSelectedItemValue(DerbyNitro),
+					GetSelectedItemValue(DerbyAIPlayers),
+					GetSelectedItemValue(DerbyAILevel),
+					GetSelectedItemValue(DerbyAIUpgrades),
+					GetSelectedItemValue(DerbyAICars),
+					GetSelectedItemValue(AITargetPlayer),
+					GetSelectedItemValue(DerbyAIClass)
+				)
+				carlist=CarlistAllUnlocked()
+				ProfileSave(Save.GetLastSaveSlotUsed(), 
+					EnterCarSelection(carselected,
+						  function()
+								EnterMenu("menu_singleplayer_trackselection")
+						  end,
+						  carlist,false,true,description,false,bg,nil,true,TRANSLATOR(TITLE_SELECTCAR)
+					),
+					function() end
+				)
+			end
+
+				  
+		elseif VirtualKey == KeyCodes["BUTTON_SELECT"] then
+			playmenusound_back()
+			if RaceSelectionState.backmenu then
+				RaceSelectionState.backmenu()
+			else
+				EnterMenu("menu_singleplayer_racetype")
+			end
+		elseif VirtualKey == KeyCodes["BUTTON_LEFT"] then
+			if GetEnabled(selectedRow) then
+				local selectedItem = GetSelectedItem(selectedRow) - 1
+				local numItems = GetNumItems(selectedRow)
+				if selectedItem < 1 then
+					selectedItem = numItems
+				end
+				SetSelectedItem(selectedRow,selectedItem)
+
+				local onChanged = OptionItems[selectedRow][OnChanged]
+				if onChanged ~= nil then
+					onChanged(selectedRow)
+				end
+				
+				if not state.derby_options then
+					if selectedRow == GameMode then
+						if selectedItem == 3 then
+							SetEnabled(Laps, false)
+							SetEnabled(AIPlayers, false)
+							SetEnabled(AILevel, false)
+							SetEnabled(AIUpgrades, false)
+							SetEnabled(AICars, false)
+							SetEnabled(AIClass, false)
+						else
+							if not GetEnabled(AIPlayers) then
+								SetEnabled(Laps, true)
+								SetEnabled(AIPlayers, true)
+								SetEnabled(AILevel, true)
+								SetEnabled(AIUpgrades, true)
+								SetEnabled(AICars, true)
+								SetEnabled(AIClass, true)
+							end
+						end
+					end
+
+					if selectedRow == AICars then
+						if selectedItem ~= 46 then
+							SetEnabled(AIClass, false)
+						else
+							if not GetEnabled(AIClass) then
+								SetEnabled(AIClass, true)
+							end
+						end
+					end
+				else
+					if selectedRow == DerbyAICars then
+						if selectedItem ~= 46 then
+							SetEnabled(DerbyAIClass, false)
+						else
+							if not GetEnabled(DerbyAIClass) then
+								SetEnabled(DerbyAIClass, true)
+							end
+						end
+					end
+				end
+				
+				optionlist:Refresh()
+				playmenusound_move()
+			end
+		elseif VirtualKey == KeyCodes["BUTTON_RIGHT"] then
+			if GetEnabled(selectedRow) then
+				local selectedItem = GetSelectedItem(selectedRow) + 1
+				local numItems = GetNumItems(selectedRow)
+				if selectedItem > numItems then
+					selectedItem = 1
+				end
+				SetSelectedItem(selectedRow,selectedItem)
+
+				local onChanged = OptionItems[selectedRow][OnChanged]
+				if onChanged ~= nil then
+					onChanged(selectedRow)
+				end
+				
+				if not state.derby_options then
+					if selectedRow == GameMode then
+						if selectedItem == 3 then
+							SetEnabled(Laps, false)
+							SetEnabled(AIPlayers, false)
+							SetEnabled(AILevel, false)
+							SetEnabled(AIUpgrades, false)
+							SetEnabled(AICars, false)
+							SetEnabled(AIClass, false)
+						else
+							if not GetEnabled(AIPlayers) then
+								SetEnabled(Laps, true)
+								SetEnabled(AIPlayers, true)
+								SetEnabled(AILevel, true)
+								SetEnabled(AIUpgrades, true)
+								SetEnabled(AIClass, true)
+							end
+						end
+					end
+					
+					if selectedRow == AICars then
+						if selectedItem ~= 46 then
+							SetEnabled(AIClass, false)
+						else
+							if not GetEnabled(AIClass) then
+								SetEnabled(AIClass, true)
+							end
+						end
+					end
+				else
+					if selectedRow == DerbyAICars then
+						if selectedItem ~= 46 then
+							SetEnabled(DerbyAIClass, false)
+						else
+							if not GetEnabled(DerbyAIClass) then
+								SetEnabled(DerbyAIClass, true)
+							end
+						end
+					end
+				end
+					
+				optionlist:Refresh()
+				playmenusound_move()
+			end
+		elseif VirtualKey == KeyCodes["BUTTON_DOWN"] then
+			-- Skip any disabled rows
+			local prevsel = optionlist:GetSelectedRow()
+			repeat
+				optionlist:MoveNext()
+			until OptionItems[optionlist:GetSelectedRow()][Enabled] == true or optionlist:GetSelectedRow() == table.getn(OptionItems)
+			if optionlist:GetSelectedRow() == table.getn(OptionItems) and OptionItems[optionlist:GetSelectedRow()][Enabled] == false then
+				optionlist:SetSelectedRow(prevsel)
+			end
+			
+			UpdateArrows(self)
+			playmenusound_move()
+		elseif VirtualKey == KeyCodes["BUTTON_UP"] then
+			-- Skip any disabled rows
+			local prevsel = optionlist:GetSelectedRow()
+			repeat
+				optionlist:MovePrev()
+			until OptionItems[optionlist:GetSelectedRow()][Enabled] == true or optionlist:GetSelectedRow() == 1
+			if optionlist:GetSelectedRow() == 1 and OptionItems[optionlist:GetSelectedRow()][Enabled] == false then
+				optionlist:SetSelectedRow(prevsel)
+			end
+			
+			UpdateArrows(self)
+			playmenusound_move()
+		elseif VirtualKey == KeyCodes["BUTTON_INFO"] then
+			bar:SetFocus()
+			playmenusound_move()
+			if not state.derby_options then
+				OnChangeOptions(
+					GetSelectedItemValue(Laps),
+					GetSelectedItemValue(AILevel),
+					GetSelectedItemValue(Ragdoll),
+					GetSelectedItemValue(GameMode),
+					GetSelectedItemValue(AIPlayers),
+					GetSelectedItemValue(Upgrades),
+					GetSelectedItemValue(AIUpgrades),
+					GetSelectedItemValue(AICars),
+					GetSelectedItemValue(PlayerDamage),
+					GetSelectedItemValue(VisualDamage),
+					GetSelectedItemValue(Nitro),
+					GetSelectedItemValue(AIClass)
+				)
+			else
+				OnChangeDerbyOptions(
+					GetSelectedItemValue(DerbyGameMode),
+					GetSelectedItemValue(DerbyTimer),
+					GetSelectedItemValue(DerbyUpgrades),
+					GetSelectedItemValue(DerbyPlayerDamage),
+					GetSelectedItemValue(DerbyVisualDamage),
+					GetSelectedItemValue(DerbyNitro),
+					GetSelectedItemValue(DerbyAIPlayers),
+					GetSelectedItemValue(DerbyAILevel),
+					GetSelectedItemValue(DerbyAIUpgrades),
+					GetSelectedItemValue(DerbyAICars),
+					GetSelectedItemValue(AITargetPlayer),
+					GetSelectedItemValue(DerbyAIClass)
+				)
+			end
+			ToggleHighScores()
+		end
+	end
+	--//end options
+	
 	Frame{Position=POS(0,72),Size=SIZE(273,143)}:AttachResource(self:getResource("big_bottom"))
 	Frame{Position=POS(273,72),Size=SIZE(45,143)}:AttachResource(self:getResource("big_bottom_ang"))
 
@@ -663,19 +2715,35 @@ function menu_singleplayer_trackselection.init(self)
 			local carlist
 			local bg
 			local description=false
+			local classChanger = true
 			if RaceSelectionState.RaceType == TRACKTYPE_STUNT then
 				carlist=CarlistStuntCars()
 				bg="data/menu/stunt_car_selection_bg.tga"
 				description=true
+				classChanger = false
 			else
 				carlist=CarlistAllUnlocked()
+				-- [cond]? [yes]:[no] in lua is basically [cond] and [yes] or [no]
+				carlist=(SR_unlockAllCars and CarlistAllCars() or CarlistAllUnlocked())
 			end
 
 				EnterCarSelection(carselected,
 					  function()
 							--//RaceSelectionState:prevPhase()
 							EnterMenu("menu_singleplayer_trackselection")
-					  end,carlist,false,true,description,false,bg,nil,true,TRANSLATOR(TITLE_SELECTCAR))
+					  end,
+					  carlist,
+					  false,
+					  true,
+					  description,
+					  false,
+					  bg,
+					  nil,
+					  true,
+					  TRANSLATOR(TITLE_SELECTCAR),
+					  nil,
+					  classChanger
+					)
 		end
 	end
 
@@ -694,8 +2762,11 @@ function menu_singleplayer_trackselection.init(self)
 	
 	--//GUI:SetBackground("data/menu/menu_background.tga")
 	GUI:SetBackgroundVideo("data/video/bg_main")
-
-	GUI:SetHelpButtons(BUTTON_OK,TRANSLATOR(UI_SELECT),BUTTON_BACK,TRANSLATOR(UI_BACK),BUTTON_INFO,TRANSLATOR(UI_HIGHSCORES))
+	if RaceSelectionState.RaceType == TRACKTYPE_STUNT then
+		GUI:SetHelpButtons(BUTTON_OK,TRANSLATOR(UI_SELECT),BUTTON_BACK,TRANSLATOR(UI_BACK),BUTTON_INFO,TRANSLATOR(UI_HIGHSCORES))
+	else
+		GUI:SetHelpButtons(BUTTON_OK,TRANSLATOR(UI_SELECT),BUTTON_BACK,TRANSLATOR(UI_BACK),BUTTON_INFO,TRANSLATOR(ICON_MAIN_OPTIONS))
+	end
 
 end
 

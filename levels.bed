@@ -9,9 +9,26 @@ TRACKTYPE_DESERT = 3
 TRACKTYPE_CANAL = 4
 TRACKTYPE_CITY = 5
 TRACKTYPE_RACING = 6
-TRACKTYPE_STUNT = 7
-TRACKTYPE_EVENT = 8
-TRACKTYPE_DERBY = 9
+TRACKTYPE_FO1_SNOW = 7
+TRACKTYPE_FO1_PIT = 8
+TRACKTYPE_FO1_FOREST = 9
+TRACKTYPE_FO1_TOWN = 10
+TRACKTYPE_FO1_RACING = 11
+TRACKTYPE_STUNT = 12
+TRACKTYPE_EVENT = 13
+TRACKTYPE_DERBY = 14
+
+
+RACETRACKTYPE_FO1_SNOW = "WINTER"
+TRACK_DESCRIPTION_FO1_SNOW = "The ever so narrowing lines of these snowy and frozen roads are sure to give you little panic attacks. Prepare yourself for threading the needle."
+RACETRACKTYPE_FO1_PIT = "PIT"
+TRACK_DESCRIPTION_FO1_PIT = "There is enjoyment to be had struggling in mud and sand in these quarrel pits. Do not underestimate the jumps or you might meet your maker. "
+RACETRACKTYPE_FO1_FOREST = "FO1 FOREST"
+TRACK_DESCRIPTION_FO1_FOREST = "Do not be fooled by the greenery of these forests. Every manuever you make is very crucial for your survival."
+RACETRACKTYPE_FO1_TOWN = "TOWN"
+TRACK_DESCRIPTION_FO1_TOWN = "This small cozy town of whattahoo has never felt this vicious after local racers have taken it a mission to destroy themselves on the curbs. Hayville farm on the other hand is very nostalgic."
+RACETRACKTYPE_FO1_RACING = "FO1 RACING"
+TRACK_DESCRIPTION_FO1_RACING = "The shortcuts of the bay circuit will have you scratching your head at times while fairgrass grounds will have you searching for the apex nonstop."
 
 
 
@@ -22,7 +39,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_FOREST_1A,
 
 			Laps = 4,
-			AIHandicapLevel = 48,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_FOREST,
 
@@ -39,7 +56,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_FOREST_1B,
 
 			Laps = 4,
-			AIHandicapLevel = 49,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_FOREST,			
 
@@ -56,7 +73,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_FOREST_1C,
 			
 			Laps = 4,
-			AIHandicapLevel = 50,
+			AIHandicapLevel = 77,
 
 			TrackType = TRACKTYPE_FOREST,			
 
@@ -68,12 +85,29 @@ Levels = {
 			TrackPath	= BaseLevelPath.."Forest/Forest1/",
 			StagePath	= BaseLevelPath.."Forest/Forest1/C/",
 	},
+	[87] = {
+			Name = "Timberlands 4",
+			Description = TRACK_DESCRIPTION_FOREST_1A,
+
+			Laps = 4,
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FOREST,
+
+			TrackIcon  = "track_images_forest7",
+			TrackImage = "track_forest_1a",
+			TrackLogo  = "track_forest_1a_logo",
+			
+			GfxSetPath	= BaseLevelPath.."Forest/",
+			TrackPath	= BaseLevelPath.."Forest/Forest3/",
+			StagePath	= BaseLevelPath.."Forest/Forest3/A/",
+	},
 	[4] = {
 			Name = "Pinegrove 1",
 			Description = TRACK_DESCRIPTION_FOREST_2A,
 
 			Laps = 4,
-			AIHandicapLevel = 51,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_FOREST,
 
@@ -90,7 +124,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_FOREST_2B,
 
 			Laps = 4,
-			AIHandicapLevel = 52,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_FOREST,
 
@@ -107,7 +141,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_FOREST_2C,
 			
 			Laps = 4,
-			AIHandicapLevel = 53,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_FOREST,
 
@@ -125,15 +159,15 @@ Levels = {
 	[8] = {
 			-- empty
 	},
-	[9] = {
-			-- empty
+	[9] = {		-- empty
+
 	},
 	[10] = {
 			Name = "City Central 1",
 			Description = TRACK_DESCRIPTION_CITY_1A,
 			
 			Laps = 4,
-			AIHandicapLevel = 54,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_CITY,
 
@@ -150,7 +184,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_CITY_1B,
 
 			Laps = 4,
-			AIHandicapLevel = 55,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_CITY,
 
@@ -167,7 +201,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_CITY_1C,
 			
 			Laps = 4,
-			AIHandicapLevel = 56,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_CITY,
 
@@ -184,7 +218,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_CITY_2A,
 			
 			Laps = 4,
-			AIHandicapLevel = 57,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_CITY,
 
@@ -201,7 +235,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_CITY_2B,
 			
 			Laps = 4,
-			AIHandicapLevel = 58,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_CITY,
 
@@ -218,7 +252,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_CITY_2C,
 			
 			Laps = 4,
-			AIHandicapLevel = 59,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_CITY,
 
@@ -235,7 +269,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_CANAL_1A,
 			
 			Laps = 4,
-			AIHandicapLevel = 60,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_CANAL,
 
@@ -252,7 +286,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_CANAL_1B,
 			
 			Laps = 4,
-			AIHandicapLevel = 61,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_CANAL,
 
@@ -269,7 +303,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_CANAL_1C,
 			
 			Laps = 4,
-			AIHandicapLevel = 62,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_CANAL,
 
@@ -295,7 +329,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_DESERT_1A,
 			
 			Laps = 4,
-			AIHandicapLevel = 63,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_DESERT,
 
@@ -312,7 +346,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_DESERT_1B,
 			
 			Laps = 4,
-			AIHandicapLevel = 64,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_DESERT,
 
@@ -328,7 +362,7 @@ Levels = {
 			Name = "Desert Town",
 			Description = TRACK_DESCRIPTION_DESERT_1C,
 			Laps = 4,
-			AIHandicapLevel = 65,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_DESERT,
 
@@ -354,7 +388,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_FIELDS_1A,
 			
 			Laps = 4,
-			AIHandicapLevel = 66,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_FIELDS,
 
@@ -371,7 +405,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_FIELDS_1B,
 			
 			Laps = 4,
-			AIHandicapLevel = 67,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_FIELDS,
 
@@ -388,7 +422,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_FIELDS_1C,
 			
 			Laps = 4,
-			AIHandicapLevel = 68,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_FIELDS,
 
@@ -405,7 +439,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_FIELDS_2A,
 			
 			Laps = 4,
-			AIHandicapLevel = 69,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_FIELDS,
 
@@ -422,7 +456,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_FIELDS_2B,
 			
 			Laps = 4,
-			AIHandicapLevel = 70,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_FIELDS,
 
@@ -439,7 +473,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_FIELDS_2C,
 			
 			Laps = 4,
-			AIHandicapLevel = 71,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_FIELDS,
 
@@ -474,7 +508,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_RACING_1A,
 			
 			Laps = 4,
-			AIHandicapLevel = 72,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_RACING,
 
@@ -491,7 +525,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_RACING_1B,
 			
 			Laps = 4,
-			AIHandicapLevel = 73,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_RACING,
 
@@ -508,7 +542,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_RACING_1C,
 			
 			Laps = 4,
-			AIHandicapLevel = 74,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_RACING,
 
@@ -525,7 +559,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_RACING_2A,
 			
 			Laps = 4,
-			AIHandicapLevel = 75,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_RACING,
 
@@ -542,7 +576,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_RACING_2B,
 			
 			Laps = 4,
-			AIHandicapLevel = 76,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_RACING,
 
@@ -572,7 +606,21 @@ Levels = {
 			StagePath	= BaseLevelPath.."Racing/Racing2/C/",
 	},
 	[46] = {
-			-- empty
+			Name = "Motor Raceway 4",
+			Description = TRACK_DESCRIPTION_RACING_2B,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_RACING,
+
+			TrackIcon  = "track_images_racing7",
+			TrackImage = "track_racing_2b",
+			TrackLogo  = "track_racing_2b_logo",
+
+			GfxSetPath	= BaseLevelPath.."Racing/",
+			TrackPath	= BaseLevelPath.."Racing/Racing3/",
+			StagePath	= BaseLevelPath.."Racing/Racing3/B/",
 	},
 	[47] = {
 			-- empty
@@ -595,7 +643,7 @@ Levels = {
 			
 			Rules = GR_DERBY,
 			
-			AIHandicapLevel = 42,
+			AIHandicapLevel = 77,
 			
 			TrackType = TRACKTYPE_DERBY,
 			
@@ -610,16 +658,16 @@ Levels = {
 	[53] = {
 			Name = "Parking Lot Derby",
 			Description = TRACK_DESCRIPTION_DERBY_2,
-			
+
 			Rules = GR_DERBY,
 			
-			AIHandicapLevel = 42,
+			AIHandicapLevel = 77,
 			
+			TrackType = TRACKTYPE_DERBY,
+
 			TrackIcon  = "track_images_derby2",
 			TrackImage = "track_derby_2",
 			TrackLogo  = "track_derby_2_logo",
-			
-			TrackType = TRACKTYPE_DERBY,
 			
 			GfxSetPath	= BaseLevelPath.."Derby/",
 			TrackPath	= BaseLevelPath.."Derby/Derby2/",
@@ -631,7 +679,7 @@ Levels = {
 			
 			Rules = GR_DERBY,
 			
-			AIHandicapLevel = 42,
+			AIHandicapLevel = 77,
 
 			TrackIcon  = "track_images_derby3",
 			TrackImage = "track_derby_3",
@@ -649,7 +697,7 @@ Levels = {
 			
 			Rules = GR_DERBY,
 			
-			AIHandicapLevel = 42,
+			AIHandicapLevel = 77,
 
 			TrackIcon  = "track_images_derby4",
 			TrackImage = "track_derby_4",
@@ -667,7 +715,7 @@ Levels = {
 			
 			Rules = GR_DERBY,
 			
-			AIHandicapLevel = 42,
+			AIHandicapLevel = 77,
 
 			TrackIcon  = "track_images_derby5",
 			TrackImage = "track_derby_5",
@@ -691,7 +739,7 @@ Levels = {
 			
 			TrackType = TRACKTYPE_DERBY,
 
-			AIHandicapLevel = 42,
+			AIHandicapLevel = 77,
 			
 			GfxSetPath	= BaseLevelPath.."Derby/",
 			TrackPath	= BaseLevelPath.."Derby/Derby6/",
@@ -701,7 +749,7 @@ Levels = {
 			Name = "Test",
 
 			Laps = 4,
-			AIHandicapLevel = 42,
+			AIHandicapLevel = 77,
 				
 			GfxSetPath	= BaseLevelPath.."Test/",
 			TrackPath	= BaseLevelPath.."Test/Test1/",
@@ -712,7 +760,7 @@ Levels = {
 		    Description = TRACK_DESCRIPTION_ARENA_1,
 			
 			Laps = 4,
-			AIHandicapLevel = 12,
+			AIHandicapLevel = 77,
 		    NitroRegen = true,
 
 			TrackIcon  = "track_images_dirt1",
@@ -730,7 +778,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_ARENA_2,
 			
 			Laps = 4,
-			AIHandicapLevel = 15,
+			AIHandicapLevel = 77,
 		    NitroRegen = true,
 			
 			TrackIcon  = "track_images_dirt2",
@@ -748,7 +796,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_ARENA_3,
 			
 			Laps = 4,
-			AIHandicapLevel = 17,
+			AIHandicapLevel = 77,
 		    NitroRegen = true,
 
 			TrackIcon  = "track_images_dirt3",
@@ -766,7 +814,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_ARENA_4,
 			
 			Laps = 4,
-			AIHandicapLevel = 20,
+			AIHandicapLevel = 77,
 		    NitroRegen = true,
 			
 			TrackIcon  = "track_images_dirt4",
@@ -784,7 +832,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_ARENA_5,
 			
 			Laps = 4,
-			AIHandicapLevel = 22,
+			AIHandicapLevel = 77,
 		    NitroRegen = true,
 			
 			TrackIcon  = "track_images_dirt5",
@@ -802,7 +850,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_ARENA_6,
 			
 			Laps = 4,
-			AIHandicapLevel = 25,
+			AIHandicapLevel = 77,
 		    NitroRegen = true,
 
 			TrackIcon  = "track_images_dirt6",
@@ -820,7 +868,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_NASCAR_1A,
 			
 			Laps = 4,
-			AIHandicapLevel = 30,
+			AIHandicapLevel = 77,
 		    NitroRegen = true,
 			
 			TrackIcon  = "track_images_oval1",
@@ -838,7 +886,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_NASCAR_1B,
 			
 			Laps = 4,
-			AIHandicapLevel = 34,
+			AIHandicapLevel = 77,
 		    NitroRegen = true,
 			
 			TrackIcon  = "track_images_oval2",
@@ -856,7 +904,7 @@ Levels = {
 			Description = TRACK_DESCRIPTION_NASCAR_1C,
 			
 			Laps = 4,
-			AIHandicapLevel = 39,
+			AIHandicapLevel = 77,
 		    NitroRegen = true,
 
 			TrackIcon  = "track_images_oval3",
@@ -873,7 +921,7 @@ Levels = {
 			Name = "Garage Test Track",
 
 			Laps = 4,
-			AIHandicapLevel = 42,
+			AIHandicapLevel = 77,
 			
 			Rules = GR_TEST,
 			
@@ -882,7 +930,94 @@ Levels = {
 			StagePath	= BaseLevelPath.."GarageTest/GarageTest1/A/",
 	},
 	[69] = {
-			-- empty
+			 Name = "Figure of Turn Left",
+		    Description = TRACK_DESCRIPTION_ARENA_1,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+		    NitroRegen = true,
+
+			TrackIcon  = "track_images_dirt7",
+			TrackImage = "track_arena_1",
+			TrackLogo  = "track_arena_1_logo",
+			
+			TrackType = TRACKTYPE_EVENT,
+	
+			GfxSetPath	= BaseLevelPath.."Arena/",
+			TrackPath	= BaseLevelPath.."Arena/Arena7/",
+			StagePath	= BaseLevelPath.."Arena/Arena7/A/",
+	},
+	[86] = {
+			Name = "One Way",
+			Description = TRACK_DESCRIPTION_NASCAR_1C,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+		    NitroRegen = true,
+
+			TrackIcon  = "track_images_oval7",
+			TrackImage = "track_oval_3",
+			TrackLogo  = "track_oval_3_logo",
+			
+			TrackType = TRACKTYPE_EVENT,
+			
+			GfxSetPath	= BaseLevelPath.."Nascar/",
+			TrackPath	= BaseLevelPath.."Nascar/Nascar2/",
+			StagePath	= BaseLevelPath.."Nascar/Nascar2/B/",
+	},
+	[88] = {
+			Name = "X-Faktor",
+			Description = TRACK_DESCRIPTION_ARENA_3,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+		    NitroRegen = true,
+
+			TrackIcon  = "track_images_dirt9",
+			TrackImage = "track_arena_3",
+			TrackLogo  = "track_arena_3_logo",
+			
+			TrackType = TRACKTYPE_EVENT,
+
+			GfxSetPath	= BaseLevelPath.."Arena/",
+			TrackPath	= BaseLevelPath.."Arena/Arena8/",
+			StagePath	= BaseLevelPath.."Arena/Arena8/A/",
+	},
+	[89] = {
+			Name = "Confusion Arena",
+			Description = TRACK_DESCRIPTION_ARENA_6,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+		    NitroRegen = true,
+
+			TrackIcon  = "track_images_dirt8",
+			TrackImage = "track_arena_6",
+			TrackLogo  = "track_arena_6_logo",
+			
+			TrackType = TRACKTYPE_EVENT,
+
+			GfxSetPath	= BaseLevelPath.."Arena/",
+			TrackPath	= BaseLevelPath.."Arena/Arena9/",
+			StagePath	= BaseLevelPath.."Arena/Arena9/A/",
+	},
+	[90] = {
+			Name = "Garage Speedway",
+			Description = TRACK_DESCRIPTION_NASCAR_1C,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+		    NitroRegen = true,
+
+			TrackIcon  = "track_images_oval8",
+			TrackImage = "track_oval_3",
+			TrackLogo  = "track_oval_3_logo",
+			
+			TrackType = TRACKTYPE_EVENT,
+			
+			GfxSetPath	= BaseLevelPath.."Nascar/",
+			TrackPath	= BaseLevelPath.."Nascar/Nascar2/",
+			StagePath	= BaseLevelPath.."Nascar/Nascar2/C/",
 	},
 	[73] = {
 			Name = "Curling",
@@ -1123,7 +1258,1119 @@ Levels = {
 			TrackPath	= BaseLevelPath.."Stunt/Stunt2/",
 			StagePath	= BaseLevelPath.."Stunt/Stunt2/A/",
 	},
+	[91] = {
+			Name = "City Central 4",
+			Description = TRACK_DESCRIPTION_CITY_1A,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_CITY,
 
+			TrackIcon  = "track_images_city7",
+			TrackImage = "track_city_1a",
+			TrackLogo  = "track_city_1a_logo",
+			
+			GfxSetPath	= BaseLevelPath.."City/",
+			TrackPath	= BaseLevelPath.."City/City3/",
+			StagePath	= BaseLevelPath.."City/City3/B/",
+	},
+	[92] = {
+			Name = "Test Track Derby",
+			Description = TRACK_DESCRIPTION_DERBY_1,
+			
+			Rules = GR_DERBY,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_DERBY,
+			
+			TrackIcon  = "track_images_derby11",
+			TrackImage = "track_derby_1",
+			TrackLogo  = "track_derby_1_logo",
+
+			GfxSetPath	= BaseLevelPath.."Nascar/",
+			TrackPath	= BaseLevelPath.."Nascar/Nascar3/",
+			StagePath	= BaseLevelPath.."Nascar/Nascar3/C/",
+	},
+	[93] = {
+			Name = "Farmland Derby",
+			Description = TRACK_DESCRIPTION_DERBY_1,
+			
+			Rules = GR_DERBY,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_DERBY,
+			
+			TrackIcon  = "track_images_derby8",
+			TrackImage = "track_derby_1",
+			TrackLogo  = "track_derby_1_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fields/",
+			TrackPath	= BaseLevelPath.."Fields/Fields3/",
+			StagePath	= BaseLevelPath.."Fields/Fields3/A/",
+	},
+	[94] = {
+			Name = "Desert Airstrip Derby",
+			Description = TRACK_DESCRIPTION_DESERT_1B,
+
+			Rules = GR_DERBY,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_DERBY,
+
+			TrackIcon  = "track_images_derby7",
+			TrackImage = "track_desert_1b",
+			TrackLogo  = "track_desert_1b_logo",
+
+			GfxSetPath	= BaseLevelPath.."Desert/",
+			TrackPath	= BaseLevelPath.."Desert/Desert2/",
+			StagePath	= BaseLevelPath.."Desert/Desert2/B/",
+	},
+	[95] = {
+			Name = "Nascar Derby",
+			Description = TRACK_DESCRIPTION_DERBY_1,
+			
+			Rules = GR_DERBY,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_DERBY,
+			
+			TrackIcon  = "track_images_derby9",
+			TrackImage = "track_oval_1",
+			TrackLogo  = "track_oval_1_logo",
+
+			GfxSetPath	= BaseLevelPath.."Nascar/",
+			TrackPath	= BaseLevelPath.."Nascar/Nascar2/",
+			StagePath	= BaseLevelPath.."Nascar/Nascar2/A/",
+	},
+	[96] = {
+			Name = "Water Canal 3 Derby",
+			Description = TRACK_DESCRIPTION_DERBY_3,
+			
+			Rules = GR_DERBY,
+			
+			AIHandicapLevel = 77,
+
+			TrackIcon  = "track_images_derby10",
+			TrackImage = "track_derby_3",
+			TrackLogo  = "track_derby_3_logo",
+			
+			TrackType = TRACKTYPE_DERBY,
+	
+			GfxSetPath	= BaseLevelPath.."Canal/",
+			TrackPath	= BaseLevelPath.."Canal/Canal3/",
+			StagePath	= BaseLevelPath.."Canal/Canal3/C/",
+	},
+	[97] = {
+			Name = "Baseball Derby",
+			Description = TRACK_DESCRIPTION_DERBY_1,
+			
+			Rules = GR_DERBY,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_DERBY,
+
+			Weather			= 0,
+			
+			TrackIcon  = "track_images_derby12",
+			TrackImage = "track_derby_1",
+			TrackLogo  = "track_derby_1_logo",
+
+			GfxSetPath	= BaseLevelPath.."Stunt/",
+			TrackPath	= BaseLevelPath.."Stunt/Stunt3/",
+			StagePath	= BaseLevelPath.."Stunt/Stunt3/A/",
+	},
+	[98] = {
+			Name = "Field Goal Derby",
+			Description = TRACK_DESCRIPTION_DERBY_1,
+			
+			Rules = GR_DERBY,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_DERBY,
+
+			Weather			= 0,
+			
+			TrackIcon  = "track_images_derby13",
+			TrackImage = "track_derby_1",
+			TrackLogo  = "track_derby_1_logo",
+
+			GfxSetPath	= BaseLevelPath.."Stunt/",
+			TrackPath	= BaseLevelPath.."Stunt/Stunt3/",
+			StagePath	= BaseLevelPath.."Stunt/Stunt3/B/",
+	},
+	[99] = {
+			Name = "Curling Derby",
+			Description = TRACK_DESCRIPTION_CURLING,
+
+			Rules = GR_DERBY,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_DERBY,
+
+			Weather			= 4,
+			
+			TrackIcon  = "track_images_derby14",
+			TrackImage = "stunt_A1_image",
+			TrackLogo  = "stunt_A1_logo",
+
+			GfxSetPath	= BaseLevelPath.."Stunt/",
+			TrackPath	= BaseLevelPath.."Stunt/Stunt3/",
+			StagePath	= BaseLevelPath.."Stunt/Stunt3/C/",
+	},
+	[100] = {
+			Name = "Parking Lot Race",
+			Description = TRACK_DESCRIPTION_DERBY_2,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+		    NitroRegen = true,
+			
+			TrackIcon  = "track_images_dirt13",
+			TrackImage = "track_derby_2",
+			TrackLogo  = "track_derby_2_logo",
+			
+			TrackType = TRACKTYPE_EVENT,
+			
+			GfxSetPath	= BaseLevelPath.."Derby/",
+			TrackPath	= BaseLevelPath.."Derby/Derby7/",
+			StagePath	= BaseLevelPath.."Derby/Derby7/A/",
+	},
+	[101] = {
+			Name = "Reversed City Central 1",
+			Description = TRACK_DESCRIPTION_CITY_1A,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_CITY,
+
+			TrackIcon  = "track_images_city8",
+			TrackImage = "track_city_1a",
+			TrackLogo  = "track_city_1a_logo",
+			
+			GfxSetPath	= BaseLevelPath.."City/",
+			TrackPath	= BaseLevelPath.."City/City3/",
+			StagePath	= BaseLevelPath.."City/City3/A/",
+	},
+	[102] = {
+			Name = "Reversed Water Canal 1",
+			Description = TRACK_DESCRIPTION_CANAL_1A,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_CANAL,
+
+			TrackIcon  = "track_images_canals4",
+			TrackImage = "track_canal_1a",
+			TrackLogo  = "track_canal_1a_logo",
+			
+			GfxSetPath	= BaseLevelPath.."Canal/",
+			TrackPath	= BaseLevelPath.."Canal/Canal2/",
+			StagePath	= BaseLevelPath.."Canal/Canal2/A/",
+	},
+	[103] = {
+			Name = "Reversed Water Canal 2",
+			Description = TRACK_DESCRIPTION_CANAL_1B,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_CANAL,
+
+			TrackIcon  = "track_images_canals5",
+			TrackImage = "track_canal_1b",
+			TrackLogo  = "track_canal_1b_logo",
+
+			GfxSetPath	= BaseLevelPath.."Canal/",
+			TrackPath	= BaseLevelPath.."Canal/Canal2/",
+			StagePath	= BaseLevelPath.."Canal/Canal2/B/",
+	},
+	[104] = {
+			Name = "Reversed Water Canal 3",
+			Description = TRACK_DESCRIPTION_CANAL_1C,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_CANAL,
+
+			TrackIcon  = "track_images_canals6",
+			TrackImage = "track_canal_1c",
+			TrackLogo  = "track_canal_1c_logo",
+
+			GfxSetPath	= BaseLevelPath.."Canal/",
+			TrackPath	= BaseLevelPath.."Canal/Canal2/",
+			StagePath	= BaseLevelPath.."Canal/Canal2/C/",
+	},
+	[105] = {
+			Name = "Pinegrove 4",
+			Description = TRACK_DESCRIPTION_FOREST_2C,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FOREST,
+
+			TrackIcon  = "track_images_forest8",
+			TrackImage = "track_forest_2c",
+			TrackLogo  = "track_forest_2c_logo",
+
+			GfxSetPath	= BaseLevelPath.."Forest/",
+			TrackPath	= BaseLevelPath.."Forest/Forest3/",
+			StagePath	= BaseLevelPath.."Forest/Forest3/C/",
+	},
+	[106] = {
+			Name = "Motor Raceway 5",
+			Description = TRACK_DESCRIPTION_RACING_2A,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_RACING,
+
+			TrackIcon  = "track_images_racing8",
+			TrackImage = "track_racing_2a",
+			TrackLogo  = "track_racing_2a_logo",
+			
+			GfxSetPath	= BaseLevelPath.."Racing/",
+			TrackPath	= BaseLevelPath.."Racing/Racing3/",
+			StagePath	= BaseLevelPath.."Racing/Racing3/A/",
+	},
+	[107] = {
+			Name = "Hellbowl",
+			Description = TRACK_DESCRIPTION_ARENA_3,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+		      NitroRegen = true,
+
+			TrackIcon  = "track_images_dirt10",
+			TrackImage = "track_arena_6",
+			TrackLogo  = "track_arena_6_logo",
+			
+			TrackType = TRACKTYPE_EVENT,
+
+			GfxSetPath	= BaseLevelPath.."Arena/",
+			TrackPath	= BaseLevelPath.."Arena/Arena10/",
+			StagePath	= BaseLevelPath.."Arena/Arena10/A/",
+	},
+	[108] = {
+			Name = "City Central 5",
+			Description = TRACK_DESCRIPTION_CITY_1A,
+			
+			Laps = 4,
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_CITY,
+
+			TrackIcon  = "track_images_city9",
+			TrackImage = "track_city_1a",
+			TrackLogo  = "track_city_1a_logo",
+			
+			GfxSetPath	= BaseLevelPath.."City/",
+			TrackPath	= BaseLevelPath.."City/City3/",
+			StagePath	= BaseLevelPath.."City/City3/D/",
+	},
+	[109] = {
+			Name = "Hazzard Dragstrip",
+			Description = TRACK_DESCRIPTION_FIELDS_2A,
+			
+			Laps = 1,
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FIELDS,
+
+			TrackIcon  = "track_images_fields7",
+			TrackImage = "track_fields_2a",
+			TrackLogo  = "track_fields_2a_logo",
+			
+			GfxSetPath	= BaseLevelPath.."Fields/",
+			TrackPath	= BaseLevelPath.."Fields/Fields3/",
+			StagePath	= BaseLevelPath.."Fields/Fields3/D/",
+	},
+	[110] = {
+			Name = "Redpine River 1",
+			Description = "Redpine Race Dash",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_SNOW,
+			
+			TrackIcon  = "track_images_winter1a",
+			TrackImage = "track_winter1a",
+			TrackLogo  = "track_winter1a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Winter/",
+			TrackPath	= BaseLevelPath.."Winter/Winter1/",
+			StagePath	= BaseLevelPath.."Winter/Winter1/A/",
+	},
+	[111] = {
+			Name = "Redpine River 2",
+			Description = "Redpine Run",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_SNOW,
+			
+			TrackIcon  = "track_images_winter1b",
+			TrackImage = "track_winter1b",
+			TrackLogo  = "track_winter1b_logo",
+
+			GfxSetPath	= BaseLevelPath.."Winter/",
+			TrackPath	= BaseLevelPath.."Winter/Winter1/",
+			StagePath	= BaseLevelPath.."Winter/Winter1/B/",
+	},
+	[112] = {
+			Name = "Redpine River 3",
+			Description = "Redpine Zero Course",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_SNOW,
+			
+			TrackIcon  = "track_images_winter1c",
+			TrackImage = "track_winter1c",
+			TrackLogo  = "track_winter1c_logo",
+
+			GfxSetPath	= BaseLevelPath.."Winter/",
+			TrackPath	= BaseLevelPath.."Winter/Winter1/",
+			StagePath	= BaseLevelPath.."Winter/Winter1/C/",
+	},
+	[113] = {
+			Name = "Whitefish Lake 1",
+			Description = "Whitefish Rally",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_SNOW,
+			
+			TrackIcon  = "track_images_winter2a",
+			TrackImage = "track_winter2a",
+			TrackLogo  = "track_winter2a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Winter/",
+			TrackPath	= BaseLevelPath.."Winter/Winter2/",
+			StagePath	= BaseLevelPath.."Winter/Winter2/A/",
+	},
+	[114] = {
+			Name = "Whitefish Lake 2",
+			Description = "Whitefish Run",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_SNOW,
+			
+			TrackIcon  = "track_images_winter2b",
+			TrackImage = "track_winter2b",
+			TrackLogo  = "track_winter2b_logo",
+
+			GfxSetPath	= BaseLevelPath.."Winter/",
+			TrackPath	= BaseLevelPath.."Winter/Winter2/",
+			StagePath	= BaseLevelPath.."Winter/Winter2/B/",
+	},
+	[115] = {
+			Name = "Whitefish Lake 3",
+			Description = "Whitefish Zero Course",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_SNOW,
+			
+			TrackIcon  = "track_images_winter2c",
+			TrackImage = "track_winter2c",
+			TrackLogo  = "track_winter2c_logo",
+
+			GfxSetPath	= BaseLevelPath.."Winter/",
+			TrackPath	= BaseLevelPath.."Winter/Winter2/",
+			StagePath	= BaseLevelPath.."Winter/Winter2/C/",
+	},
+	[116] = {
+			Name = "Bunker Hill 1",
+			Description = "Bunker Challenge",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_PIT,
+			
+			TrackIcon  = "track_images_pit1a",
+			TrackImage = "track_pit1a",
+			TrackLogo  = "track_pit1a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Pit/",
+			TrackPath	= BaseLevelPath.."Pit/Pit1/",
+			StagePath	= BaseLevelPath.."Pit/Pit1/A/",
+	},
+	[117] = {
+			Name = "Bunker Hill 2",
+			Description = "Bunker Hill Havoc",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_PIT,
+			
+			TrackIcon  = "track_images_pit1b",
+			TrackImage = "track_pit1b",
+			TrackLogo  = "track_pit1b_logo",
+
+			GfxSetPath	= BaseLevelPath.."Pit/",
+			TrackPath	= BaseLevelPath.."Pit/Pit1/",
+			StagePath	= BaseLevelPath.."Pit/Pit1/B/",
+	},
+	[118] = {
+			Name = "Bunker Hill 3",
+			Description = "Bunker Bigbang Run",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_PIT,
+			
+			TrackIcon  = "track_images_pit1c",
+			TrackImage = "track_pit1c",
+			TrackLogo  = "track_pit1c_logo",
+
+			GfxSetPath	= BaseLevelPath.."Pit/",
+			TrackPath	= BaseLevelPath.."Pit/Pit1/",
+			StagePath	= BaseLevelPath.."Pit/Pit1/C/",
+	},
+	[119] = {
+			Name = "Brad's Sandpit 1",
+			Description = "Brad's Pit Crash",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_PIT,
+			
+			TrackIcon  = "track_images_pit2a",
+			TrackImage = "track_pit2a",
+			TrackLogo  = "track_pit2a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Pit/",
+			TrackPath	= BaseLevelPath.."Pit/Pit2/",
+			StagePath	= BaseLevelPath.."Pit/Pit2/A/",
+	},
+	[120] = {
+			Name = "Brad's Sandpit 2",
+			Description = "Brad's Sandrun",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_PIT,
+			
+			TrackIcon  = "track_images_pit2b",
+			TrackImage = "track_pit2b",
+			TrackLogo  = "track_pit2b_logo",
+
+			GfxSetPath	= BaseLevelPath.."Pit/",
+			TrackPath	= BaseLevelPath.."Pit/Pit2/",
+			StagePath	= BaseLevelPath.."Pit/Pit2/B/",
+	},
+	[121] = {
+			Name = "Brad's Sandpit 3",
+			Description = "Brad's Super Dustup",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_PIT,
+			
+			TrackIcon  = "track_images_pit2c",
+			TrackImage = "track_pit2c",
+			TrackLogo  = "track_pit2c_logo",
+
+			GfxSetPath	= BaseLevelPath.."Pit/",
+			TrackPath	= BaseLevelPath.."Pit/Pit2/",
+			StagePath	= BaseLevelPath.."Pit/Pit2/C/",
+	},
+	[122] = {
+			Name = "Gravel Mound 1",
+			Description = "Mound Mayhem",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_PIT,
+			
+			TrackIcon  = "track_images_pit3a",
+			TrackImage = "track_pit3a",
+			TrackLogo  = "track_pit3a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Pit/",
+			TrackPath	= BaseLevelPath.."Pit/Pit3/",
+			StagePath	= BaseLevelPath.."Pit/Pit3/A/",
+	},
+	[123] = {
+			Name = "Gravel Mound 2",
+			Description = "Mound Supersmash",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_PIT,
+			
+			TrackIcon  = "track_images_pit3b",
+			TrackImage = "track_pit3b",
+			TrackLogo  = "track_pit3b_logo",
+
+			GfxSetPath	= BaseLevelPath.."Pit/",
+			TrackPath	= BaseLevelPath.."Pit/Pit3/",
+			StagePath	= BaseLevelPath.."Pit/Pit3/B/",
+	},
+	[124] = {
+			Name = "Gravel Mound 3",
+			Description = "Mound Rock Run",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_PIT,
+			
+			TrackIcon  = "track_images_pit3c",
+			TrackImage = "track_pit3c",
+			TrackLogo  = "track_pit3c_logo",
+
+			GfxSetPath	= BaseLevelPath.."Pit/",
+			TrackPath	= BaseLevelPath.."Pit/Pit3/",
+			StagePath	= BaseLevelPath.."Pit/Pit3/C/",
+	},
+	[125] = {
+			Name = "Gracie Woodland 1",
+			Description = "Woodland Havoc",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_FOREST,
+			
+			TrackIcon  = "track_images_fo1forest1a",
+			TrackImage = "track_fo1forest1a",
+			TrackLogo  = "track_fo1forest1a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1forest/",
+			TrackPath	= BaseLevelPath.."Fo1forest/Fo1forest1/",
+			StagePath	= BaseLevelPath.."Fo1forest/Fo1forest1/A/",
+	},
+	[126] = {
+			Name = "Gracie Woodland 2",
+			Description = "Woodland Mayhem",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_FOREST,
+			
+			TrackIcon  = "track_images_fo1forest1b",
+			TrackImage = "track_fo1forest1b",
+			TrackLogo  = "track_fo1forest1b_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1forest/",
+			TrackPath	= BaseLevelPath.."Fo1forest/Fo1forest1/",
+			StagePath	= BaseLevelPath.."Fo1forest/Fo1forest1/B/",
+	},
+	[127] = {
+			Name = "Gracie Woodland 3",
+			Description = "Woodland Challenge",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_FOREST,
+			
+			TrackIcon  = "track_images_fo1forest1c",
+			TrackImage = "track_fo1forest1c",
+			TrackLogo  = "track_fo1forest1c_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1forest/",
+			TrackPath	= BaseLevelPath.."Fo1forest/Fo1forest1/",
+			StagePath	= BaseLevelPath.."Fo1forest/Fo1forest1/C/",
+	},
+	[128] = {
+			Name = "Finchley Forest 1",
+			Description = "Finchley Trial Run",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_FOREST,
+			
+			TrackIcon  = "track_images_fo1forest2a",
+			TrackImage = "track_fo1forest2a",
+			TrackLogo  = "track_fo1forest2a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1forest/",
+			TrackPath	= BaseLevelPath.."Fo1forest/Fo1forest2/",
+			StagePath	= BaseLevelPath.."Fo1forest/Fo1forest2/A/",
+	},
+	[129] = {
+			Name = "Finchley Forest 2",
+			Description = "Finchley Challenge",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_FOREST,
+			
+			TrackIcon  = "track_images_fo1forest2b",
+			TrackImage = "track_fo1forest2b",
+			TrackLogo  = "track_fo1forest2b_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1forest/",
+			TrackPath	= BaseLevelPath.."Fo1forest/Fo1forest2/",
+			StagePath	= BaseLevelPath.."Fo1forest/Fo1forest2/B/",
+	},
+	[130] = {
+			Name = "Finchley Forest 3",
+			Description = "Finchley Timberdash",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_FOREST,
+			
+			TrackIcon  = "track_images_fo1forest2c",
+			TrackImage = "track_fo1forest2c",
+			TrackLogo  = "track_fo1forest2c_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1forest/",
+			TrackPath	= BaseLevelPath.."Fo1forest/Fo1forest2/",
+			StagePath	= BaseLevelPath.."Fo1forest/Fo1forest2/C/",
+	},
+	[131] = {
+			Name = "Pinewood Meadows 1",
+			Description = "Pinewood Crashcup",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_FOREST,
+			
+			TrackIcon  = "track_images_fo1forest3a",
+			TrackImage = "track_fo1forest3a",
+			TrackLogo  = "track_fo1forest3a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1forest/",
+			TrackPath	= BaseLevelPath.."Fo1forest/Fo1forest3/",
+			StagePath	= BaseLevelPath.."Fo1forest/Fo1forest3/A/",
+	},
+	[132] = {
+			Name = "Pinewood Meadows 2",
+			Description = "Pinewood Qualifier",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_FOREST,
+			
+			TrackIcon  = "track_images_fo1forest3b",
+			TrackImage = "track_fo1forest3b",
+			TrackLogo  = "track_fo1forest3b_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1forest/",
+			TrackPath	= BaseLevelPath.."Fo1forest/Fo1forest3/",
+			StagePath	= BaseLevelPath.."Fo1forest/Fo1forest3/B/",
+	},
+	[133] = {
+			Name = "Pinewood Meadows 3",
+			Description = "Pinewood Challenge",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_FOREST,
+			
+			TrackIcon  = "track_images_fo1forest3c",
+			TrackImage = "track_fo1forest3c",
+			TrackLogo  = "track_fo1forest3c_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1forest/",
+			TrackPath	= BaseLevelPath.."Fo1forest/Fo1forest3/",
+			StagePath	= BaseLevelPath.."Fo1forest/Fo1forest3/C/",
+	},
+	[134] = {
+			Name = "Whattahoo Town 1",
+			Description = "Whattahoo Wham",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_TOWN,
+			
+			TrackIcon  = "track_images_town2a",
+			TrackImage = "track_town2a",
+			TrackLogo  = "track_town2a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Town/",
+			TrackPath	= BaseLevelPath.."Town/Town2/",
+			StagePath	= BaseLevelPath.."Town/Town2/A/",
+	},
+	[135] = {
+			Name = "Whattahoo Town 2",
+			Description = "Whattahoo Rush Hour",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_TOWN,
+			
+			TrackIcon  = "track_images_town2b",
+			TrackImage = "track_town2b",
+			TrackLogo  = "track_town2b_logo",
+
+			GfxSetPath	= BaseLevelPath.."Town/",
+			TrackPath	= BaseLevelPath.."Town/Town2/",
+			StagePath	= BaseLevelPath.."Town/Town2/B/",
+	},
+	[136] = {
+			Name = "Whattahoo Town 3",
+			Description = "Whattahoo Roadrun",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_TOWN,
+			
+			TrackIcon  = "track_images_town2c",
+			TrackImage = "track_town2c",
+			TrackLogo  = "track_town2c_logo",
+
+			GfxSetPath	= BaseLevelPath.."Town/",
+			TrackPath	= BaseLevelPath.."Town/Town2/",
+			StagePath	= BaseLevelPath.."Town/Town2/C/",
+	},
+	[137] = {
+			Name = "Hayville Farm 1",
+			Description = "Hayville Havoc",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_TOWN,
+			
+			TrackIcon  = "track_images_town3a",
+			TrackImage = "track_town3a",
+			TrackLogo  = "track_town3a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Town/",
+			TrackPath	= BaseLevelPath.."Town/Town3/",
+			StagePath	= BaseLevelPath.."Town/Town3/A/",
+	},
+	[138] = {
+			Name = "Hayville Farm 2",
+			Description = "Hayville Farmdash",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_TOWN,
+			
+			TrackIcon  = "track_images_town3b",
+			TrackImage = "track_town3b",
+			TrackLogo  = "track_town3b_logo",
+
+			GfxSetPath	= BaseLevelPath.."Town/",
+			TrackPath	= BaseLevelPath.."Town/Town3/",
+			StagePath	= BaseLevelPath.."Town/Town3/B/",
+	},
+	[139] = {
+			Name = "Hayville Farm 3",
+			Description = "Hayville Haystakker",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_TOWN,
+			
+			TrackIcon  = "track_images_town3c",
+			TrackImage = "track_town3c",
+			TrackLogo  = "track_town3c_logo",
+
+			GfxSetPath	= BaseLevelPath.."Town/",
+			TrackPath	= BaseLevelPath.."Town/Town3/",
+			StagePath	= BaseLevelPath.."Town/Town3/C/",
+	},
+	[140] = {
+			Name = "Bay Circuit 1",
+			Description = "Bay Amateur Run",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_RACING,
+			
+			TrackIcon  = "track_images_fo1racing1a",
+			TrackImage = "track_fo1racing1a",
+			TrackLogo  = "track_fo1racing1a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1racing/",
+			TrackPath	= BaseLevelPath.."Fo1racing/Fo1racing1/",
+			StagePath	= BaseLevelPath.."Fo1racing/Fo1racing1/A/",
+	},
+	[141] = {
+			Name = "Bay Circuit 2",
+			Description = "Bay Cup Run",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_RACING,
+			
+			TrackIcon  = "track_images_fo1racing1b",
+			TrackImage = "track_fo1racing1b",
+			TrackLogo  = "track_fo1racing1b_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1racing/",
+			TrackPath	= BaseLevelPath.."Fo1racing/Fo1racing1/",
+			StagePath	= BaseLevelPath.."Fo1racing/Fo1racing1/B/",
+	},
+	[142] = {
+			Name = "Bay Circuit 3",
+			Description = "Bay Challenge",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_RACING,
+			
+			TrackIcon  = "track_images_fo1racing1c",
+			TrackImage = "track_fo1racing1c",
+			TrackLogo  = "track_fo1racing1c_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1racing/",
+			TrackPath	= BaseLevelPath.."Fo1racing/Fo1racing1/",
+			StagePath	= BaseLevelPath.."Fo1racing/Fo1racing1/C/",
+	},
+	[143] = {
+			Name = "Fairgrass Grounds 1",
+			Description = "Fairgrass Cup",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_RACING,
+			
+			TrackIcon  = "track_images_fo1racing2a",
+			TrackImage = "track_fo1racing2a",
+			TrackLogo  = "track_fo1racing2a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1racing/",
+			TrackPath	= BaseLevelPath.."Fo1racing/Fo1racing2/",
+			StagePath	= BaseLevelPath.."Fo1racing/Fo1racing2/A/",
+	},
+	[144] = {
+			Name = "Fairgrass Grounds 2",
+			Description = "Fairgrass Run",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_RACING,
+			
+			TrackIcon  = "track_images_fo1racing2b",
+			TrackImage = "track_fo1racing2b",
+			TrackLogo  = "track_fo1racing2b_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1racing/",
+			TrackPath	= BaseLevelPath.."Fo1racing/Fo1racing2/",
+			StagePath	= BaseLevelPath.."Fo1racing/Fo1racing2/B/",
+	},
+	[145] = {
+			Name = "Fairgrass Grounds 3",
+			Description = "Fairgrass Challenge",
+			
+			Laps = 4,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_FO1_RACING,
+			
+			TrackIcon  = "track_images_fo1racing2c",
+			TrackImage = "track_fo1racing2c",
+			TrackLogo  = "track_fo1racing2c_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1racing/",
+			TrackPath	= BaseLevelPath.."Fo1racing/Fo1racing2/",
+			StagePath	= BaseLevelPath.."Fo1racing/Fo1racing2/C/",
+	},
+	[146] = {
+			Name = "Super Mud Bowl 1",
+			Description = "Circle Of Eight",
+			
+			Laps = 4,
+			NitroRegen = true,
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_EVENT,
+			
+			TrackIcon  = "track_images_fo1arena1a",
+			TrackImage = "track_fo1arena1a",
+			TrackLogo  = "track_fo1arena1a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1arena/",
+			TrackPath	= BaseLevelPath.."Fo1arena/Fo1arena1/",
+			StagePath	= BaseLevelPath.."Fo1arena/Fo1arena1/A/",
+	},
+	[147] = {
+			Name = "Super Mud Bowl 2",
+			Description = "Roundabout Dash",
+			
+			Laps = 4,
+			NitroRegen = true,
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_EVENT,
+			
+			TrackIcon  = "track_images_fo1arena2a",
+			TrackImage = "track_fo1arena2a",
+			TrackLogo  = "track_fo1arena2a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1arena/",
+			TrackPath	= BaseLevelPath.."Fo1arena/Fo1arena2/",
+			StagePath	= BaseLevelPath.."Fo1arena/Fo1arena2/A/",
+	},
+	[148] = {
+			Name = "Super Mud Bowl 3",
+			Description = "Crashcourse Alley",
+			
+			Laps = 4,
+			NitroRegen = true,
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_EVENT,
+			
+			TrackIcon  = "track_images_fo1arena3a",
+			TrackImage = "track_fo1arena3a",
+			TrackLogo  = "track_fo1arena3a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1arena/",
+			TrackPath	= BaseLevelPath.."Fo1arena/Fo1arena3/",
+			StagePath	= BaseLevelPath.."Fo1arena/Fo1arena3/A/",
+	},
+	[149] = {
+			Name = "Demolition Arena 1",
+			Description = "Demolition Dash",
+			
+			Rules = GR_DERBY,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_DERBY,
+			
+			TrackIcon  = "track_images_fo1derby1a",
+			TrackImage = "track_fo1derby1a",
+			TrackLogo  = "track_fo1derby1a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1derby/",
+			TrackPath	= BaseLevelPath.."Fo1derby/Fo1derby1/",
+			StagePath	= BaseLevelPath.."Fo1derby/Fo1derby1/A/",
+	},
+	[150] = {
+			Name = "Demolition Arena 2",
+			Description = "Super Mud Mayhem",
+			
+			Rules = GR_DERBY,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_DERBY,
+			
+			TrackIcon  = "track_images_fo1derby2a",
+			TrackImage = "track_fo1derby2a",
+			TrackLogo  = "track_fo1derby2a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1derby/",
+			TrackPath	= BaseLevelPath.."Fo1derby/Fo1derby2/",
+			StagePath	= BaseLevelPath.."Fo1derby/Fo1derby2/A/",
+	},
+	[151] = {
+			Name = "Demolition Arena 3",
+			Description = "Demolition Sandpit",
+			
+			Rules = GR_DERBY,
+
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_DERBY,
+			
+			TrackIcon  = "track_images_fo1derby3a",
+			TrackImage = "track_fo1derby3a",
+			TrackLogo  = "track_fo1derby3a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1derby/",
+			TrackPath	= BaseLevelPath.."Fo1derby/Fo1derby3/",
+			StagePath	= BaseLevelPath.."Fo1derby/Fo1derby3/A/",
+	},
+	[152] = {
+			Name = "Grand Slam Stadium",
+			Description = "Sorry, i dont think i can make the stunts work.",
+			
+			Rules = GR_DERBY,
+			
+			AIHandicapLevel = 77,
+			
+			TrackType = TRACKTYPE_DERBY,
+			
+			TrackIcon  = "track_images_fo1stunt1a",
+			TrackImage = "track_fo1stunt1a",
+			TrackLogo  = "track_fo1stunt1a_logo",
+
+			GfxSetPath	= BaseLevelPath.."Fo1stunt/",
+			TrackPath	= BaseLevelPath.."Fo1stunt/Fo1stunt1/",
+			StagePath	= BaseLevelPath.."Fo1stunt/Fo1stunt1/A/",
+	},
 }
 
 -- level index list for easy-to-read level indices

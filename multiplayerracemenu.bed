@@ -1,13 +1,4 @@
---///////////////////////////////////////////////////////////////////////////
---// MultiplayerRaceMenu.bed
---///////////////////////////////////////////////////////////////////////////
---// Copyright (c) 2006 Bugbear Entertainment ltd. 
---// All Rights Reserved.
---// 
---// Created on 13.3.2005 11:46:09
---// 
---// @Author Pasi Matilainen (pasi.matilainen@bugbear.fi)
---///////////////////////////////////////////////////////////////////////////
+
 
 local tracks
 
@@ -16,10 +7,76 @@ dofile("data/menu/garage_elements1.bed")
 dofile("data/menu/race_type_images1.bed")
 dofile("data/menu/race_type_images2.bed")
 dofile("data/menu/race_type_images3.bed")
-dofile("data/menu/single_player_track_images19.bed")
+--dofile("data/menu/single_player_track_images19.bed")
 dofile("data/menu/single_player_images2.bed")
 dofile("data/menu/single_player_images3.bed")
 
+dofile("data/menu/single_player_track_images1.bed")
+dofile("data/menu/single_player_track_images2.bed")
+dofile("data/menu/single_player_track_images3.bed")
+dofile("data/menu/single_player_track_images4.bed")
+dofile("data/menu/single_player_track_images5.bed")
+dofile("data/menu/single_player_track_images6.bed")
+dofile("data/menu/single_player_track_images7.bed")
+dofile("data/menu/single_player_track_images8.bed")
+dofile("data/menu/single_player_track_images9.bed")
+dofile("data/menu/single_player_track_images10.bed")
+dofile("data/menu/single_player_track_images11.bed")
+dofile("data/menu/single_player_track_images12.bed")
+dofile("data/menu/single_player_track_images13.bed")
+dofile("data/menu/single_player_track_images14.bed")
+dofile("data/menu/single_player_track_images15.bed")
+dofile("data/menu/single_player_track_images16.bed")
+dofile("data/menu/single_player_track_images17.bed")
+dofile("data/menu/single_player_track_images18.bed")
+dofile("data/menu/single_player_track_images19.bed")
+dofile("data/menu/single_player_track_images20.bed")
+dofile("data/menu/single_player_track_images21.bed")
+dofile("data/menu/single_player_track_images22.bed")
+dofile("data/menu/single_player_track_images23.bed")
+dofile("data/menu/single_player_track_images24.bed")
+dofile("data/menu/single_player_track_images25.bed")
+dofile("data/menu/single_player_track_images26.bed")
+dofile("data/menu/single_player_track_images27.bed")
+dofile("data/menu/single_player_track_images28.bed")
+dofile("data/menu/single_player_track_images29.bed")
+dofile("data/menu/single_player_track_images30.bed")
+
+dofile("data/menu/single_player_track_images31.bed")
+dofile("data/menu/single_player_track_images32.bed")
+dofile("data/menu/single_player_track_images33.bed")
+dofile("data/menu/single_player_track_images34.bed")
+dofile("data/menu/single_player_track_images35.bed")
+dofile("data/menu/single_player_track_images36.bed")
+dofile("data/menu/single_player_track_images37.bed")
+dofile("data/menu/single_player_track_images38.bed")
+dofile("data/menu/single_player_track_images39.bed")
+dofile("data/menu/single_player_track_images40.bed")
+dofile("data/menu/single_player_track_images41.bed")
+dofile("data/menu/single_player_track_images42.bed")
+dofile("data/menu/single_player_track_images43.bed")
+dofile("data/menu/single_player_track_images44.bed")
+dofile("data/menu/single_player_track_images45.bed")
+dofile("data/menu/single_player_track_images46.bed")
+dofile("data/menu/single_player_track_images47.bed")
+dofile("data/menu/single_player_track_images48.bed")
+dofile("data/menu/single_player_track_images49.bed")
+dofile("data/menu/single_player_track_images50.bed")
+dofile("data/menu/single_player_track_images51.bed")
+dofile("data/menu/single_player_track_images52.bed")
+dofile("data/menu/single_player_track_images53.bed")
+dofile("data/menu/single_player_track_images54.bed")
+dofile("data/menu/single_player_track_images55.bed")
+dofile("data/menu/single_player_track_images56.bed")
+dofile("data/menu/single_player_track_images57.bed")
+dofile("data/menu/single_player_track_images58.bed")
+dofile("data/menu/single_player_track_images59.bed")
+dofile("data/menu/single_player_track_images60.bed")
+dofile("data/menu/single_player_track_images61.bed")
+dofile("data/menu/single_player_track_images62.bed")
+dofile("data/menu/single_player_track_images63.bed")
+dofile("data/menu/single_player_track_images64.bed")
+dofile("data/menu/single_player_track_images65.bed")
 
 local mprace_selected
 local mprace_back
@@ -29,6 +86,12 @@ local mprace_numplayers
 local mprace_event
 
 local SelectedRow
+
+-- GZ: this is to activate/disable additional derby modes:
+--   1 = Wrecking + Survivor
+--   2 = Wrecking + Survivor + Tag(Hunter & Prey)
+--   3 = Wrecking + Survivor + Tag(Hunter & Prey) + Frag
+local usingDerbyMode = 2
 
 function EnterMultiplayerRaceSelection(rules, okaction, backaction, numplayers)
 	mprace_rules = rules
@@ -56,6 +119,12 @@ GameModeNames = {
 	[ReplicatedSession.GAMETYPE_RACE]				= MULTIPLAYER_GAMEMODE_RACE,
 	[ReplicatedSession.GAMETYPE_DERBY_WRECKING]		= MULTIPLAYER_GAMEMODE_WRECKINGDERBY,
 	[ReplicatedSession.GAMETYPE_STUNT]				= MULTIPLAYER_GAMETYPE_STUNT,
+	
+	[ReplicatedSession.GAMETYPE_PONGRACE]			= MULTIPLAYER_GAMEMODE_PONGRACE,
+	[ReplicatedSession.GAMETYPE_DERBY_LMS]			= MULTIPLAYER_GAMEMODE_SURVIVORDERBY,
+	[ReplicatedSession.GAMETYPE_HUNTER_PREY]		= MULTIPLAYER_GAMEMODE_TAG,
+	[ReplicatedSession.GAMETYPE_DERBY_FRAG]			= MULTIPLAYER_GAMEMODE_FRAGDERBY,
+	
 }
 
 local TrackTypeImages = {
@@ -85,12 +154,86 @@ function menu_multiplayer_trackselection.create(self)
 	self:addResource("race_type_images3.tga",race_type_images3,race_type_images3_size)
 	self:addResource("single_player_images2.tga",single_player_images2,single_player_images2_size)
 	self:addResource("single_player_images3.tga",single_player_images3,single_player_images3_size)
+	--self:addResource("single_player_track_images19.tga",single_player_track_images19,single_player_track_images19_size)	
+
+	self:addResource("single_player_track_images1.tga",single_player_track_images1,single_player_track_images1_size)	
+	self:addResource("single_player_track_images2.tga",single_player_track_images2,single_player_track_images2_size)	
+	self:addResource("single_player_track_images3.tga",single_player_track_images3,single_player_track_images3_size)	
+	self:addResource("single_player_track_images4.tga",single_player_track_images4,single_player_track_images4_size)	
+	self:addResource("single_player_track_images5.tga",single_player_track_images5,single_player_track_images5_size)	
+	self:addResource("single_player_track_images6.tga",single_player_track_images6,single_player_track_images6_size)	
+	self:addResource("single_player_track_images7.tga",single_player_track_images7,single_player_track_images7_size)	
+	self:addResource("single_player_track_images8.tga",single_player_track_images8,single_player_track_images8_size)	
+	self:addResource("single_player_track_images9.tga",single_player_track_images9,single_player_track_images9_size)	
+	self:addResource("single_player_track_images10.tga",single_player_track_images10,single_player_track_images10_size)	
+	self:addResource("single_player_track_images11.tga",single_player_track_images11,single_player_track_images11_size)	
+	self:addResource("single_player_track_images12.tga",single_player_track_images12,single_player_track_images12_size)	
+	self:addResource("single_player_track_images13.tga",single_player_track_images13,single_player_track_images13_size)	
+	self:addResource("single_player_track_images14.tga",single_player_track_images14,single_player_track_images14_size)	
+	self:addResource("single_player_track_images15.tga",single_player_track_images15,single_player_track_images15_size)	
+	self:addResource("single_player_track_images16.tga",single_player_track_images16,single_player_track_images16_size)	
+	self:addResource("single_player_track_images17.tga",single_player_track_images17,single_player_track_images17_size)	
+	self:addResource("single_player_track_images18.tga",single_player_track_images18,single_player_track_images18_size)	
 	self:addResource("single_player_track_images19.tga",single_player_track_images19,single_player_track_images19_size)	
+	self:addResource("single_player_track_images20.tga",single_player_track_images20,single_player_track_images20_size)	
+	self:addResource("single_player_track_images21.tga",single_player_track_images21,single_player_track_images21_size)	
+	self:addResource("single_player_track_images22.tga",single_player_track_images22,single_player_track_images22_size)	
+	self:addResource("single_player_track_images23.tga",single_player_track_images23,single_player_track_images23_size)	
+	self:addResource("single_player_track_images24.tga",single_player_track_images24,single_player_track_images24_size)	
+	self:addResource("single_player_track_images25.tga",single_player_track_images25,single_player_track_images25_size)	
+	self:addResource("single_player_track_images26.tga",single_player_track_images26,single_player_track_images26_size)	
+	self:addResource("single_player_track_images27.tga",single_player_track_images27,single_player_track_images27_size)	
+	self:addResource("single_player_track_images28.tga",single_player_track_images28,single_player_track_images28_size)	
+	self:addResource("single_player_track_images29.tga",single_player_track_images29,single_player_track_images29_size)	
+	self:addResource("single_player_track_images30.tga",single_player_track_images30,single_player_track_images30_size)	
+	self:addResource("single_player_track_images31.tga",single_player_track_images31,single_player_track_images31_size)	
+	self:addResource("single_player_track_images32.tga",single_player_track_images32,single_player_track_images32_size)	
+	self:addResource("single_player_track_images33.tga",single_player_track_images33,single_player_track_images33_size)	
+	self:addResource("single_player_track_images34.tga",single_player_track_images34,single_player_track_images34_size)	
+	self:addResource("single_player_track_images35.tga",single_player_track_images35,single_player_track_images35_size)	
+	self:addResource("single_player_track_images36.tga",single_player_track_images36,single_player_track_images36_size)	
+	self:addResource("single_player_track_images37.tga",single_player_track_images37,single_player_track_images37_size)	
+	self:addResource("single_player_track_images38.tga",single_player_track_images38,single_player_track_images38_size)	
+	self:addResource("single_player_track_images39.tga",single_player_track_images39,single_player_track_images39_size)	
+	self:addResource("single_player_track_images40.tga",single_player_track_images40,single_player_track_images40_size)	
+	self:addResource("single_player_track_images41.tga",single_player_track_images41,single_player_track_images41_size)	
+	self:addResource("single_player_track_images42.tga",single_player_track_images42,single_player_track_images42_size)	
+	self:addResource("single_player_track_images43.tga",single_player_track_images43,single_player_track_images43_size)	
+	self:addResource("single_player_track_images44.tga",single_player_track_images44,single_player_track_images44_size)	
+	self:addResource("single_player_track_images45.tga",single_player_track_images45,single_player_track_images45_size)	
+	self:addResource("single_player_track_images46.tga",single_player_track_images46,single_player_track_images46_size)	
+	self:addResource("single_player_track_images47.tga",single_player_track_images47,single_player_track_images47_size)	
+	self:addResource("single_player_track_images48.tga",single_player_track_images48,single_player_track_images48_size)	
+	self:addResource("single_player_track_images49.tga",single_player_track_images49,single_player_track_images49_size)	
+	self:addResource("single_player_track_images50.tga",single_player_track_images50,single_player_track_images50_size)	
+	self:addResource("single_player_track_images51.tga",single_player_track_images51,single_player_track_images51_size)	
+	self:addResource("single_player_track_images52.tga",single_player_track_images52,single_player_track_images52_size)	
+	self:addResource("single_player_track_images53.tga",single_player_track_images53,single_player_track_images53_size)	
+	self:addResource("single_player_track_images54.tga",single_player_track_images54,single_player_track_images54_size)	
+	self:addResource("single_player_track_images55.tga",single_player_track_images55,single_player_track_images55_size)	
+	self:addResource("single_player_track_images56.tga",single_player_track_images56,single_player_track_images56_size)	
+	self:addResource("single_player_track_images57.tga",single_player_track_images57,single_player_track_images57_size)	
+	self:addResource("single_player_track_images58.tga",single_player_track_images58,single_player_track_images58_size)	
+	self:addResource("single_player_track_images59.tga",single_player_track_images59,single_player_track_images59_size)	
+	self:addResource("single_player_track_images60.tga",single_player_track_images60,single_player_track_images60_size)	
+	self:addResource("single_player_track_images61.tga",single_player_track_images61,single_player_track_images61_size)	
+	self:addResource("single_player_track_images62.tga",single_player_track_images62,single_player_track_images62_size)	
+	self:addResource("single_player_track_images63.tga",single_player_track_images63,single_player_track_images63_size)	
+	self:addResource("single_player_track_images64.tga",single_player_track_images64,single_player_track_images64_size)	
+	self:addResource("single_player_track_images65.tga",single_player_track_images65,single_player_track_images65_size)	
+				
+	--local racetype=race_type_names[RaceSelectionState.RaceType].tracktype
+	--local files=trackfiles[racetype]
+	--for k,v in ipairs(files) do
+		--for k,v in ipairs(Levels) do
+			--self:addResource(v..".tga",_G[v],_G[v.."_size"])
+			--self:addResource("single_player_track_images"..v..".tga",single_player_track_images19,single_player_track_images19_size)	
+		--end
 
 	self:loadResources()
 end
 
-local OnGameTypeChanged, OnTrackTypeChanged
+local OnGameTypeChanged, OnTrackTypeChanged, OnGameModeChanged
 
 local EmptyOption = {
 	L"",
@@ -112,8 +255,8 @@ local TimeLimitDerbyOption =
 local LapsOption = 
 {
 	MULTIPLAYER_LAPS,
-	{L"1", L"2", L"3", L"4", L"5", L"6", L"7", L"8", L"9", L"10" },
-	{1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+	{L"1", L"2", L"3", L"4", L"5", L"6", L"7", L"8", L"9", L"10", L"12", L"15" },
+	{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15 },
 	4,
 	true,
 }
@@ -121,8 +264,8 @@ local LapsOption =
 local TrackTypeRaces = 
 {
 	MULTIPLAYER_TRACKTYPE,
-	{RACETRACKTYPE_FOREST, RACETRACKTYPE_FIELDS, RACETRACKTYPE_CANAL, RACETRACKTYPE_CITY, RACETRACKTYPE_DESERT, RACETRACKTYPE_RACING, RACETRACKTYPE_ARENA },
-	{TRACKTYPE_FOREST, TRACKTYPE_FIELDS, TRACKTYPE_CANAL, TRACKTYPE_CITY, TRACKTYPE_DESERT, TRACKTYPE_RACING, TRACKTYPE_EVENT},
+	{RACETRACKTYPE_FOREST, RACETRACKTYPE_FIELDS, RACETRACKTYPE_CANAL, RACETRACKTYPE_CITY, RACETRACKTYPE_DESERT, RACETRACKTYPE_RACING, RACETRACKTYPE_ARENA, L(RACETRACKTYPE_FO1_SNOW) ,L(RACETRACKTYPE_FO1_PIT),L(RACETRACKTYPE_FO1_FOREST),L(RACETRACKTYPE_FO1_TOWN),L(RACETRACKTYPE_FO1_RACING)},
+	{TRACKTYPE_FOREST, TRACKTYPE_FIELDS, TRACKTYPE_CANAL, TRACKTYPE_CITY, TRACKTYPE_DESERT, TRACKTYPE_RACING, TRACKTYPE_EVENT,TRACKTYPE_FO1_SNOW,TRACKTYPE_FO1_PIT,TRACKTYPE_FO1_FOREST,TRACKTYPE_FO1_TOWN,TRACKTYPE_FO1_RACING},
 	1,
 	true,
 	function()OnTrackTypeChanged()end,
@@ -133,9 +276,53 @@ local TrackTypeDerby =
 	MULTIPLAYER_TRACKTYPE,
 	{RACETRACKTYPE_DERBY, RACETRACKTYPE_ARENA, },
 	{TRACKTYPE_DERBY, TRACKTYPE_EVENT},
+	--{RACETRACKTYPE_DERBY, RACETRACKTYPE_ARENA, RACETRACKTYPE_FOREST, RACETRACKTYPE_FIELDS, RACETRACKTYPE_CANAL, RACETRACKTYPE_CITY, RACETRACKTYPE_DESERT, RACETRACKTYPE_RACING},
+	--{TRACKTYPE_DERBY, TRACKTYPE_EVENT, TRACKTYPE_FOREST, TRACKTYPE_FIELDS, TRACKTYPE_CANAL, TRACKTYPE_CITY, TRACKTYPE_DESERT, TRACKTYPE_RACING, TRACKTYPE_STUNT},
 	1,
 	true,
 	function()OnTrackTypeChanged()end,
+}
+
+local GameModeRace =
+{
+	MULTIPLAYER_GAMEMODE,
+	{MULTIPLAYER_GAMEMODE_RACE, MULTIPLAYER_GAMEMODE_PONGRACE },
+	{1, 2},
+	1,
+	true,
+	function()OnGameModeChanged()end,
+	{MULTIPLAYER_GAMEMODE_RACE_DESCRIPTION, MULTIPLAYER_GAMEMODE_PONGRACE_DESCRIPTION }
+}
+
+local GameModeDerby =
+{
+	{
+		MULTIPLAYER_GAMEMODE,
+		{MULTIPLAYER_GAMEMODE_WRECKINGDERBY, MULTIPLAYER_GAMEMODE_SURVIVORDERBY},
+		{3, 4},
+		1,
+		true,
+		function()OnGameModeChanged()end,
+		{MULTIPLAYER_GAMEMODE_WRECKINGDERBY_DESCRIPTION, MULTIPLAYER_GAMEMODE_SURVIVORDERBY_DESCRIPTION}
+	},
+	{
+		MULTIPLAYER_GAMEMODE,
+		{MULTIPLAYER_GAMEMODE_WRECKINGDERBY, MULTIPLAYER_GAMEMODE_SURVIVORDERBY, MULTIPLAYER_GAMEMODE_TAG},
+		{3, 4, 5},
+		1,
+		true,
+		function()OnGameModeChanged()end,
+		{MULTIPLAYER_GAMEMODE_WRECKINGDERBY_DESCRIPTION, MULTIPLAYER_GAMEMODE_SURVIVORDERBY_DESCRIPTION, MULTIPLAYER_GAMEMODE_TAG_DESCRIPTION},
+	},
+	{
+		MULTIPLAYER_GAMEMODE,
+		{MULTIPLAYER_GAMEMODE_WRECKINGDERBY, MULTIPLAYER_GAMEMODE_SURVIVORDERBY, MULTIPLAYER_GAMEMODE_TAG, MULTIPLAYER_GAMEMODE_FRAGDERBY },
+		{3, 4, 5, 6},
+		1,
+		true,
+		function()OnGameModeChanged()end,
+		{MULTIPLAYER_GAMEMODE_WRECKINGDERBY_DESCRIPTION, MULTIPLAYER_GAMEMODE_SURVIVORDERBY_DESCRIPTION, MULTIPLAYER_GAMEMODE_TAG_DESCRIPTION, MULTIPLAYER_GAMEMODE_FRAGDERBY_DESCRIPTION }
+	},
 }
 
 local Options = {
@@ -147,6 +334,10 @@ local Options = {
 		true,
 		function()OnGameTypeChanged()end,
 		{MULTIPLAYER_GAMETYPE_RACE_DESCRIPTION, MULTIPLAYER_GAMETYPE_STUNT_DESCRIPTION, MULTIPLAYER_GAMETYPE_DERBY_DESCRIPTION }
+	},
+
+	{
+		-- Game mode
 	},
 
 	{
@@ -163,7 +354,7 @@ local Options = {
 	},
 	{
 		MULTIPLAYER_LAPS,
-		{L"1", L"2", L"3", L"4", L"5", L"6", L"7", L"8", L"9", L"10" },
+		{L"1", L"2", L"3", L"4", L"5", L"6", L"7", L"8", L"9", L"10"},
 		{1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
 		4,
 		true,
@@ -171,9 +362,10 @@ local Options = {
 }
 
 local GameType = 1
-local TrackType = 2
-local Track = 3
-local Laps = 4
+local GameMode = 2
+local TrackType = 3
+local Track = 4
+local Laps = 5
 
 local Label=1
 local ItemLabels=2
@@ -183,7 +375,7 @@ local Enabled=5
 local OnChanged=6
 local Descriptions=7
 
-local NumOptions = 4
+local NumOptions = 5
 
 local function GetSelectedItem(Items, RowNr)
 	return Items[RowNr][SelectedItem]
@@ -205,6 +397,17 @@ local function GetNumItems(Items, RowNr)
 	return table.getn(Items[RowNr][ItemValues])
 end
 
+OnGameModeChanged = function()
+	local gameMode = GetSelectedItemValue(Options, GameMode)
+	if gameMode == 1 or gameMode == 2 then	-- race & pong race
+		Options[Laps] = LapsOption
+	elseif gameMode == 4 then				-- survivor
+		Options[Laps] = EmptyOption
+	else									-- wrecking, frag & hunter&prey
+		Options[Laps] = TimeLimitDerbyOption
+	end
+end
+
 OnGameTypeChanged = function()
 	local gameType = GetSelectedItemValue(Options, GameType)
 	if gameType == 1 then -- Race
@@ -212,16 +415,21 @@ OnGameTypeChanged = function()
 		SetSelectedItem(Options, TrackType, 1)
 		Options[Laps] = LapsOption
 		Options[Laps][Label] = MULTIPLAYER_LAPS
+		Options[GameMode] = GameModeRace
 		OnTrackTypeChanged()
+		OnGameModeChanged()
 	elseif gameType == 3 then -- Derby
 		Options[TrackType] = TrackTypeDerby
 		SetSelectedItem(Options, TrackType, 1)
 		Options[Laps] = TimeLimitDerbyOption
 		Options[Laps][Label] = MULTIPLAYER_MINUTES
+		Options[GameMode] = GameModeDerby[usingDerbyMode]
 		OnTrackTypeChanged()
+		OnGameModeChanged()
 	elseif gameType == 2 then -- Stunt
 		Options[TrackType] = EmptyOption
 		Options[Laps] = EmptyOption
+		Options[GameMode] = EmptyOption
 		ValidTracks = { }
 		SelectedTrack = 1
 		for i,l in ipairs(Levels) do
@@ -299,20 +507,27 @@ local function RefreshInfo(self)
 
 		local tracktype
 		local gametype = GetSelectedItemValue(Options, GameType)
-		if gametype == 1 or gametype == 3 then
-			tracktype = GetSelectedItemValue(Options, TrackType)
-		elseif gametype == 2 then
+		if gametype == 2 then
 			tracktype = TRACKTYPE_STUNT
+		else
+			tracktype = GetSelectedItemValue(Options, TrackType)
 		end
 
-		W("track_image"):AttachResource(self:getResource(TrackTypeImages[tracktype]))
+		--W("track_image"):AttachResource(self:getResource(TrackTypeImages[tracktype]))
+		local icon=leveldata.TrackIcon or ""
+		W("track_image"):AttachResource(self:getResource(icon.."_sp"))
+		
 	end
 
 	if SelectedRow == Track then
 		if SelectedTrack then
 			local leveldata = Levels[ValidTracks[SelectedTrack]]
 			local desc = W("infotext")
-			desc:SetTitle(TRANSLATOR(leveldata.Description))
+			if leveldata.Description == tostring(leveldata.Description) then
+				desc:SetTitle(L(leveldata.Description))
+			else
+				desc:SetTitle(TRANSLATOR(leveldata.Description))
+			end
 			desc:WordWrap()
 			local w,h = wm.GetTextExtents(desc:GetTitle(), fontmedium())
 			local w2,h2 = desc:GetParent():GetSize()
@@ -413,7 +628,7 @@ function menu_multiplayer_trackselection.init(self)
 		else
 			etype = mprace_rules
 		end	
-	
+
 		if etype == ReplicatedSession.GAMETYPE_TOURNAMENT then
 			SetSelectedItem(Options, GameType, 1)
 		elseif etype == ReplicatedSession.GAMETYPE_RACE or etype == ReplicatedSession.GAMETYPE_PONGRACE then
@@ -425,6 +640,33 @@ function menu_multiplayer_trackselection.init(self)
 		end
 		OnGameTypeChanged()
 
+		local gamemode = 0
+		if etype == ReplicatedSession.GAMETYPE_RACE then
+			gamemode = 1
+		elseif etype == ReplicatedSession.GAMETYPE_PONGRACE then
+			gamemode = 2
+		elseif etype == ReplicatedSession.GAMETYPE_STUNT then
+			gamemode = 0 -- No gamemode
+		elseif etype == ReplicatedSession.GAMETYPE_DERBY_WRECKING then
+			gamemode = 3
+		elseif etype == ReplicatedSession.GAMETYPE_DERBY_LMS then
+			gamemode = 4
+		elseif etype == ReplicatedSession.GAMETYPE_HUNTER_PREY then
+			gamemode = 5
+		elseif etype == ReplicatedSession.GAMETYPE_DERBY_FRAG then
+			gamemode = 6
+		else
+			-- problem...
+		end
+		if gamemode ~= nil then
+			for i = 1, table.getn(Options[GameMode][ItemValues]) do
+				if Options[GameMode][ItemValues][i] == gamemode then
+					SetSelectedItem(Options, GameMode, i)
+					break
+				end
+			end
+		end
+
 		if mprace_rules == ReplicatedSession.GAMETYPE_TOURNAMENT or mprace_rules == ReplicatedSession.GAMETYPE_TOURNAMENT_DERBY then
 			Options[GameType][Enabled] = (mprace_rules == ReplicatedSession.GAMETYPE_TOURNAMENT)
 		else
@@ -432,7 +674,8 @@ function menu_multiplayer_trackselection.init(self)
 		end
 
 		if mprace_event then
-			if etype == ReplicatedSession.GAMETYPE_RACE then
+			--GZ if etype == ReplicatedSession.GAMETYPE_RACE then
+			if etype ~= ReplicatedSession.GAMETYPE_STUNT then
 				local tracktype = Levels[mprace_event.trackid].TrackType
 				local level = Levels[mprace_event.trackid]
 				local tracktype = level.TrackType
@@ -446,15 +689,17 @@ function menu_multiplayer_trackselection.init(self)
 				OnTrackTypeChanged()
 			end
 		
-			if etype == ReplicatedSession.GAMETYPE_RACE or etype == ReplicatedSession.GAMETYPE_DERBY_WRECKING then
+			--GZ if etype == ReplicatedSession.GAMETYPE_RACE or etype == ReplicatedSession.GAMETYPE_DERBY_WRECKING then
+			if etype ~= ReplicatedSession.GAMETYPE_STUNT and etype ~= ReplicatedSession.GAMETYPE_DERBY_LMS then
 				for i = 1, table.getn(Options[Laps][ItemValues]) do
 					if Options[Laps][ItemValues][i] == mprace_event.lapsOrTimeLimit then
 						SetSelectedItem(Options, Laps, i)
-						break
+                                              break
 					end
 				end
 			end
 			
+
 			if etype == ReplicatedSession.GAMETYPE_DERBY_WRECKING then
 				local level = Levels[mprace_event.trackid]
 				for i = 1, table.getn(Options[TrackType][ItemValues]) do
@@ -465,6 +710,7 @@ function menu_multiplayer_trackselection.init(self)
 				end
 				OnTrackTypeChanged()
 			end
+
 			
 			for i,v in ipairs(ValidTracks) do
 				if mprace_event.trackid == v then
@@ -487,12 +733,39 @@ function menu_multiplayer_trackselection.init(self)
 		if VirtualKey == KeyCodes["BUTTON_START"] then
 			local newrules
 			local gametype = GetSelectedItemValue(Options, GameType)
+			-- TODO: use gameMode
 			if gametype == 1 then
 				newrules = ReplicatedSession.GAMETYPE_RACE
+			elseif gametype == 4 then
+				newrules = ReplicatedSession.GAMETYPE_PONGRACE
 			elseif gametype == 2 then
 				newrules = ReplicatedSession.GAMETYPE_STUNT
 			else
 				newrules = ReplicatedSession.GAMETYPE_DERBY_WRECKING
+			end
+			local gametype = GetSelectedItemValue(Options, GameType)
+			if gametype == 2 then --stunt
+				newrules = ReplicatedSession.GAMETYPE_STUNT
+			else
+				local gamemode = GetSelectedItemValue(Options, GameMode)
+				local derbySettings = db:GetTable("Settings.Derbies")
+				if gamemode == 1 then		-- race
+					newrules = ReplicatedSession.GAMETYPE_RACE
+				elseif gamemode == 2 then	-- pong race
+					newrules = ReplicatedSession.GAMETYPE_PONGRACE
+				elseif gamemode == 3 then	-- wrecking derby
+					newrules = ReplicatedSession.GAMETYPE_DERBY_WRECKING
+					derbySettings.InactivityTimer = 45
+				elseif gamemode == 4 then	-- survivor derby
+					newrules = ReplicatedSession.GAMETYPE_DERBY_LMS
+					derbySettings.InactivityTimer = 1800
+				elseif gamemode == 5 then	-- hunter & prey derby
+					newrules = ReplicatedSession.GAMETYPE_HUNTER_PREY
+				elseif gamemode == 6 then	-- frag derby
+					newrules = ReplicatedSession.GAMETYPE_DERBY_FRAG
+				else
+					-- problem...
+				end
 			end
 			
 			local event = {
