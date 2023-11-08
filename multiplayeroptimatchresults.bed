@@ -228,11 +228,12 @@ local function NetworkEvents(event)
 		if info.CarClass > (ClassCounter-1) then -------------------
 			player.Car = info.CarClass - ClassCounter ----------------------
 			player.CarValid = true
-		elseif info.CarClass == SessionInfo.CarClass.Stunt or info.Races[info.NextRace].EventType == ReplicatedSession.GAMETYPE_STUNT then
+		--elseif info.CarClass == SessionInfo.CarClass.Stunt or info.Races[info.NextRace].EventType == ReplicatedSession.GAMETYPE_STUNT then
+		elseif info.Races[info.NextRace].EventType == ReplicatedSession.GAMETYPE_STUNT then
 			player.Car = CarlistStuntCars()[1].index		
 			player.CarValid = false
 		elseif info.CarClass ~= SessionInfo.CarClass.Any then
-			player.Car = CarlistFromClass(info.CarClass, false, true)[1].index
+			player.Car = 0------------CarlistFromClass(info.CarClass, false, true)[1].index
 			player.CarValid = false
 		else
 			player.Car = 0

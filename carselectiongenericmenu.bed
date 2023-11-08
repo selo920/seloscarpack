@@ -12,7 +12,7 @@
 
 useTestTrack = false
 
-local currentlyLoadedCars = 0
+--local currentlyLoadedCars = 0 -- not used anymore 
 
 -- standalone palette selector mod
 -- removing this line will disable the color palette mod :)
@@ -483,12 +483,14 @@ function menu_carselection.init(self)
 		MessageBox(L(id),MESSAGEBOX_OK,ok)
 	end
 
-	function parent.reloadCarList(self, dir)
+
+	-----------------------------------------------------------------------------
+	function parent.reloadCarList(self, dir) --i just change some stuff below
 		dir = dir or 0
 		local m = menu_carselection
 		local oldLoadedCarCount = m.currentCarCount
 		local oldCarIdx = m.currentCarCount - (table.getn(m.GarageCars) - usrOpt.lastMenuCar)
-		currentlyLoadedCars = 0
+		--currentlyLoadedCars = 0 --not used anymore
 		m.carRow = (m.carRow + dir - 1) % table.getn(customCarClassList) + 1
 
 		local listIdx = m.carRow
@@ -513,39 +515,47 @@ function menu_carselection.init(self)
 		end
 		
 		local mycarlist = m.carlist
-
 		-- local id = 1
+		--------------------------------------------
+		--i add this to make sure to remove the array items and avoid overflow crash 
+		menu_carselection.GarageCars={} --delete array shit
+		collectgarbage("collect") -- afaik this force free memory without wait, so clean it now !!
+		--------------------------------------------
 		local first
-		local cars={}
+		--local cars={} -- What is the purpose of this o__O ?????
 		for i=1,table.getn(mycarlist) do
 			local car=mycarlist[i]
 			if car then
 				local iconname
-
 				if not m.all_available and Garage:IsCarLocked(car.index) then
 					iconname=string.format("car_%d_icon_locked",GetCarDataIndex(car.index))
 				else
 					iconname=string.format("car_%d_icon",GetCarDataIndex(car.index))
 				end
-
-				
 				local id,button=parent:AddButton(m:getResource(iconname)) --//ICON(self,iconname))
-				table.insert(cars,i,{ index=car.index,button=button})
-				currentlyLoadedCars = currentlyLoadedCars + 1
-				insertDataToMetatable(m.GarageCars,id, { index=car.index,button=button})
 				
+				--------------------------------- I think all this is no longer necessary
+				--table.insert(cars,i,{ index=car.index,button=button}) --- What is the purpose of this o__O ?????
+				--currentlyLoadedCars = currentlyLoadedCars + 1 -- not used anymore
+				--------------------------------DELETE--------------------
+				
+				insertDataToMetatable(m.GarageCars,id, { index=car.index,button=button})  --fixed: no more overflow crash on this function !!!
 				if not first then first=id end
 			end
 		end
 
+		---------------------------------I think all this is no longer necessary
+		--parent:onButtonChange(table.getn(m.GarageCars)+1 - currentlyLoadedCars) -- delete  
+		--m.currentCarCount = currentlyLoadedCars -- delete
+		--------------------------------DELETE--------------------
+		
 		parent:SetSelectedButton(0,false)
-
-		parent:onButtonChange(table.getn(m.GarageCars)+1 - currentlyLoadedCars)
-
-		m.currentCarCount = currentlyLoadedCars
+		parent:onButtonChange(first) ---- fixed: no more fancy stuff here :D
 
 	end
-
+	-----------------------------------------------------------------------------
+	-- i did it. :) 
+	
 	parent.onChildAction = function(self,id)
 		if menu_carselection.goingforward or menu_carselection.goingback then
 			return
