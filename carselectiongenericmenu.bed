@@ -361,6 +361,8 @@ function menu_carselection.create(self)
 	self:addResource("garage_elements2.tga",garage_elements2,garage_elements2_size)
 	self:addResource("car_icons_2.tga",car_icons_2,car_icons_2_size)
 	self:addResource("car_icons_2_locked.tga",car_icons_2_locked,car_icons_2_locked_size)
+	self:addResource("car_icons_3.tga",car_icons_3,car_icons_3_size)
+	self:addResource("car_icons_3_locked.tga",car_icons_3_locked,car_icons_3_locked_size)
 
 	self:loadResources()
 
@@ -751,7 +753,7 @@ end
 
 function menu_carselection.deinit(self)
 	self.parent:deinit(self)
-
+	collectgarbage("collect")
 end
 
 function menu_carselection.startshow(self)

@@ -1880,6 +1880,7 @@ function menu_multiplayer_lobby.deinit(self)
 	if VoiceSettingsActive then
 		hidevoice()
 	end
+	collectgarbage("collect")
 end
 
 function menu_multiplayer_lobby.update(self, time)

@@ -858,6 +858,7 @@ end
 
 function menu_multiplayer_trackselection.deinit(self)
 	self.parent:deinit(self)
+	collectgarbage("collect")
 end
 
 function menu_multiplayer_trackselection.update(self,time)

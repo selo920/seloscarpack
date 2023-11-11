@@ -21,7 +21,7 @@ customCarClassList = {
         classname = "Street",
         background = "data/menu/carshop_street_bg.tga",
 		description= "only street cars",
-        28,30,31,09,21,27,12,32,22,15,11,34,25,29,46,47,50,51,52,54,55,56,57,60,63,65,71,72,74,76,78,79,80,81,82,83,84,86,93,94,95,96,98,99,101,102,100,
+        28,30,31,09,21,27,12,32,22,15,11,34,25,29,46,47,50,51,52,54,55,56,57,60,63,65,71,72,74,76,78,79,80,81,82,83,84,86,93,94,95,96,98,99,100,101,102,103,104,
     },
     {
         classname = "Bonus/Stunt",
@@ -39,19 +39,19 @@ customCarClassList = {
         classname = "Community Corner",
         background = "data/menu/foj_community.tga",
 		description= "only community created cars",
-        85,92,102,
+        85,92,102,103,
     }, 
     {
         classname = "Selo's Customs",
         background = "data/menu/selocustoms.tga",
 		description= "only selo's precious",
-        46,47,81,82,93,94,95,96,98,99,101,100,
+        46,47,81,82,93,94,95,96,98,99,101,100,104,
     },
     {
         classname = "Tier S (MP)",
         background = "data/menu/mp_tier.tga",
 		description= "balanced around bullet gt",
-        24,10,27,12,32,22,15,11,34,25,29,42,50,51,52,54,55,56,57,76,78,79,83,84,86,60,63,65,71,72,74,102,81,82,46,47,93,94,95,96,98,99,101,100,
+        24,10,27,12,32,22,15,11,34,25,29,42,50,51,52,54,55,56,57,76,78,79,83,84,86,60,63,65,71,72,74,102,103,81,82,46,47,93,94,95,96,98,99,101,100,104,
     },
     {
         classname = "Tier A (MP)",
@@ -63,13 +63,13 @@ customCarClassList = {
         classname = "Tier B (MP)",
         background = "data/menu/mp_tier.tga",
 		description= "balanced around sparrowhawk",
-        14,17,4,7,33,28,9,21,58,62,64,69,73,
+        14,17,4,7,33,28,30,9,21,58,62,64,69,73,
     },
     {
         classname = "Tier C (MP)",
         background = "data/menu/mp_tier.tga",
 		description= "balanced around scorpion",
-        1,3,5,19,31,30,66,67,
+        1,3,5,19,31,66,67,
     },
     {
         classname = "Tier D (MP)",

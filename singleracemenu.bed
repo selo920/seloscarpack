@@ -485,9 +485,7 @@ end
 
 function menu_singleplayer_racetype.deinit(self)
 	self.parent:deinit(self)
-
-
-
+	collectgarbage("collect")
 end
 
 
